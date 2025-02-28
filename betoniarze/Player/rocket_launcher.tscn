@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbf6vihdic7ld"]
+[gd_scene load_steps=5 format=3 uid="uid://dbf6vihdic7ld"]
 
 [ext_resource type="Script" path="res://Player/rocket.gd" id="1_g47qb"]
+[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_f8r13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ojhd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kre10"]
 
-[node name="Rocket Launcher" type="Node2D"]
-
-[node name="Rocket Launcher Texture" type="Sprite2D" parent="."]
-
-[node name="Rocket" type="RigidBody2D" parent="."]
+[node name="Rocket" type="CharacterBody2D"]
 script = ExtResource("1_g47qb")
 
-[node name="Rocket Texture" type="Sprite2D" parent="Rocket"]
+[node name="Rocket Texture2" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_f8r13")
 
-[node name="Rocket Collider" type="CollisionShape2D" parent="Rocket"]
+[node name="Rocket Collider2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6ojhd")
 
-[node name="Rocket Area" type="Area2D" parent="Rocket"]
+[node name="Rocket Area2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocket/Rocket Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocket Area2"]
 shape = SubResource("CircleShape2D_kre10")

@@ -1,12 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://djpihxejo1d0r"]
+[gd_scene load_steps=5 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3a02r"]
+[ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/rocket_launcher.tscn" id="2_boloi"]
+[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_ukoxr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
+size = Vector2(126, 127)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3a02r")
+rocket_scene = ExtResource("2_boloi")
 
 [node name="Player Texture" type="Sprite2D" parent="."]
+texture = ExtResource("2_ukoxr")
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_20l4n")
 
 [node name="Camera2D" type="Camera2D" parent="."]

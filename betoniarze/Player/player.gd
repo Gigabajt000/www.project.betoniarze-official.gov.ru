@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const EXLPOSION_POWER = 100
-@export var rocket_scene: PackedScene  # Assign "rocket.tscn" in the inspector
+@export var rocket_scene: PackedScene
 
 func _process(delta: float) -> void:
 	pass
@@ -13,7 +13,7 @@ func rocket_jump(explosion_position: Vector2, max_explosion_force: float, explos
 		return
 	
 	var explosion_strength = (1.0 - (distance / explosion_range)) * max_explosion_force
-	var direction
+	var direction = (global_position - explosion_position).normalized()
 	
 	velocity += direction * explosion_strength
 
@@ -26,8 +26,8 @@ func _physics_process(delta: float) -> void:
 func shoot():
 	if rocket_scene:
 		var rocket = rocket_scene.instantiate()
-		rocket.global_position = global_position + Vector2(20, 0)  # Offset to avoid self-collision
-		rocket.rotation = rotation
+		rocket.global_position = global_position
+		rocket.shoot_direction = (get_global_mouse_position() - global_position).normalized()  # Set direction
 		get_parent().add_child(rocket)
 
 func _input(event):
