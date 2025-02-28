@@ -3,6 +3,10 @@ extends CharacterBody2D
 const EXLPOSION_POWER = 100
 @export var rocket_scene: PackedScene
 
+func Player():
+	pass #Prosze mi tego nie usuwać inaczej utne jaja
+	#to jest do kolców btw
+
 func _process(delta: float) -> void:
 	pass
 

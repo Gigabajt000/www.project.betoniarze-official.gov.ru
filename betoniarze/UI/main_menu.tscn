@@ -9,11 +9,17 @@ font_size = 100
 [sub_resource type="LabelSettings" id="LabelSettings_6amle"]
 font_color = Color(1, 0, 0, 1)
 
-[node name="Main_Menu" type="Node2D"]
-position = Vector2(598, 297)
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 598.0
+offset_top = 297.0
+offset_right = 598.0
+offset_bottom = 297.0
 script = ExtResource("1_541ho")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -28,6 +34,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.596078)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -41,6 +48,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -66,6 +74,7 @@ layout_mode = 2
 text = "    Settings    "
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
