@@ -256,3 +256,4 @@ text = "Level8"
 label_settings = SubResource("LabelSettings_6amle")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
