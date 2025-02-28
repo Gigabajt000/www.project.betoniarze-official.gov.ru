@@ -2,6 +2,10 @@ extends Node
 
 var IsAlive: bool = true
 
+#dzwięk
+var master_volume : float = 1
+var muted: bool = false
+
 func _process(delta):
 	if IsAlive == false:
 		Death()

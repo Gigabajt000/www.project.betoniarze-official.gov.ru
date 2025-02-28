@@ -1,0 +1,249 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv5q2blr7onvn"]
+
+[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_8kgc0"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_541ho"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqsex"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_6amle"]
+font_color = Color(1, 0, 0, 1)
+
+[node name="Main_Menu" type="Node2D"]
+position = Vector2(598, 297)
+script = ExtResource("1_541ho")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -684.5
+offset_top = -382.5
+offset_right = 684.5
+offset_bottom = 382.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.596078)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -632.0
+offset_top = -11.0
+offset_right = 633.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -270.0
+offset_right = 174.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_dqsex")
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "    Settings    "
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -599.0
+offset_right = 599.0
+offset_bottom = 338.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level1"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="Button2" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level2"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="Button3" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level3"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="Button4" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level4"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level5"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="Button2" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level6"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="Button3" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer2/Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level7"
+label_settings = SubResource("LabelSettings_6amle")
+
+[node name="Button4" type="Button" parent="MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("1_8kgc0")
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer2/Button4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level8"
+label_settings = SubResource("LabelSettings_6amle")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
