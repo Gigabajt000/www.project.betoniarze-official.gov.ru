@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://t8pscco1c6y3"]
+
+[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_iqifa"]
+[ext_resource type="Script" path="res://Player/kolce.gd" id="1_j7wrm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k740v"]
+size = Vector2(115, 114)
+
+[node name="Kolce" type="Node2D"]
+script = ExtResource("1_j7wrm")
+
+[node name="Kolce Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_iqifa")
+
+[node name="Area2D" type="Area2D" parent="Kolce Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kolce Sprite/Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_k740v")
+
+[connection signal="body_entered" from="Kolce Sprite/Area2D" to="." method="_on_area_2d_body_entered"]
