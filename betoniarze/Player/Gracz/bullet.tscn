@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dty3oibl0fvon"]
 
-[ext_resource type="Script" path="res://Player/bullet.gd" id="1_eg6pt"]
+[ext_resource type="Script" path="res://Player/Gracz/bullet.gd" id="1_eg6pt"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_tkt4b"]
 [ext_resource type="AudioStream" uid="uid://crk0xievqkht" path="res://Sound/explosion.wav" id="3_ugo8v"]
 

@@ -1,33 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=6 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Gracz/kolce.tscn" id="2_a0g76"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="3_d523m"]
 [ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition/Ammunition.tscn" id="4_l224j"]
-[ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="5_1h2xq"]
-[ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="6_24dir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(128, 137)
 
 [node name="Main" type="Node2D"]
 
-[node name="Drzwi" parent="." instance=ExtResource("6_24dir")]
-position = Vector2(-884, -132)
-
 [node name="Player" parent="." instance=ExtResource("3_d523m")]
 position = Vector2(-179, -138)
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-1191, 15)
-scale = Vector2(5.32031, 1)
-texture = ExtResource("1_ef2qo")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D"]
-position = Vector2(0.751835, -2)
-shape = SubResource("RectangleShape2D_jtbtm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["ground"]]
 position = Vector2(-9, 15)
@@ -57,7 +41,3 @@ position = Vector2(1137, -114)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Ammunition" parent="CanvasLayer" instance=ExtResource("4_l224j")]
-
-[node name="Przycisk" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("5_1h2xq")]
-position = Vector2(693, -97)
-Drzwi = NodePath("../Drzwi")

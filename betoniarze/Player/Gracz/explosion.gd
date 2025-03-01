@@ -1,5 +1,7 @@
 extends Area2D
 
+func Eksplozja():
+	pass #to nic nie robi, ale zostaw
 
 
 func _physics_process(delta):

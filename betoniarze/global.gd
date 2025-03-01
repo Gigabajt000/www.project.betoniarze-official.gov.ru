@@ -16,4 +16,4 @@ var zoom = 0.7
 
 func Death():
 	
-	get_tree().change_scene_to_file("res://UI/death_screen.tscn")
+	get_tree().change_scene_to_file("res://UI/Death_Screen/death_screen.tscn")

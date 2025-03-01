@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://djpihxejo1d0r"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_3a02r"]
-[ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/rocket_launcher.tscn" id="2_boloi"]
+[ext_resource type="Script" path="res://Player/Gracz/player.gd" id="1_3a02r"]
+[ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/Gracz/rocket_launcher.tscn" id="2_boloi"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_ukoxr"]
-[ext_resource type="Script" path="res://Player/rocket_launcher.gd" id="4_oxlml"]
+[ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="4_oxlml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
 size = Vector2(114, 113)

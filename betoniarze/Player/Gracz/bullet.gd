@@ -19,15 +19,15 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
-@onready var explosion = preload("res://Player/explosion.tscn")
+@onready var explosion = preload("res://Player/Gracz/explosion.tscn")
 
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if can_collide == true:
 		explosion_sfx.play(0)
-		
 		$Sprite2D.visible = false
 		var explosion_instance = explosion.instantiate()
-		explosion_instance.position = body.position
 		add_child(explosion_instance)
+		explosion_instance.position = Vector2(0,0)
+		
 		can_collide = false

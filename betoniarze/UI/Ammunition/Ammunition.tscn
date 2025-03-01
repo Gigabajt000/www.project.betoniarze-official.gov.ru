@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwcjmax67ubvt"]
 
-[ext_resource type="Script" path="res://UI/Ammuntion.gd" id="1_6pgky"]
+[ext_resource type="Script" path="res://UI/Ammunition/Ammuntion.gd" id="1_6pgky"]
 [ext_resource type="Texture2D" uid="uid://vcmtnsi1qvt6" path="res://Art/rakieta.png" id="2_hw3am"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0brmx"]
