@@ -14,5 +14,5 @@ func _process(delta):
 	progress_bar2.value = Global.amunicja - 50
 	
 	if Global.amunicja < Global.max_amunicja:
-		Global.amunicja += 0.1
+		Global.amunicja += 0.04
 	

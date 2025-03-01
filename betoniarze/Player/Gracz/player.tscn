@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://djpihxejo1d0r"]
+[gd_scene load_steps=8 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/Gracz/player.gd" id="1_3a02r"]
 [ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/Gracz/rocket_launcher.tscn" id="2_boloi"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_ukoxr"]
 [ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="4_oxlml"]
+[ext_resource type="AudioStream" uid="uid://dyahf20ywaqop" path="res://Sound/explosion Działko_Parowe.wav" id="5_nfk2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
 size = Vector2(114, 113)
+
+[sub_resource type="Curve" id="Curve_etrrw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0.527472), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("celownik")]
 z_index = 1
@@ -24,11 +29,32 @@ shape = SubResource("RectangleShape2D_20l4n")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
 
-[node name="Rocket" parent="." instance=ExtResource("2_boloi")]
+[node name="Rocket" parent="." node_paths=PackedStringArray("particle") instance=ExtResource("2_boloi")]
 script = ExtResource("4_oxlml")
+particle = NodePath("CPUParticles2D")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Rocket"]
+position = Vector2(96, 0)
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.73
+spread = 106.82
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.5
+initial_velocity_max = 181.81
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_etrrw")
+color = Color(0, 0, 0, 1)
 
 [node name="Przyszły pocisk" type="Node2D" parent="Rocket"]
 position = Vector2(96, 0)
+
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="Rocket"]
+stream = ExtResource("5_nfk2t")
+volume_db = -12.891
 
 [node name="Celownik" type="Sprite2D" parent="."]
 position = Vector2(-221.5, -258)

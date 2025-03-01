@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Player/Gracz/explosion.gd" id="1_4x1x1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1025"]
-radius = 281.114
+radius = 199.01
 
 [sub_resource type="Curve" id="Curve_gslpv"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.97191, 0), 0.0, 0.0, 0, 0]

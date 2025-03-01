@@ -10,7 +10,7 @@ func _physics_process(delta):
 			
 			$CPUParticles2D.emitting = true
 			var force = (o.global_position - global_position).normalized()
-			force *= 85
+			force *= 150
 			o.apply_central_impulse(force)
 			
 		if  o.has_method("Enemy"):
