@@ -1,17 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=11 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
+[ext_resource type="Script" path="res://World/camera_2d.gd" id="1_pkevd"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Gracz/kolce.tscn" id="2_a0g76"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="3_d523m"]
 [ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition/Ammunition.tscn" id="4_l224j"]
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="5_1h2xq"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="6_24dir"]
+[ext_resource type="PackedScene" uid="uid://bcpou0mrjchfq" path="res://UI/Death_Screen/death_screen.tscn" id="7_pigvr"]
 [ext_resource type="PackedScene" uid="uid://bnowdgnrihfy3" path="res://Player/Enemy/Light_Enemy.tscn" id="7_t78ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(128, 137)
 
 [node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
+script = ExtResource("1_pkevd")
 
 [node name="Drzwi" parent="." instance=ExtResource("6_24dir")]
 position = Vector2(-884, -132)
@@ -73,6 +79,9 @@ Drzwi = NodePath("../Drzwi")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Ammunition" parent="CanvasLayer" instance=ExtResource("4_l224j")]
+
+[node name="Death_Screen" parent="CanvasLayer" instance=ExtResource("7_pigvr")]
+visible = false
 
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_t78ni")]
 position = Vector2(590, -616)

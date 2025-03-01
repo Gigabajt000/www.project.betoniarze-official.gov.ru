@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://djpihxejo1d0r"]
+[gd_scene load_steps=10 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/Gracz/player.gd" id="1_3a02r"]
 [ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/Gracz/rocket_launcher.tscn" id="2_boloi"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_ukoxr"]
+[ext_resource type="AudioStream" uid="uid://b4c48oe83m8q4" path="res://Sound/hitHurt (4).wav" id="3_8aglv"]
 [ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="4_oxlml"]
 [ext_resource type="AudioStream" uid="uid://dyahf20ywaqop" path="res://Sound/explosion Działko_Parowe.wav" id="5_nfk2t"]
+
+[sub_resource type="Curve" id="Curve_riadc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
 size = Vector2(114, 113)
@@ -19,6 +24,20 @@ script = ExtResource("1_3a02r")
 celownik = NodePath("Celownik")
 metadata/_edit_horizontal_guides_ = [-401.0]
 
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 120
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 111.11
+initial_velocity_max = 313.13
+scale_amount_min = 20.0
+scale_amount_max = 30.0
+scale_amount_curve = SubResource("Curve_riadc")
+color = Color(1, 0, 0, 1)
+
 [node name="Player Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_ukoxr")
 
@@ -26,8 +45,9 @@ texture = ExtResource("2_ukoxr")
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_20l4n")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.7, 0.7)
+[node name="Zabicie_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8aglv")
+volume_db = -12.891
 
 [node name="Rocket" parent="." node_paths=PackedStringArray("particle") instance=ExtResource("2_boloi")]
 script = ExtResource("4_oxlml")

@@ -72,8 +72,8 @@ func _physics_process(delta: float) -> void:
 	if cos4 == null and temporary_direction > 0:
 		can_move = true
 
-	
-	temporary_direction = (target.position.x - position.x)
+	if Global.IsAlive == true:
+		temporary_direction = (target.position.x - position.x)
 	
 	if can_move == false:
 		direction = 0

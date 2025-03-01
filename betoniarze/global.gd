@@ -6,6 +6,7 @@ var IsAlive: bool = true
 var master_volume : float = 1
 var muted: bool = false
 
+var play_zabicie: bool = false
 
 #ammunition
 var max_amunicja: int = 100
@@ -21,5 +22,6 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func Death():
+	play_zabicie= true
 	IsAlive = false
-	get_tree().change_scene_to_file("res://UI/Death_Screen/death_screen.tscn")
+	

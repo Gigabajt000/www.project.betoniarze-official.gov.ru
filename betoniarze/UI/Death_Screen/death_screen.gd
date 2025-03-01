@@ -1,6 +1,10 @@
 extends Control
 
-
+func _process(delta):
+	if Global.IsAlive == false:
+		$".".visible = true
+	if Global.IsAlive == true:
+		$".".visible = false
 
 func _on_main_menu_pressed():
 	print("x")
