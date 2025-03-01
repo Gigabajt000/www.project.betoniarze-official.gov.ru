@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwcjmax67ubvt"]
+
+[ext_resource type="Script" path="res://UI/Ammuntion.gd" id="1_6pgky"]
+[ext_resource type="Texture2D" uid="uid://vcmtnsi1qvt6" path="res://Art/rakieta.png" id="2_hw3am"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0brmx"]
+font_size = 41
+
+[node name="Ammunition" type="Control" node_paths=PackedStringArray("progress_bar1", "progress_bar2")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pgky")
+progress_bar1 = NodePath("MarginContainer/VBoxContainer/HBoxContainer/TextureProgressBar")
+progress_bar2 = NodePath("MarginContainer/VBoxContainer/HBoxContainer/TextureProgressBar2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -114.0
+offset_right = 136.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ammo"
+label_settings = SubResource("LabelSettings_0brmx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 56
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_over = ExtResource("2_hw3am")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_over = ExtResource("2_hw3am")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=6 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/kolce.tscn" id="2_a0g76"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/player.tscn" id="3_d523m"]
+[ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition.tscn" id="4_l224j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(121.797, 100)
@@ -25,3 +26,7 @@ position = Vector2(156, -114)
 
 [node name="Player" parent="." instance=ExtResource("3_d523m")]
 position = Vector2(-179, -138)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ammunition" parent="CanvasLayer" instance=ExtResource("4_l224j")]
