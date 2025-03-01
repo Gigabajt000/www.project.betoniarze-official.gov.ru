@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpwyo8dbydjap"]
 
-[ext_resource type="Script" path="res://eksplozja_beczki.gd" id="1_in3fi"]
+[ext_resource type="Script" path="res://Player/eksplozja_beczki.gd" id="1_in3fi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qp4ha"]
 radius = 261.62
