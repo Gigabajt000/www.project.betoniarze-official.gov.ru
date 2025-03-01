@@ -1,9 +1,9 @@
 extends Node
 
-var IsAlive: bool = true
+var IsAlive: bool = false
 
 #dzwięk
-var master_volume : float = 1
+var master_volume: float = 1
 var muted: bool = false
 
 var play_zabicie: bool = false
