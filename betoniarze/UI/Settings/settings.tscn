@@ -72,7 +72,7 @@ grow_horizontal = 2
 
 [node name="Main Menu" type="Button" parent="MarginContainer2"]
 layout_mode = 2
-text = "Main Menu"
+text = "Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/sound_slider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

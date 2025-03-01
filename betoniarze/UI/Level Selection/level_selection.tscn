@@ -201,4 +201,14 @@ grow_vertical = 2
 text = "Level8"
 label_settings = SubResource("LabelSettings_wesk7")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 139.0
+offset_top = 519.0
+offset_right = 1016.0
+offset_bottom = 550.0
+size_flags_vertical = 4
+text = "Back"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

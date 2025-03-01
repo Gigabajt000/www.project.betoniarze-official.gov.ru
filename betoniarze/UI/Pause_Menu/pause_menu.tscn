@@ -1,18 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv5q2blr7onvn"]
+[gd_scene load_steps=2 format=3 uid="uid://vmtbxrprytn"]
 
-[ext_resource type="Script" path="res://UI/Main_Menu/main_menu.gd" id="1_541ho"]
+[ext_resource type="Script" path="res://UI/Pause_Menu/pause_menu.gd" id="1_wg8hm"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_dqsex"]
-font_size = 100
-
-[node name="Main_Menu" type="Control"]
+[node name="pause_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_541ho")
+script = ExtResource("1_wg8hm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -272.5
-offset_top = -167.5
-offset_right = 272.5
-offset_bottom = 167.5
+offset_left = -243.0
+offset_top = -81.5
+offset_right = 243.0
+offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -47,23 +44,18 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 35
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Main Menu"
-label_settings = SubResource("LabelSettings_dqsex")
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
+text = "Resume"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "    Settings    "
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Main Menu"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
