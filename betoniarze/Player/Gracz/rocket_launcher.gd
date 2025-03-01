@@ -13,7 +13,6 @@ func _physics_process(delta):
 	
 func shoot():
 	var bullet = bullet_path.instantiate()
-	bullet.direction = rotation
+	bullet.direction = global_rotation
 	bullet.pos = $"Przyszły pocisk".global_position
-	bullet.rot = global_rotation
 	get_parent().add_child(bullet)
