@@ -42,8 +42,8 @@ theme_override_constants/separation = 56
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_over = ExtResource("2_hw3am")
+texture_progress = ExtResource("2_hw3am")
 
 [node name="TextureProgressBar2" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_over = ExtResource("2_hw3am")
+texture_progress = ExtResource("2_hw3am")

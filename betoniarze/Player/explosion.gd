@@ -1,14 +1,13 @@
 extends Area2D
 
-@export var explosion_radius: float = 150
-@export var max_explosion_force: float = 1000
 
+func _physics_process(delta):
+	for o in get_overlapping_bodies():
+		if o is RigidBody2D:
+			var force = (o.global_position - global_position).normalized()
+			force *= 200
+			o.apply_central_impulse(force)
 
-func _ready() -> void:
-	$"Remove Explosion Timer".start()
-	for body in get_overlapping_bodies():
-		if body is CharacterBody2D:
-			body.rocket_jump(global_position, max_explosion_force, explosion_radius)
 
 func _on_timer_timeout():
 	queue_free()

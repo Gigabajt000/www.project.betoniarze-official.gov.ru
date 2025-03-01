@@ -1,21 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://djpihxejo1d0r"]
+[gd_scene load_steps=6 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3a02r"]
 [ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/rocket_launcher.tscn" id="2_boloi"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_ukoxr"]
+[ext_resource type="Script" path="res://Player/rocket_launcher.gd" id="4_oxlml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
-size = Vector2(126, 127)
+size = Vector2(114, 113)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("celownik")]
+z_index = 1
 script = ExtResource("1_3a02r")
-rocket_scene = ExtResource("2_boloi")
+celownik = NodePath("Celownik")
 
 [node name="Player Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_ukoxr")
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_20l4n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
+
+[node name="Rocket" parent="." instance=ExtResource("2_boloi")]
+script = ExtResource("4_oxlml")
+
+[node name="Przyszły pocisk" type="Node2D" parent="Rocket"]
+position = Vector2(96, 0)
+
+[node name="Celownik" type="Sprite2D" parent="."]
+position = Vector2(-221.5, -258)
+scale = Vector2(0.195313, 0.1875)
+texture = ExtResource("2_ukoxr")

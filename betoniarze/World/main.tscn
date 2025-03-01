@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition.tscn" id="4_l224j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
-size = Vector2(121.797, 100)
+size = Vector2(128, 137)
 
 [node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("3_d523m")]
+position = Vector2(-179, -138)
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["ground"]]
 position = Vector2(-9, 15)
@@ -21,11 +24,19 @@ texture = ExtResource("1_ef2qo")
 position = Vector2(0.751835, -2)
 shape = SubResource("RectangleShape2D_jtbtm")
 
-[node name="Kolce" parent="." instance=ExtResource("2_a0g76")]
-position = Vector2(156, -114)
+[node name="Sprite2D2" type="Sprite2D" parent="." groups=["ground"]]
+position = Vector2(972, 15)
+scale = Vector2(5.32031, 1)
+texture = ExtResource("1_ef2qo")
 
-[node name="Player" parent="." instance=ExtResource("3_d523m")]
-position = Vector2(-179, -138)
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(0.469894, -0.5)
+shape = SubResource("RectangleShape2D_jtbtm")
+
+[node name="Kolce" parent="." instance=ExtResource("2_a0g76")]
+position = Vector2(1137, -114)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
