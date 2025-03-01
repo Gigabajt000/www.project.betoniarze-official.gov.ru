@@ -12,6 +12,7 @@ size = Vector2(114, 113)
 z_index = 1
 script = ExtResource("1_3a02r")
 celownik = NodePath("Celownik")
+metadata/_edit_horizontal_guides_ = [-401.0]
 
 [node name="Player Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_ukoxr")
