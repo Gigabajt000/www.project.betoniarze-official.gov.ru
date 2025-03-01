@@ -1,13 +1,14 @@
 extends Node2D
 
-
-
 var bullet_path = preload("res://Player/Gracz/bullet.tscn")
+
+var x: float = 0
 
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("shoot") and Global.amunicja >= 50:
-		
+	x = x - delta
+	if Input.is_action_just_pressed("shoot") and Global.amunicja >= 50 and x <= 0:
+		x = 1
 		Global.amunicja = Global.amunicja - 50
 		shoot()	
 	

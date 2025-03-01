@@ -13,6 +13,10 @@ func _physics_process(delta):
 			force *= 85
 			o.apply_central_impulse(force)
 			
+		if  o.has_method("Enemy"):
+			$CPUParticles2D.emitting = false
+			$CPUParticles2D_Zabicie.emitting = true
+			o.queue_free()
 
 func _on_timer_timeout():
 	
