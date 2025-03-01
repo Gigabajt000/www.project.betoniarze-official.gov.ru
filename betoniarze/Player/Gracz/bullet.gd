@@ -31,3 +31,7 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		explosion_instance.position = Vector2(0,0)
 		
 		can_collide = false
+
+
+func _on_timer_timeout():
+	queue_free()

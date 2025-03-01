@@ -16,6 +16,9 @@ position = Vector2(0, 1.90735e-06)
 scale = Vector2(0.117188, 0.117188)
 texture = ExtResource("1_tkt4b")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -25,4 +28,5 @@ shape = SubResource("CircleShape2D_tnh4j")
 stream = ExtResource("3_ugo8v")
 volume_db = -12.891
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
