@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dty3oibl0fvon"]
+[gd_scene load_steps=5 format=3 uid="uid://dty3oibl0fvon"]
 
 [ext_resource type="Script" path="res://Player/bullet.gd" id="1_eg6pt"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_tkt4b"]
+[ext_resource type="AudioStream" uid="uid://crk0xievqkht" path="res://Sound/explosion.wav" id="3_ugo8v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnh4j"]
 radius = 7.0
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("explosion_sfx")]
 script = ExtResource("1_eg6pt")
+explosion_sfx = NodePath("explosion_sfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1.90735e-06)
@@ -18,5 +20,9 @@ texture = ExtResource("1_tkt4b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_tnh4j")
+
+[node name="explosion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ugo8v")
+volume_db = -12.891
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
