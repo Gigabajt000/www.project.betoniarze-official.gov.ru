@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Player/explosion.gd" id="1_4x1x1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1025"]
-radius = 216.002
+radius = 281.114
 
 [sub_resource type="Curve" id="Curve_gslpv"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.97191, 0), 0.0, 0.0, 0, 0]
@@ -23,8 +23,8 @@ amount = 120
 explosiveness = 0.9
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 270.71
-initial_velocity_max = 401.01
+initial_velocity_min = 301.01
+initial_velocity_max = 402.02
 scale_amount_min = 7.0
 scale_amount_max = 14.0
 scale_amount_curve = SubResource("Curve_gslpv")

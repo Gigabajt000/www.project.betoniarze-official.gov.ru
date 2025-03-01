@@ -6,7 +6,7 @@ func _physics_process(delta):
 		if o is RigidBody2D:
 			$CPUParticles2D.emitting = true
 			var force = (o.global_position - global_position).normalized()
-			force *= 100
+			force *= 85
 			o.apply_central_impulse(force)
 
 
