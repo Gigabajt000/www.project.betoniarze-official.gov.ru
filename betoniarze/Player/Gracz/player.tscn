@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://djpihxejo1d0r"]
+[gd_scene load_steps=11 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/Gracz/player.gd" id="1_3a02r"]
 [ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/Gracz/rocket_launcher.tscn" id="2_boloi"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b4c48oe83m8q4" path="res://Sound/hitHurt (4).wav" id="3_8aglv"]
 [ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="4_oxlml"]
 [ext_resource type="AudioStream" uid="uid://dyahf20ywaqop" path="res://Sound/explosion Działko_Parowe.wav" id="5_nfk2t"]
+[ext_resource type="Texture2D" uid="uid://ck2enkml4i6rq" path="res://Art/Celownik.png" id="7_w50c6"]
 
 [sub_resource type="Curve" id="Curve_riadc"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
@@ -78,6 +79,7 @@ stream = ExtResource("5_nfk2t")
 volume_db = -12.891
 
 [node name="Celownik" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-221.5, -258)
-scale = Vector2(0.195313, 0.1875)
-texture = ExtResource("2_ukoxr")
+scale = Vector2(4, 4)
+texture = ExtResource("7_w50c6")

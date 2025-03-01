@@ -43,7 +43,9 @@ theme_override_constants/separation = 56
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_progress = ExtResource("2_hw3am")
+tint_progress = Color(1, 1, 1, 0.705882)
 
 [node name="TextureProgressBar2" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_progress = ExtResource("2_hw3am")
+tint_progress = Color(1, 1, 1, 0.705882)

@@ -4,19 +4,19 @@ var bullet_path = preload("res://Player/Gracz/bullet.tscn")
 
 #Timery
 var x: float = 0
-var y: float = 0
+
 
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
 	x = x - delta
-	y = y - delta
+	Global.y = Global.y - delta
 	if Input.is_action_just_pressed("shoot") and Global.amunicja >= 50 and x <= 0:
 		x = 1
 		Global.amunicja = Global.amunicja - 50
 		shoot()	
 		
-	if Input.is_action_just_pressed("push")	and y <= 0 and x <= 0:
-		y = 5
+	if Input.is_action_just_pressed("push")	and Global.y <= 0 and x <= 0:
+		Global.y = 5
 		push()
 	
 	

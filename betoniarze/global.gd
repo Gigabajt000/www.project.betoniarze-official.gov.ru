@@ -2,6 +2,10 @@ extends Node
 
 var IsAlive: bool = false
 
+#UI
+var y: float = 0
+
+
 #dzwięk
 var master_volume: float = 1
 var muted: bool = false
