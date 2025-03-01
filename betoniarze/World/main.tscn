@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=12 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
 [ext_resource type="Script" path="res://World/camera_2d.gd" id="1_pkevd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="6_24dir"]
 [ext_resource type="PackedScene" uid="uid://bcpou0mrjchfq" path="res://UI/Death_Screen/death_screen.tscn" id="7_pigvr"]
 [ext_resource type="PackedScene" uid="uid://bnowdgnrihfy3" path="res://Player/Enemy/Light_Enemy.tscn" id="7_t78ni"]
+[ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="10_cob2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(128, 137)
@@ -86,3 +87,6 @@ visible = false
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_t78ni")]
 position = Vector2(590, -616)
 target = NodePath("../Player")
+
+[node name="Beczka_Wybuchowa" parent="." instance=ExtResource("10_cob2k")]
+position = Vector2(122, -712)

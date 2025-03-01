@@ -16,7 +16,7 @@ func _physics_process(delta):
 		shoot()	
 		
 	if Input.is_action_just_pressed("push")	and y <= 0 and x <= 0:
-		y = 1.7
+		y = 5
 		push()
 	
 	
@@ -25,7 +25,7 @@ func _physics_process(delta):
 	
 func push():
 	var force = ($"Przyszły pocisk".global_position - global_position).normalized()
-	force *= 1200
+	force *= 1500
 	$"..".linear_velocity = -(force)
 	particle.emitting = true
 	$explosion_sfx.play(0)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpwyo8dbydjap"]
+
+[ext_resource type="Script" path="res://eksplozja_beczki.gd" id="1_in3fi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qp4ha"]
+radius = 261.62
+
+[sub_resource type="Curve" id="Curve_2m5fy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="eksplozja_beczki" type="Area2D"]
+script = ExtResource("1_in3fi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qp4ha")
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 120
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 111.11
+initial_velocity_max = 313.13
+scale_amount_min = 20.0
+scale_amount_max = 30.0
+scale_amount_curve = SubResource("Curve_2m5fy")
+color = Color(1, 0, 0, 1)

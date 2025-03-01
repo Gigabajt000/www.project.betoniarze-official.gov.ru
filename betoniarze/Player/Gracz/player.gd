@@ -19,5 +19,5 @@ func _physics_process(delta: float) -> void:
 		#Animacja Smierci trzeba zrobic tutaj
 		
 		x = x + delta
-		if x >= 2:
+		if x >= 1:
 			queue_free()

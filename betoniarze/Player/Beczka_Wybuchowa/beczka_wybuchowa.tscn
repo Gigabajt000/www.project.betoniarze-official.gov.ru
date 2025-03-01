@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy321p2ckls7j"]
+[gd_scene load_steps=6 format=3 uid="uid://cy321p2ckls7j"]
 
 [ext_resource type="Script" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.gd" id="1_oew65"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_qd2ks"]
@@ -9,7 +9,11 @@ size = Vector2(112, 156)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s718s"]
 size = Vector2(111, 154)
 
-[node name="Beczka_Wybuchowa" type="RigidBody2D"]
+[sub_resource type="Curve" id="Curve_r50c7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.97191, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Beczka_Wybuchowa" type="StaticBody2D"]
 script = ExtResource("1_oew65")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,5 +30,21 @@ shape = SubResource("RectangleShape2D_jicup")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_s718s")
+
+[node name="początek eksplozji" type="Node2D" parent="Area2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 300
+one_shot = true
+explosiveness = 0.9
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 169.7
+initial_velocity_max = 412.12
+scale_amount_min = 9.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_r50c7")
+color = Color(1, 0.411765, 0.0862745, 1)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
