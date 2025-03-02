@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=16 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_47k2o"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
@@ -13,11 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="9_u34sg"]
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="10_cob2k"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="11_1rpfq"]
+[ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="14_q3xk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(128, 137)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("pause_menu")]
+position = Vector2(-666, -534)
 script = ExtResource("1_47k2o")
 pause_menu = NodePath("CanvasLayer/pause_menu")
 
@@ -92,10 +94,14 @@ visible = false
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("9_u34sg")]
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("11_1rpfq")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_t78ni")]
-position = Vector2(590, -616)
+position = Vector2(458, -616)
 target = NodePath("../Player")
 
 [node name="Beczka_Wybuchowa" parent="." instance=ExtResource("10_cob2k")]
-position = Vector2(122, -712)
+position = Vector2(-880, -367)
+
+[node name="Turret" parent="." instance=ExtResource("14_q3xk3")]
+position = Vector2(299, -121)

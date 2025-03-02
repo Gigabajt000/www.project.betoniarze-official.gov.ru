@@ -6,7 +6,7 @@ func Eksplozja():
 
 func _physics_process(delta):
 	for o in get_overlapping_bodies():
-		if o is RigidBody2D:
+		if o.has_method("Player"):
 			
 			if Global.IsAlive == true:
 				Global.Death()

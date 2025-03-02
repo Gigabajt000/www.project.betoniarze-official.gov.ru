@@ -13,7 +13,7 @@ size = Vector2(111, 154)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.97191, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Beczka_Wybuchowa" type="StaticBody2D"]
+[node name="Beczka_Wybuchowa" type="RigidBody2D"]
 script = ExtResource("1_oew65")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
