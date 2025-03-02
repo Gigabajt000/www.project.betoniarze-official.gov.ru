@@ -10,12 +10,11 @@ rough = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmdr"]
 size = Vector2(121, 228)
 
-[node name="heavy_enemy" type="RigidBody2D" node_paths=PackedStringArray("raycast_dół_lewo", "raycast_dół1_prawo", "raycast_podłoga")]
+[node name="heavy_enemy" type="RigidBody2D" node_paths=PackedStringArray("raycast_dół_lewo", "raycast_dół1_prawo")]
 physics_material_override = SubResource("PhysicsMaterial_nplrl")
 script = ExtResource("1_k3k5d")
 "raycast_dół_lewo" = NodePath("RayCast2D_Dół2")
 "raycast_dół1_prawo" = NodePath("RayCast2D_Dół1")
-"raycast_podłoga" = NodePath("RayCast2D_Podłoga")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.5, 2.00001)
@@ -33,8 +32,4 @@ target_position = Vector2(0, 104)
 
 [node name="RayCast2D_Dół2" type="RayCast2D" parent="."]
 position = Vector2(-80, 71)
-target_position = Vector2(0, 104)
-
-[node name="RayCast2D_Podłoga" type="RayCast2D" parent="."]
-position = Vector2(0, 71)
 target_position = Vector2(0, 104)

@@ -19,7 +19,7 @@ var max_amunicja: int = 100
 var amunicja: float = 100
 
 #Camera
-var zoom = 0.7
+var zoom = Vector2(0.7, 0.7)
 
 #UI
 var is_in_settings_scene: bool = false

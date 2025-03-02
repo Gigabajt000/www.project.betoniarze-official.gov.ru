@@ -2,7 +2,6 @@ extends RigidBody2D
 
 @export var raycast_dół_lewo: RayCast2D
 @export var raycast_dół1_prawo: RayCast2D
-@export var raycast_podłoga: RayCast2D
 @export var target : RigidBody2D
 
 var cos2
@@ -18,7 +17,6 @@ func _physics_process(delta: float) -> void:
 	
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
-	cos2 = raycast_podłoga.get_collider()
 	
 	
 	
@@ -47,7 +45,3 @@ func _physics_process(delta: float) -> void:
 		linear_velocity.x = SPEED * direction
 	else:
 		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
-
-
-	if cos2 == null:
-		linear_velocity += get_gravity() * delta
