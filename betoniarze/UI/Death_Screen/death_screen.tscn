@@ -58,14 +58,9 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Main Menu"
 
-[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Settings"
-
 [node name="Wyjdź" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Wyjdź" to="." method="_on_wyjdź_pressed"]

@@ -33,7 +33,6 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if mouse_shown == false:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	print(is_in_settings_scene)
 
 func Death():
 	play_zabicie= true
