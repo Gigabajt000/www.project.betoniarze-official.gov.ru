@@ -13,7 +13,8 @@ var direction
 var can_move = true
 var SPEED = 60
 
-
+func Heavy_Enemy():
+	pass #Tego też nie usuwaj
 
 func _physics_process(delta: float) -> void:
 	

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ber3jgmlxurbp"]
+[gd_scene load_steps=5 format=3 uid="uid://ber3jgmlxurbp"]
 
 [ext_resource type="Script" path="res://Player/Gracz/explosion.gd" id="1_4x1x1"]
-[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_1vjhk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1025"]
 radius = 146.055
@@ -20,8 +19,10 @@ script = ExtResource("1_4x1x1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l1025")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D_nieuzywane" type="CPUParticles2D" parent="."]
+emitting = false
 amount = 120
+lifetime = 0.01
 explosiveness = 0.9
 spread = 180.0
 gravity = Vector2(0, 0)
@@ -45,8 +46,3 @@ scale_amount_min = 20.0
 scale_amount_max = 30.0
 scale_amount_curve = SubResource("Curve_rv8p0")
 color = Color(1, 0, 0, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2.5, 1.49999)
-scale = Vector2(1.64844, 1.97656)
-texture = ExtResource("2_1vjhk")
