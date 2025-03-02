@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=18 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_47k2o"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="9_u34sg"]
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="10_cob2k"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="11_1rpfq"]
+[ext_resource type="PackedScene" uid="uid://gjvpw1b3kwi4" path="res://UI/działko_parowe_ui.tscn" id="12_ix02n"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="14_q3xk3"]
 [ext_resource type="PackedScene" uid="uid://ctw4nlxqryxer" path="res://Player/Enemy/heavy_enemy.tscn" id="15_no6f1"]
 
@@ -90,13 +91,15 @@ position = Vector2(0.469894, -0.5)
 shape = SubResource("RectangleShape2D_jtbtm")
 
 [node name="Kolce" parent="." instance=ExtResource("2_a0g76")]
-position = Vector2(1137, -114)
+position = Vector2(1142, -135)
 
 [node name="Przycisk" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("5_1h2xq")]
 position = Vector2(693, -97)
 Drzwi = NodePath("../Drzwi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Działko_Parowe_UI" parent="CanvasLayer" instance=ExtResource("12_ix02n")]
 
 [node name="Ammunition" parent="CanvasLayer" instance=ExtResource("4_l224j")]
 
@@ -109,7 +112,7 @@ visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("7_t78ni")]
-position = Vector2(-516, -826)
+position = Vector2(271, -120)
 target = NodePath("../Player")
 
 [node name="Beczka_Wybuchowa" parent="." instance=ExtResource("10_cob2k")]
@@ -124,4 +127,4 @@ mass = 5.0
 target = NodePath("../Player")
 
 [node name="Turret2" parent="." instance=ExtResource("14_q3xk3")]
-position = Vector2(262, -120)
+position = Vector2(297, -607)

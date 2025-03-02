@@ -5,6 +5,7 @@ func Eksplozja():
 
 
 func _physics_process(delta):
+	
 	for o in get_overlapping_bodies():
 		if o is RigidBody2D:
 			
@@ -12,6 +13,7 @@ func _physics_process(delta):
 			var force = (o.global_position - global_position).normalized()
 			force *= 200
 			o.apply_central_impulse(force)
+			
 			
 		if  o.has_method("Enemy"):
 			$CPUParticles2D_Zabicie.emitting = true
