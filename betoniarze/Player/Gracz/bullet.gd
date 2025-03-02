@@ -25,6 +25,7 @@ func _physics_process(delta):
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	
 	if can_collide == true:
+		Global.boom = true
 		explosion_sfx.play(0)
 		$Sprite2D.visible = false
 		var explosion_instance = explosion.instantiate()

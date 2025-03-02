@@ -5,6 +5,7 @@ var zoom_factor := Vector2(1, 1)
 
 func _process(delta: float) -> void:
 	camera_zoom()
+	Global.original_position = position
 
 
 func Player():

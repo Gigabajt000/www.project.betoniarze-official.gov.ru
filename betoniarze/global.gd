@@ -25,6 +25,10 @@ var zoom = Vector2(0.7, 0.7)
 var is_in_settings_scene: bool = false
 var is_in_pause_menu: bool = false
 
+#Camera shake
+var boom: bool = false
+var original_position: Vector2
+
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 

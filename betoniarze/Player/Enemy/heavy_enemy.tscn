@@ -12,6 +12,7 @@ size = Vector2(121, 228)
 
 [node name="heavy_enemy" type="RigidBody2D" node_paths=PackedStringArray("raycast_dół_lewo", "raycast_dół1_prawo")]
 physics_material_override = SubResource("PhysicsMaterial_nplrl")
+lock_rotation = true
 script = ExtResource("1_k3k5d")
 "raycast_dół_lewo" = NodePath("RayCast2D_Dół2")
 "raycast_dół1_prawo" = NodePath("RayCast2D_Dół1")
