@@ -27,8 +27,8 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 
 	if can_collide == true :
 		can_collide = false
-		
-		
+		$CPUParticles2D_nieuzywane.emitting = true
+		$Timer.start()
 		Global.boom = true
 		explosion_sfx.play(0)
 		$Sprite2D.visible = false

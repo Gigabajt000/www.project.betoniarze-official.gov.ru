@@ -116,7 +116,7 @@ position = Vector2(1005, -126)
 target = NodePath("../Player")
 
 [node name="Beczka_Wybuchowa" parent="." instance=ExtResource("10_cob2k")]
-position = Vector2(864, -145)
+position = Vector2(-842, -878)
 
 [node name="heavy_enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_no6f1")]
 position = Vector2(-630, -891)

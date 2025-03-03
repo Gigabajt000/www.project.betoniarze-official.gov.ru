@@ -10,9 +10,16 @@ func _physics_process(delta):
 			
 			if Global.IsAlive == true:
 				Global.Death()
-			
+				queue_free()
 		if  o.has_method("Enemy"):
 			
 			$CPUParticles2D_Zabicie.emitting = true
 			
 			o.queue_free()
+			queue_free()
+		if  o.has_method("Heavy_Enemy"):
+			
+			var force = (o.global_position - global_position).normalized()
+			force *= Vector2(800,400)
+			o.linear_velocity += force
+			queue_free()
