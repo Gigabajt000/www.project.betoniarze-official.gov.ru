@@ -118,13 +118,10 @@ target = NodePath("../Player")
 [node name="Beczka_Wybuchowa" parent="." instance=ExtResource("10_cob2k")]
 position = Vector2(864, -145)
 
-[node name="Turret" parent="." instance=ExtResource("14_q3xk3")]
-position = Vector2(726, -613)
-
 [node name="heavy_enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_no6f1")]
 position = Vector2(-630, -891)
 mass = 5.0
 target = NodePath("../Player")
 
-[node name="Turret2" parent="." instance=ExtResource("14_q3xk3")]
-position = Vector2(297, -607)
+[node name="Turret" parent="." instance=ExtResource("14_q3xk3")]
+position = Vector2(462, -595)

@@ -16,6 +16,9 @@ radius = 553.05
 script = ExtResource("1_7lw66")
 progress_bar = NodePath("ProgressBar")
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(538, 2)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_vls4p")
@@ -56,11 +59,7 @@ position = Vector2(-72, -1)
 [node name="Wykrywanie" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wykrywanie"]
-visible = false
 shape = SubResource("CircleShape2D_tf4wg")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(538, 2)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

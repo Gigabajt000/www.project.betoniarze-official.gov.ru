@@ -3,16 +3,19 @@ extends StaticBody2D
 var deafult_transform
 var attacking: bool = false
 var timer: float = 0
-var look_at_player: bool = true
+var look_at_player: bool = false
 
 @export var progress_bar: ProgressBar
 
 var bullet_path = preload("res://Player/Turret/bullet_turret.tscn")
+var gracz
 
 func _process(delta: float) -> void:
 	
 	if look_at_player == false:
 		transform = deafult_transform
+	if look_at_player == true and gracz != null:
+		look_at(gracz.global_position)
 	
 	if $RayCast2D.get_collider() is StaticBody2D:
 		attacking = false
@@ -22,8 +25,10 @@ func _process(delta: float) -> void:
 
 		
 	for o in $Wykrywanie.get_overlapping_bodies():
-		if o.has_method("Player") and look_at_player == true:
-			look_at(o.global_position)
+		if o.has_method("Player"):
+			gracz = o
+			$RayCast2D.look_at(gracz.global_position)
+			
 
 func _ready():
 	deafult_transform = transform
