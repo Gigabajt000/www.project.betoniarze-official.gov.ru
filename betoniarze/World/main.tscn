@@ -20,10 +20,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(128, 137)
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("pause_menu")]
+[node name="Main" type="Node2D"]
 position = Vector2(-666, -534)
 script = ExtResource("1_47k2o")
-pause_menu = NodePath("CanvasLayer/pause_menu")
 
 [node name="Player" parent="." instance=ExtResource("3_d523m")]
 position = Vector2(-163, -120)
@@ -100,13 +99,16 @@ Drzwi = NodePath("../Drzwi")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Działko_Parowe_UI" parent="CanvasLayer" instance=ExtResource("12_ix02n")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Ammunition" parent="CanvasLayer" instance=ExtResource("4_l224j")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Death_Screen" parent="CanvasLayer" instance=ExtResource("7_pigvr")]
 visible = false
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("9_u34sg")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("11_1rpfq")]
 metadata/_edit_use_anchors_ = true

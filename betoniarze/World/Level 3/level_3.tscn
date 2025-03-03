@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://qte38jbk1cga"]
+
+[ext_resource type="Script" path="res://World/main.gd" id="1_is4ol"]
+[ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_ohu5t"]
+[ext_resource type="Script" path="res://World/camera_2d.gd" id="3_rnh1b"]
+[ext_resource type="PackedScene" uid="uid://gjvpw1b3kwi4" path="res://UI/działko_parowe_ui.tscn" id="4_b5k0n"]
+[ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition/Ammunition.tscn" id="5_sejtv"]
+[ext_resource type="PackedScene" uid="uid://bcpou0mrjchfq" path="res://UI/Death_Screen/death_screen.tscn" id="6_jilqe"]
+[ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="7_223br"]
+[ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_mocbl"]
+
+[node name="Level 3" type="Node2D"]
+script = ExtResource("1_is4ol")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "level 3"
+
+[node name="Player" parent="." instance=ExtResource("2_ohu5t")]
+position = Vector2(-163, -120)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
+script = ExtResource("3_rnh1b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Działko_Parowe_UI" parent="CanvasLayer" instance=ExtResource("4_b5k0n")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Ammunition" parent="CanvasLayer" instance=ExtResource("5_sejtv")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Death_Screen" parent="CanvasLayer" instance=ExtResource("6_jilqe")]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("7_223br")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("8_mocbl")]
+metadata/_edit_use_anchors_ = true

@@ -211,4 +211,11 @@ size_flags_vertical = 4
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level 3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level 4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Level 5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Level 6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Level 7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Level 8" to="." method="_on_level_8_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
