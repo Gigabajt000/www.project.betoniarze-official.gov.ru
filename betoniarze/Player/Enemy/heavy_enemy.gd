@@ -10,29 +10,28 @@ var cos4
 
 var temporary_direction = 0
 var direction
-var can_move = true
-var SPEED = 60
+var SPEED = 100
+
 
 func Heavy_Enemy():
 	pass #Tego też nie usuwaj
 
+
 func _physics_process(delta: float) -> void:
+
 	
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
-	
+	print(linear_velocity.x)
 
-	if cos3 == null and can_move == true:
+	if cos3 == null:
 		direction = 1
-	if cos4 == null  and can_move == true:
+		
+	if cos4 == null:
 		direction = -1
-	
-	
-	if direction:
+		
+	if abs(linear_velocity.x) <= SPEED:
 		linear_velocity.x = SPEED * direction
-	else:
-		linear_velocity.x = move_toward(linear_velocity.x, 0, SPEED)
-
 func attack():
 	Global.Death()
 	

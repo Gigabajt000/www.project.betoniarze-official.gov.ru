@@ -36,9 +36,6 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		add_child(explosion_instance)
 		explosion_instance.position = Vector2(0,0)
 		
-		
-	
-
 
 func _on_timer_timeout():
 	queue_free()
