@@ -4,7 +4,7 @@ extends CharacterBody2D
 var pos: Vector2
 var rot: float
 var direction: float
-var speed = -2000
+var speed = 2000
 
 var can_collide:bool = true
 

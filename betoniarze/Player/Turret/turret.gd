@@ -8,6 +8,11 @@ var timer: float = 0
 
 var bullet_path = preload("res://Player/Turret/bullet_turret.tscn")
 
+func _process(delta: float) -> void:
+	for o in $Wykrywanie.get_overlapping_bodies():
+		if o.has_method("Player"):
+			look_at(o.global_position)
+
 func _ready():
 	progress_bar.max_value = 3
 	
@@ -41,3 +46,7 @@ func _on_area_2d_body_exited(body):
 	if body.has_method("Player"):
 		timer = 0
 		attacking = false
+
+
+
+	
