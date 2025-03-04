@@ -6,6 +6,8 @@ var is_in_game: bool = false
 
 #UI
 var y: float = 0
+signal open_settings
+signal close_settings
 
 
 #dzwięk
@@ -20,10 +22,6 @@ var amunicja: float = 100
 
 #Camera
 var zoom = Vector2(0.7, 0.7)
-
-#UI
-var is_in_settings_scene: bool = false
-var is_in_pause_menu: bool = false
 
 #Camera shake
 var boom: bool = false

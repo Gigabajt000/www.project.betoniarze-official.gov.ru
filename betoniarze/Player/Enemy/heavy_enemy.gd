@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 	
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
-	print(linear_velocity.x)
 
 	if cos3 == null:
 		direction = 1

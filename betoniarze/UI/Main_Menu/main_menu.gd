@@ -5,7 +5,7 @@ func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 
 func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://UI/Settings/settings.tscn")
+	get_tree().change_scene_to_file("res://UI/Settings/main_menu_settings.tscn")
 
 
 func _on_play_pressed() -> void:

@@ -1,4 +1,4 @@
-extends ColorRect
+extends CanvasLayer
 
 signal on_transition_finished
 
@@ -6,6 +6,7 @@ signal on_transition_finished
 @onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
+	process_mode = PROCESS_MODE_ALWAYS
 	color_rect.visible = false
 	animation_player.animation_finished.connect(_on_animation_finished)
 	
