@@ -105,7 +105,6 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Death_Screen" parent="CanvasLayer" instance=ExtResource("7_pigvr")]
-visible = false
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("9_u34sg")]
 metadata/_edit_use_anchors_ = true
