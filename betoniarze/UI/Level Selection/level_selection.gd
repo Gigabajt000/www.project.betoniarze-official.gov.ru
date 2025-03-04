@@ -8,61 +8,69 @@ func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 
 func _on_level_1_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	Global.IsAlive = true
-	get_tree().change_scene_to_file("res://World/main.tscn")
+	if Global.level1 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		Global.IsAlive = true
+		get_tree().change_scene_to_file("res://World/main.tscn")
 	
 
 
 func _on_level_2_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	Global.IsAlive = true
-	get_tree().change_scene_to_file("res://World/Level 2/level_2.tscn")
+	if Global.level2 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		Global.IsAlive = true
+		get_tree().change_scene_to_file("res://World/Level 2/level_2.tscn")
 	
 
 
 func _on_level_3_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	get_tree().change_scene_to_file("res://World/Level 3/level_3.tscn")
-	Global.IsAlive = true
+	if Global.level3 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		get_tree().change_scene_to_file("res://World/Level 3/level_3.tscn")
+		Global.IsAlive = true
 
 
 func _on_level_4_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	get_tree().change_scene_to_file("res://World/Level 4/level_4.tscn")
-	Global.IsAlive = true
+	if Global.level4 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		get_tree().change_scene_to_file("res://World/Level 4/level_4.tscn")
+		Global.IsAlive = true
 
 
 func _on_level_5_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	get_tree().change_scene_to_file("res://World/Level 5/level_5.tscn")
-	Global.IsAlive = true
+	if Global.level5 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		get_tree().change_scene_to_file("res://World/Level 5/level_5.tscn")
+		Global.IsAlive = true
 
 
 func _on_level_6_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	get_tree().change_scene_to_file("res://World/Level 6/level_6.tscn")
-	Global.IsAlive = true
+	if Global.level6 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		get_tree().change_scene_to_file("res://World/Level 6/level_6.tscn")
+		Global.IsAlive = true
 
 
 func _on_level_7_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	get_tree().change_scene_to_file("res://World/Level 7/level_7.tscn")
-	Global.IsAlive = true
+	if Global.level7 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		get_tree().change_scene_to_file("res://World/Level 7/level_7.tscn")
+		Global.IsAlive = true
 
 
 func _on_level_8_pressed() -> void:
-	FadeIn.transition()
-	await FadeIn.on_transition_finished
-	get_tree().change_scene_to_file("res://World/Level 8/level_8.tscn")
-	Global.IsAlive = true
+	if Global.level8 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		get_tree().change_scene_to_file("res://World/Level 8/level_8.tscn")
+		Global.IsAlive = true
 
 
 func _on_button_pressed() -> void:
