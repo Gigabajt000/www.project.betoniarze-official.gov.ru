@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if $RayCast2D.get_collider() is StaticBody2D:
 		attacking = false
 		look_at_player = false
-	else:
+	if  $RayCast2D.get_collider() is RigidBody2D:
 		look_at_player = true
 
 		
