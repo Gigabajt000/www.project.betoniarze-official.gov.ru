@@ -11,16 +11,22 @@ var bullet_path = preload("res://Player/Turret/bullet_turret.tscn")
 var gracz
 
 func _process(delta: float) -> void:
+	if abs(rotation) >= deg_to_rad(180):
+		$Sprite2D.flip_h = true
+		$Sprite2D.flip_v = true
+	else:
+		$Sprite2D.flip_h = false
+		$Sprite2D.flip_v = false
 	
 	if look_at_player == false:
-		transform = deafult_transform
+		transform = transform.interpolate_with(deafult_transform, 3 * delta)
 	if look_at_player == true and gracz != null:
 		look_at(gracz.global_position)
 	
-	if $RayCast2D.get_collider() is StaticBody2D:
+	if $RayCast2D.get_collider() is StaticBody2D or $RayCast2D.get_collider() == null:
 		attacking = false
 		look_at_player = false
-	if  $RayCast2D.get_collider() is RigidBody2D:
+	if $RayCast2D.get_collider() is RigidBody2D:
 		look_at_player = true
 
 		
