@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 
-	if can_collide == true :
+	if can_collide == true and body.has_method("Player") == false :
 		can_collide = false
 		$CPUParticles2D_nieuzywane.emitting = true
 		$Timer.start()
