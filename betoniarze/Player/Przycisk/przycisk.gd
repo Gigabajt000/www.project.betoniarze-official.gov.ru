@@ -7,5 +7,4 @@ func _on_area_2d_area_entered(area):
 	if area.has_method("Eksplozja"):
 		print("entered")
 		animation.play("Przycisk")
-		Drzwi.collision_layer = 8
-	
+		Drzwi.gunwo = true

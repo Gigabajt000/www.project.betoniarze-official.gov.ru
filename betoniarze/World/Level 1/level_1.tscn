@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqhjvoghc7v7k"]
+[gd_scene load_steps=14 format=3 uid="uid://bqhjvoghc7v7k"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_yrsww"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_0u10q"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="10_oovmt"]
 [ext_resource type="PackedScene" uid="uid://dhj6apym210ol" path="res://Tilemap/node_2d.tscn" id="11_atd2n"]
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="12_q5ihn"]
+[ext_resource type="PackedScene" uid="uid://ctw4nlxqryxer" path="res://Player/Enemy/heavy_enemy.tscn" id="13_ckefn"]
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_yrsww")
@@ -31,7 +32,7 @@ grow_vertical = 2
 text = "level 1"
 
 [node name="Player" parent="." instance=ExtResource("2_0u10q")]
-position = Vector2(-543, -205)
+position = Vector2(-619, -212)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -72,8 +73,12 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(126, -207)
 level = 1
 
-[node name="Node2D" parent="." instance=ExtResource("11_atd2n")]
+[node name="Tilemap" parent="." instance=ExtResource("11_atd2n")]
 position = Vector2(-522, -182)
 
 [node name="Beczka_Wybuchowa" parent="." instance=ExtResource("12_q5ihn")]
-position = Vector2(-396, -213)
+position = Vector2(-169, -245)
+
+[node name="heavy_enemy" parent="." instance=ExtResource("13_ckefn")]
+position = Vector2(-402, -224)
+linear_velocity = Vector2(50, 0)
