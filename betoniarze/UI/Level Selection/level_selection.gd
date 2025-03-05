@@ -12,7 +12,7 @@ func _on_level_1_pressed() -> void:
 		FadeIn.transition()
 		await FadeIn.on_transition_finished
 		Global.IsAlive = true
-		get_tree().change_scene_to_file("res://World/main.tscn")
+		get_tree().change_scene_to_file("res://World/Level 1/level_1.tscn")
 	
 
 

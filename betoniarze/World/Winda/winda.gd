@@ -1,23 +1,52 @@
 extends Node2D
 
-var current_scene
+@export var level: int
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	current_scene = get_tree().current_scene
-	print(current_scene)
 	if Input.is_action_just_pressed("enter") and Global.change == true:
 		Global.change = false
-		if current_scene and current_scene.filename == "res://World/main.tscn":
-			print("a")
-			FadeIn.transition()
-			await FadeIn._on_animation_finished
-			Global.level2 = true
+		match (level):
+			1:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level2 = true
+				get_tree().change_scene_to_file("res://World/Level 2/level_2.tscn")
+			2:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level3 = true
+				get_tree().change_scene_to_file("res://World/Level 3/level_3.tscn")
+			3:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level4 = true
+				get_tree().change_scene_to_file("res://World/Level 4/level_4.tscn")
+			4:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level5 = true
+				get_tree().change_scene_to_file("res://World/Level 5/level_5.tscn")
+			5:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level6 = true
+				get_tree().change_scene_to_file("res://World/Level 6/level_6.tscn")
+			6:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level7 = true
+				get_tree().change_scene_to_file("res://World/Level 7/level_7.tscn")
+			7:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				Global.level8 = true
+				get_tree().change_scene_to_file("res://World/Level 8/level_8.tscn")
+			8:
+				FadeIn.transition()
+				await FadeIn._on_animation_finished
+				get_tree().change_scene_to_file("res://UI/Level Selection/level_selection.tscn")
+				
+
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dufjnqfscevao"]
+[gd_scene load_steps=12 format=3 uid="uid://dufjnqfscevao"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_p7y15"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_yskvw"]
@@ -8,13 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://bcpou0mrjchfq" path="res://UI/Death_Screen/death_screen.tscn" id="6_umks7"]
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="7_era53"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_7qy8w"]
+[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="9_nfl8b"]
+[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="10_wnfd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unjwy"]
+size = Vector2(128, 137)
 
 [node name="Level 6" type="Node2D"]
 script = ExtResource("1_p7y15")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = -272.0
+offset_right = 50.0
+offset_bottom = -249.0
 text = "level 6"
 
 [node name="Player" parent="." instance=ExtResource("2_yskvw")]
@@ -39,3 +45,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("8_7qy8w")]
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9, 15)
+scale = Vector2(5.32031, 1)
+texture = ExtResource("9_nfl8b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0.751835, -2)
+shape = SubResource("RectangleShape2D_unjwy")
+
+[node name="Winda" parent="." instance=ExtResource("10_wnfd7")]
+position = Vector2(126, -207)
+level = 6
