@@ -79,9 +79,9 @@ shape = SubResource("RectangleShape2D_84ly7")
 position = Vector2(126, -207)
 level = 2
 
-[node name="Przycisk" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("12_vhsem")]
-position = Vector2(-39, -96)
-Drzwi = NodePath("../Drzwi")
-
 [node name="Drzwi" parent="." instance=ExtResource("13_kyq0t")]
 position = Vector2(-330, -90)
+
+[node name="Przycisk" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("12_vhsem")]
+position = Vector2(-65, -63)
+Drzwi = NodePath("../Drzwi")

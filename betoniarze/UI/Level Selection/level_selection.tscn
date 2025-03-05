@@ -1,10 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://calwive56yyy6"]
+[gd_scene load_steps=13 format=3 uid="uid://calwive56yyy6"]
 
 [ext_resource type="Script" path="res://UI/Level Selection/level_selection.gd" id="1_dao3m"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_env5a"]
 [ext_resource type="Script" path="res://UI/Level Selection/grid_container.gd" id="2_04lxy"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrl3o"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_wesk7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8fmm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvr7y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p776u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sefco"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cipc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtw2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7r14r"]
 
 [node name="Level selection" type="Control"]
 layout_mode = 3
@@ -59,6 +75,7 @@ script = ExtResource("2_04lxy")
 [node name="Level 1" type="Button" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jrl3o")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 1"]
@@ -79,6 +96,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 2" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v8fmm")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 2"]
@@ -99,6 +117,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 3" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rvr7y")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 3"]
@@ -119,6 +138,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 4" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p776u")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 4"]
@@ -139,6 +159,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 5" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sefco")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 5"]
@@ -159,6 +180,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 6" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3cipc")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 6"]
@@ -179,6 +201,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 7" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtw2r")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 7"]
@@ -199,6 +222,7 @@ label_settings = SubResource("LabelSettings_wesk7")
 
 [node name="Level 8" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7r14r")
 icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 8"]
