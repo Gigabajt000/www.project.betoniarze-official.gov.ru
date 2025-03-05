@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/Gracz/player.gd" id="1_3a02r"]
+[ext_resource type="Texture2D" uid="uid://d1tr6bay3g0bb" path="res://Art/SteamPunk_hero_v2_to_animation.png" id="2_543ar"]
 [ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/Gracz/rocket_launcher.tscn" id="2_boloi"]
-[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="2_ukoxr"]
 [ext_resource type="AudioStream" uid="uid://b4c48oe83m8q4" path="res://Sound/hitHurt (4).wav" id="3_8aglv"]
 [ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="4_oxlml"]
 [ext_resource type="AudioStream" uid="uid://dyahf20ywaqop" path="res://Sound/explosion Działko_Parowe.wav" id="5_nfk2t"]
@@ -13,7 +13,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
-size = Vector2(114, 113)
+size = Vector2(21, 43)
 
 [sub_resource type="Curve" id="Curve_etrrw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0.527472), 0.0, 0.0, 0, 0]
@@ -21,6 +21,7 @@ point_count = 2
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("celownik")]
 z_index = 1
+position = Vector2(9, -1)
 gravity_scale = 2.0
 lock_rotation = true
 script = ExtResource("1_3a02r")
@@ -28,24 +29,26 @@ celownik = NodePath("Celownik")
 metadata/_edit_horizontal_guides_ = [-401.0]
 
 [node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="."]
+position = Vector2(-9, 1)
 emitting = false
-amount = 120
+amount = 60
 one_shot = true
 explosiveness = 0.75
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 111.11
-initial_velocity_max = 313.13
-scale_amount_min = 20.0
-scale_amount_max = 30.0
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_riadc")
 color = Color(1, 0, 0, 1)
 
 [node name="Player Texture" type="Sprite2D" parent="."]
-texture = ExtResource("2_ukoxr")
+texture_filter = 1
+texture = ExtResource("2_543ar")
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -0.5)
+position = Vector2(-8.5, 1.5)
 shape = SubResource("RectangleShape2D_20l4n")
 
 [node name="Zabicie_sfx" type="AudioStreamPlayer" parent="."]
@@ -53,11 +56,12 @@ stream = ExtResource("3_8aglv")
 volume_db = -12.891
 
 [node name="Rocket" parent="." node_paths=PackedStringArray("particle") instance=ExtResource("2_boloi")]
+position = Vector2(1, -4)
 script = ExtResource("4_oxlml")
 particle = NodePath("CPUParticles2D")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Rocket"]
-position = Vector2(96, 0)
+position = Vector2(23, 0)
 emitting = false
 amount = 100
 lifetime = 0.5
@@ -73,7 +77,7 @@ scale_amount_curve = SubResource("Curve_etrrw")
 color = Color(0, 0, 0, 1)
 
 [node name="Przyszły pocisk" type="Node2D" parent="Rocket"]
-position = Vector2(96, 0)
+position = Vector2(5, -1)
 
 [node name="explosion_sfx" type="AudioStreamPlayer" parent="Rocket"]
 stream = ExtResource("5_nfk2t")
@@ -82,5 +86,4 @@ volume_db = -12.891
 [node name="Celownik" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-221.5, -258)
-scale = Vector2(4, 4)
 texture = ExtResource("7_w50c6")

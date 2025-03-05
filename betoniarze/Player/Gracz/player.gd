@@ -19,9 +19,9 @@ func camera_zoom():
 	if abs(linear_velocity.y) > abs(linear_velocity.x):
 		zoom_factor = abs(Vector2(linear_velocity.y, linear_velocity.y) / Vector2(2000, 2000))
 	
-	zoom_factor = zoom_factor.clamp(Vector2(0.4, 0.4), Vector2(0.7, 0.7))
-	var y = Vector2(0.4, 0.4) + (Vector2(0.7, 0.7) - zoom_factor)
-	Global.zoom = Global.zoom.move_toward(y, 0.005)
+	zoom_factor = zoom_factor.clamp(Vector2(1.5, 1.5), Vector2(2, 2))
+	var y = Vector2(1.5, 1.5) + (Vector2(2, 2) - zoom_factor)
+	Global.zoom = Global.zoom.move_toward(y, 0.01)
 
 var x : float = 0	
 func _physics_process(delta: float) -> void:

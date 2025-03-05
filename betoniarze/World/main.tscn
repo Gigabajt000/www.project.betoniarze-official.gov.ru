@@ -29,7 +29,7 @@ script = ExtResource("1_47k2o")
 position = Vector2(-163, -120)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(2, 2)
 script = ExtResource("1_pkevd")
 
 [node name="Drzwi" parent="." instance=ExtResource("6_24dir")]

@@ -1,10 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dbf6vihdic7ld"]
 
-[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_na8ok"]
+[ext_resource type="Texture2D" uid="uid://dybof67v5k2o7" path="res://Art/SteamPunk_arms_to_animation.png" id="1_jopa7"]
 
 [node name="Rocket" type="Node2D"]
+texture_filter = 1
 
-[node name="Rocket Texture2" type="Sprite2D" parent="."]
-position = Vector2(28, 0)
-scale = Vector2(1.03125, 0.2)
-texture = ExtResource("1_na8ok")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jopa7")

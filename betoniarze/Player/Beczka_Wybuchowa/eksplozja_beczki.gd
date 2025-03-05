@@ -20,6 +20,6 @@ func _physics_process(delta):
 		if  o.has_method("Heavy_Enemy"):
 			
 			var force = (o.global_position - global_position).normalized()
-			force *= Vector2(800,400)
+			force *= Vector2(400,200)
 			o.linear_velocity += force
 			queue_free()

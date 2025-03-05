@@ -17,14 +17,14 @@ shape = SubResource("CircleShape2D_l1025")
 
 [node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 120
+amount = 60
 one_shot = true
 explosiveness = 0.75
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 111.11
-initial_velocity_max = 313.13
-scale_amount_min = 20.0
-scale_amount_max = 30.0
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_rv8p0")
 color = Color(1, 0, 0, 1)

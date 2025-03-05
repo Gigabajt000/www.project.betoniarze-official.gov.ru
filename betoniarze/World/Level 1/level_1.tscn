@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqhjvoghc7v7k"]
+[gd_scene load_steps=13 format=3 uid="uid://bqhjvoghc7v7k"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_yrsww"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_0u10q"]
@@ -9,12 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="7_0i04q"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_0vtpn"]
 [ext_resource type="Script" path="res://World/nie_usuwaj_tego.gd" id="9_6631q"]
-[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="9_h38mj"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="10_oovmt"]
-[ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="11_tk27i"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t8l8"]
-size = Vector2(128, 137)
+[ext_resource type="PackedScene" uid="uid://dhj6apym210ol" path="res://Tilemap/node_2d.tscn" id="11_atd2n"]
+[ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="12_q5ihn"]
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_yrsww")
@@ -34,10 +31,10 @@ grow_vertical = 2
 text = "level 1"
 
 [node name="Player" parent="." instance=ExtResource("2_0u10q")]
-position = Vector2(-163, -120)
+position = Vector2(-543, -205)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(3, 3)
 script = ExtResource("3_2bebs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -71,20 +68,12 @@ metadata/_edit_use_anchors_ = true
 visible = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9, 15)
-scale = Vector2(5.32031, 1)
-texture = ExtResource("9_h38mj")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0.751835, -2)
-shape = SubResource("RectangleShape2D_0t8l8")
-
 [node name="Winda" parent="." instance=ExtResource("10_oovmt")]
 position = Vector2(126, -207)
 level = 1
 
-[node name="Turret" parent="." instance=ExtResource("11_tk27i")]
-position = Vector2(-623, -122)
+[node name="Node2D" parent="." instance=ExtResource("11_atd2n")]
+position = Vector2(-522, -182)
+
+[node name="Beczka_Wybuchowa" parent="." instance=ExtResource("12_q5ihn")]
+position = Vector2(-396, -213)
