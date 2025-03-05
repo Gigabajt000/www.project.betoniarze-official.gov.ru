@@ -35,8 +35,10 @@ var level3: bool = false
 var level4: bool = false
 var level5: bool = false
 var level6: bool = false
-var level7: bool = false
+var level7: bool = true
 var level8: bool = false
+
+var change:bool
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS

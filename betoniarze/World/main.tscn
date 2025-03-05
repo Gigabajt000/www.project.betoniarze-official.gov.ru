@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://kemfh5qetn4t"]
+[gd_scene load_steps=19 format=3 uid="uid://kemfh5qetn4t"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_47k2o"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://gjvpw1b3kwi4" path="res://UI/działko_parowe_ui.tscn" id="12_ix02n"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="14_q3xk3"]
 [ext_resource type="PackedScene" uid="uid://ctw4nlxqryxer" path="res://Player/Enemy/heavy_enemy.tscn" id="15_no6f1"]
+[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="17_cil1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbtm"]
 size = Vector2(128, 137)
@@ -126,3 +127,7 @@ target = NodePath("../Player")
 
 [node name="Turret" parent="." instance=ExtResource("14_q3xk3")]
 position = Vector2(462, -595)
+
+[node name="Winda" parent="." instance=ExtResource("17_cil1d")]
+position = Vector2(220, -182)
+scale = Vector2(5.32031, 1)
