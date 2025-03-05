@@ -10,6 +10,9 @@ var look_at_player: bool = false
 var bullet_path = preload("res://Player/Turret/bullet_turret.tscn")
 var gracz
 
+func Turret():
+	pass
+
 func _process(delta: float) -> void:
 	if abs(rotation) >= deg_to_rad(180):
 		$Sprite2D.flip_h = true
@@ -50,7 +53,7 @@ func _physics_process(delta):
 		
 	progress_bar.value = timer
 	
-	if attacking == true and not $RayCast2D.get_collider() is StaticBody2D:
+	if attacking == true and not $RayCast2D.get_collider() is StaticBody2D and Global.stun == false:
 		timer = timer + delta
 	
 	if attacking == true and timer >= 3 and not $RayCast2D.get_collider() is StaticBody2D:

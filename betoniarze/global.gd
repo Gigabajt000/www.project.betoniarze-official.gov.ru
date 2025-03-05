@@ -27,6 +27,8 @@ var zoom = Vector2(0.7, 0.7)
 var boom: bool = false
 var original_position: Vector2
 
+var stun : bool = false
+
 var level1: bool = true
 var level2: bool = false
 var level3: bool = false
@@ -39,7 +41,14 @@ var level8: bool = false
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 
+var timer: float = 0
+
 func _process(delta):
+	if stun == true:
+		timer = timer + delta
+	if stun == true and timer >= 2:
+		timer = 0
+		stun = false
 	if mouse_shown == true:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if mouse_shown == false:
