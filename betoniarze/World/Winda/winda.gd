@@ -8,42 +8,43 @@ func _process(delta: float) -> void:
 		match (level):
 			1:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				Global.level2 = true
 				get_tree().change_scene_to_file("res://World/Level 2/level_2.tscn")
 			2:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
+				print("a")
 				Global.level3 = true
 				get_tree().change_scene_to_file("res://World/Level 3/level_3.tscn")
 			3:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				Global.level4 = true
 				get_tree().change_scene_to_file("res://World/Level 4/level_4.tscn")
 			4:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				Global.level5 = true
 				get_tree().change_scene_to_file("res://World/Level 5/level_5.tscn")
 			5:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				Global.level6 = true
 				get_tree().change_scene_to_file("res://World/Level 6/level_6.tscn")
 			6:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				Global.level7 = true
 				get_tree().change_scene_to_file("res://World/Level 7/level_7.tscn")
 			7:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				Global.level8 = true
 				get_tree().change_scene_to_file("res://World/Level 8/level_8.tscn")
 			8:
 				FadeIn.transition()
-				await FadeIn._on_animation_finished
+				await FadeIn.on_transition_finished
 				get_tree().change_scene_to_file("res://UI/Level Selection/level_selection.tscn")
 				
 

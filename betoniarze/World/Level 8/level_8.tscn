@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://4ytjqsddv58w"]
+[gd_scene load_steps=13 format=3 uid="uid://4ytjqsddv58w"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_u2wfn"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_wil21"]
 [ext_resource type="Script" path="res://World/camera_2d.gd" id="3_ncnou"]
+[ext_resource type="Script" path="res://World/nie_usuwaj_tego.gd" id="4_fpqk6"]
 [ext_resource type="PackedScene" uid="uid://gjvpw1b3kwi4" path="res://UI/działko_parowe_ui.tscn" id="4_koeut"]
 [ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition/Ammunition.tscn" id="5_i0kum"]
 [ext_resource type="PackedScene" uid="uid://bcpou0mrjchfq" path="res://UI/Death_Screen/death_screen.tscn" id="6_rhxbi"]
@@ -32,18 +33,33 @@ script = ExtResource("3_ncnou")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="nie usuwaj tego" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_fpqk6")
+metadata/_edit_use_anchors_ = true
+
 [node name="Działko_Parowe_UI" parent="CanvasLayer" instance=ExtResource("4_koeut")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Ammunition" parent="CanvasLayer" instance=ExtResource("5_i0kum")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Death_Screen" parent="CanvasLayer" instance=ExtResource("6_rhxbi")]
+visible = false
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("7_v1slg")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("8_nt3h1")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
