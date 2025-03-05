@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qte38jbk1cga"]
+[gd_scene load_steps=12 format=3 uid="uid://qte38jbk1cga"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_is4ol"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_ohu5t"]
@@ -9,11 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bcpou0mrjchfq" path="res://UI/Death_Screen/death_screen.tscn" id="6_jilqe"]
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="7_223br"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_mocbl"]
-[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="9_fuopp"]
-[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="10_yav2v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_25vp7"]
-size = Vector2(128, 137)
+[ext_resource type="PackedScene" uid="uid://i2p4cgaqayu5" path="res://Tilemap/level_3.tscn" id="10_vb623"]
+[ext_resource type="PackedScene" uid="uid://bnowdgnrihfy3" path="res://Player/Enemy/Light_Enemy.tscn" id="11_jhi5m"]
 
 [node name="Level 3" type="Node2D"]
 script = ExtResource("1_is4ol")
@@ -30,7 +27,7 @@ grow_horizontal = 2
 text = "level 3"
 
 [node name="Player" parent="." instance=ExtResource("2_ohu5t")]
-position = Vector2(-163, -120)
+position = Vector2(-671, -268)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
@@ -67,17 +64,9 @@ metadata/_edit_use_anchors_ = true
 visible = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9, 15)
-scale = Vector2(5.32031, 1)
-texture = ExtResource("9_fuopp")
+[node name="Level3" parent="." instance=ExtResource("10_vb623")]
+position = Vector2(-1022, -237)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0.751835, -2)
-shape = SubResource("RectangleShape2D_25vp7")
-
-[node name="Winda" parent="." instance=ExtResource("10_yav2v")]
-position = Vector2(126, -207)
-level = 3
+[node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_jhi5m")]
+position = Vector2(-317, -248)
+target = NodePath("../Player")

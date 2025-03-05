@@ -106,6 +106,8 @@ animations = [{
 }]
 
 [node name="Drzwi" type="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
 script = ExtResource("1_i7df0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

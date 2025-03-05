@@ -10,6 +10,7 @@ size = Vector2(128, 126)
 size = Vector2(203, 88)
 
 [node name="Light_Enemy" type="CharacterBody2D" node_paths=PackedStringArray("raycast_dół_lewo", "raycast_dół1_prawo", "area")]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_r4s87")
 "raycast_dół_lewo" = NodePath("RayCast2D_Dół1")
 "raycast_dół1_prawo" = NodePath("RayCast2D_Dół2")

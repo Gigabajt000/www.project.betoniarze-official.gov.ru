@@ -30,7 +30,7 @@ var original_position: Vector2
 var stun : bool = false
 
 var level1: bool = true
-var level2: bool = false
+var level2: bool = true
 var level3: bool = false
 var level4: bool = false
 var level5: bool = false

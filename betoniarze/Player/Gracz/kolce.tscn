@@ -7,6 +7,7 @@
 size = Vector2(115, 49)
 
 [node name="Kolce" type="Node2D"]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_j7wrm")
 
 [node name="Kolce Sprite" type="Sprite2D" parent="."]

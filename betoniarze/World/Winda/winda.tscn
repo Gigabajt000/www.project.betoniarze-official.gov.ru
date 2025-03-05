@@ -7,6 +7,7 @@
 radius = 157.08
 
 [node name="Winda" type="Node2D"]
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_85x5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
