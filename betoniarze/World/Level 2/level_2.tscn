@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmre7qq06t8jp"]
+[gd_scene load_steps=12 format=3 uid="uid://cmre7qq06t8jp"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_u6wah"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="1_um1q4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="7_h3niw"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_cstn8"]
 [ext_resource type="PackedScene" uid="uid://bqwaxnk2ree4v" path="res://Tilemap/level_2.tscn" id="10_aisqd"]
+[ext_resource type="PackedScene" uid="uid://d2r01xv4y3k2r" path="res://World/parallax_2d.tscn" id="10_wiegb"]
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_u6wah")
@@ -60,3 +61,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Level2" parent="." instance=ExtResource("10_aisqd")]
 position = Vector2(-1364, -199)
+
+[node name="Parallax2D" parent="." instance=ExtResource("10_wiegb")]
+scroll_offset = Vector2(200, 0)

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var level: int
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("enter") and Global.change == true:
 		Global.change = false
 		match (level):
@@ -47,7 +47,6 @@ func _process(delta: float) -> void:
 				await FadeIn.on_transition_finished
 				get_tree().change_scene_to_file("res://UI/Level Selection/level_selection.tscn")
 				
-
 
 
 
