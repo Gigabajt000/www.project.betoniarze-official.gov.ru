@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 70
-@export var target : RigidBody2D
+@export var target : CharacterBody2D
 
 @export var raycast_dół_lewo: RayCast2D
 @export var raycast_dół1_prawo: RayCast2D
@@ -16,7 +16,7 @@ var JUMP_VELOCITY = -240.0
 var direction = 0
 
 
-
+var can_attack: bool = false
 var cos3
 var cos4
 
@@ -24,43 +24,31 @@ var temporary_direction = 0
 
 var can_move = true
 
-@export var animated_sprite : AnimatedSprite2D
 
 func Enemy():
 	pass #To też nic nie robi, nie wycinaj bo urwe jaja
 
 func attack():
-	Global.Death()
-	velocity.x = 0
-	#animated_sprite.play("attack")
-	
-
-
-func animation():
-	if velocity.x > 0:
-		pass
-		#animated_sprite.play("walk")
-		#animated_sprite.flip_h = false
-		#animated_sprite.offset.x = 0
-	elif velocity.x < 0:
-		pass
-		#animated_sprite.play("walk")
-		#animated_sprite.flip_h = true
-		#animated_sprite.offset.x = -10
-	elif velocity.x == 0:
-		#animated_sprite.play("idle")
-		pass
-
-func _process(delta: float) -> void:
-	animation()
-
+	$Sprite2D.play("light_attack")
+	if $Sprite2D.frame >= 10 and can_attack == true:
+		Global.Death()
+		can_attack = false
 
 func _physics_process(delta: float) -> void:
 	
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
 	
-	
+	if abs(velocity.x) > 0 and can_attack == false:
+		$Sprite2D.play("light_walk")
+		
+	if cos3 == null and direction == -1:
+		direction = 1
+		$Sprite2D.flip_h = true
+		
+	elif cos4 == null and direction == 1:
+		direction = -1
+		$Sprite2D.flip_h = false
 	
 	if cos3 == null and temporary_direction > 0 :
 		can_move = false

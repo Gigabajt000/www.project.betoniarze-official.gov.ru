@@ -65,7 +65,3 @@ position = Vector2(-665, -212)
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_flxdq")]
 position = Vector2(-979, -231)
 target = NodePath("../Player")
-
-[node name="Light_Enemy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_flxdq")]
-position = Vector2(337, -327)
-target = NodePath("../Player")
