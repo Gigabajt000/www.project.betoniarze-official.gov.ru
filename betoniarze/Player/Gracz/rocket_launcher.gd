@@ -28,7 +28,7 @@ func _physics_process(delta):
 func push():
 	var force = ($"Przyszły pocisk".global_position - $"../Srodek_Gracza".global_position).normalized()
 	force *= 1000
-	$"..".linear_velocity = -(force)
+	$"..".velocity = -(force)
 	particle.emitting = true
 	$explosion_sfx.play(0)
 

@@ -18,11 +18,9 @@ size = Vector2(18, 42)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0.527472), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("celownik", "srodek")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("celownik", "srodek")]
 z_index = 1
 position = Vector2(9, -1)
-lock_rotation = true
-linear_damp = 1.0
 script = ExtResource("1_3a02r")
 celownik = NodePath("Celownik")
 srodek = NodePath("Srodek_Gracza")
@@ -76,7 +74,7 @@ scale_amount_curve = SubResource("Curve_etrrw")
 color = Color(0, 0, 0, 1)
 
 [node name="Przyszły pocisk" type="Node2D" parent="Rocket"]
-position = Vector2(17, 0)
+position = Vector2(20, 8)
 
 [node name="explosion_sfx" type="AudioStreamPlayer" parent="Rocket"]
 stream = ExtResource("5_nfk2t")

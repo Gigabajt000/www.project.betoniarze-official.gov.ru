@@ -4,8 +4,6 @@ func Eksplozja():
 	pass #to nic nie robi, ale zostaw
 
 
-
-
 func _physics_process(delta):
 	
 	for o in get_overlapping_bodies():
@@ -21,7 +19,7 @@ func _physics_process(delta):
 			var force = (o.srodek.global_position - global_position).normalized()
 			force *= 1000
 			
-			o.linear_velocity += force
+			o.velocity += force
 			queue_free()
 			
 			

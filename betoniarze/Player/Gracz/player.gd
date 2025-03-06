@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @export var celownik : Sprite2D
 @export var srodek: Node2D
@@ -17,10 +17,10 @@ func Player():
 	#to jest do kolców btw
 
 func camera_zoom():
-	if abs(linear_velocity.x) >= abs(linear_velocity.y):
-		zoom_factor = abs(Vector2(linear_velocity.x, linear_velocity.x) / Vector2(2000, 2000))
-	if abs(linear_velocity.y) > abs(linear_velocity.x):
-		zoom_factor = abs(Vector2(linear_velocity.y, linear_velocity.y) / Vector2(2000, 2000))
+	if abs(velocity.x) >= abs(velocity.y):
+		zoom_factor = abs(Vector2(velocity.x, velocity.x) / Vector2(2000, 2000))
+	if abs(velocity.y) > abs(velocity.x):
+		zoom_factor = abs(Vector2(velocity.y, velocity.y) / Vector2(2000, 2000))
 	
 	zoom_factor = zoom_factor.clamp(Vector2(1.2, 1.2), Vector2(1.5, 1.5))
 	var y = Vector2(1.2, 1.2) + (Vector2(1.5, 1.5) - zoom_factor)
@@ -28,10 +28,11 @@ func camera_zoom():
 
 var x : float = 0	
 func _physics_process(delta: float) -> void:
-	if linear_velocity.y < 0:
-		gravity_scale = gravity_scale * 1.1
-	if linear_velocity.y >= 0:
-		gravity_scale = 1
+	
+	if not is_on_floor():
+		velocity += get_gravity() * delta * 2
+	if is_on_floor() and abs(velocity.x) != 0:
+		velocity.x = move_toward(velocity.x, 0, velocity.x / 10)
 	
 	celownik.position = get_local_mouse_position()
 	if Global.play_zabicie == true:
@@ -44,7 +45,9 @@ func _physics_process(delta: float) -> void:
 		x = x + delta
 		if x >= 1:
 			queue_free()
-			
+	
+	move_and_slide()
+	
 func player_filp():
 	if get_global_mouse_position().x > position.x:
 		$"Player Texture".flip_h = false
