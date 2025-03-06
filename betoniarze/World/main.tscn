@@ -122,7 +122,6 @@ position = Vector2(-842, -878)
 
 [node name="heavy_enemy" parent="." instance=ExtResource("15_no6f1")]
 position = Vector2(-630, -891)
-mass = 5.0
 
 [node name="Turret" parent="." instance=ExtResource("14_q3xk3")]
 position = Vector2(462, -595)

@@ -148,6 +148,8 @@ position = Vector2(772, -33)
 level = 1
 
 [node name="Label" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
 offset_left = -64.0
 offset_top = -101.0
 offset_right = 147.0
@@ -156,6 +158,8 @@ text = "\"Left Click\" To Fire Bazooka"
 label_settings = SubResource("LabelSettings_6oy35")
 
 [node name="Label2" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
 offset_left = 275.0
 offset_top = -112.0
 offset_right = 511.0
@@ -164,6 +168,8 @@ text = "You Can Also Use \"Right Click\"!"
 label_settings = SubResource("LabelSettings_6oy35")
 
 [node name="Label3" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 1
 offset_left = 655.0
 offset_top = -108.0
 offset_right = 901.0
