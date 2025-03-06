@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://calwive56yyy6"]
+[gd_scene load_steps=13 format=3 uid="uid://calwive56yyy6"]
 
 [ext_resource type="Script" path="res://UI/Level Selection/level_selection.gd" id="1_dao3m"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_env5a"]
 [ext_resource type="Script" path="res://UI/Level Selection/grid_container.gd" id="2_04lxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjwhv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wesk7"]
 
@@ -52,6 +54,7 @@ offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hjwhv")
 text = "Back"
 
 [node name="GridContainer" type="GridContainer" parent="."]

@@ -27,3 +27,9 @@ func _on_check_box_toggled(toggled_on):
 	Global.muted = toggled_on
 	if toggled_on == false:
 		AudioServer.set_bus_volume_db(0, linear_to_db(Global.master_volume))
+
+func _on_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

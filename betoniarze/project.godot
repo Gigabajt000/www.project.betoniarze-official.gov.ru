@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Global="*res://global.gd"
 FadeIn="*res://UI/Fade_In/fade_in.tscn"
 
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={
