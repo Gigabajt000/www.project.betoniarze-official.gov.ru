@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbf6vihdic7ld"]
+[gd_scene load_steps=3 format=3 uid="uid://dbf6vihdic7ld"]
 
+[ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="1_jo23r"]
 [ext_resource type="Texture2D" uid="uid://dybof67v5k2o7" path="res://Art/SteamPunk_arms_to_animation.png" id="1_jopa7"]
 
 [node name="Rocket" type="Node2D"]
 texture_filter = 1
+position = Vector2(13, 2)
+script = ExtResource("1_jo23r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jopa7")

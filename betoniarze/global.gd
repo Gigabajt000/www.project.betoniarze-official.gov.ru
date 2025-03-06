@@ -40,6 +40,9 @@ var level8: bool = false
 
 var change:bool
 
+#flip character
+var flip: bool = false
+
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	zoom = Vector2(2, 2)

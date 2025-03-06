@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://djpihxejo1d0r"]
+[gd_scene load_steps=10 format=3 uid="uid://djpihxejo1d0r"]
 
 [ext_resource type="Script" path="res://Player/Gracz/player.gd" id="1_3a02r"]
 [ext_resource type="Texture2D" uid="uid://d1tr6bay3g0bb" path="res://Art/SteamPunk_hero_v2_to_animation.png" id="2_543ar"]
 [ext_resource type="PackedScene" uid="uid://dbf6vihdic7ld" path="res://Player/Gracz/rocket_launcher.tscn" id="2_boloi"]
 [ext_resource type="AudioStream" uid="uid://b4c48oe83m8q4" path="res://Sound/hitHurt (4).wav" id="3_8aglv"]
-[ext_resource type="Script" path="res://Player/Gracz/rocket_launcher.gd" id="4_oxlml"]
 [ext_resource type="AudioStream" uid="uid://dyahf20ywaqop" path="res://Sound/explosion Działko_Parowe.wav" id="5_nfk2t"]
 [ext_resource type="Texture2D" uid="uid://ck2enkml4i6rq" path="res://Art/Celownik.png" id="7_w50c6"]
 
@@ -58,8 +57,7 @@ stream = ExtResource("3_8aglv")
 volume_db = -12.891
 
 [node name="Rocket" parent="." node_paths=PackedStringArray("particle") instance=ExtResource("2_boloi")]
-position = Vector2(-9, 1)
-script = ExtResource("4_oxlml")
+position = Vector2(-1, -5)
 particle = NodePath("CPUParticles2D")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Rocket"]

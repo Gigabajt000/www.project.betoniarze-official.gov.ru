@@ -7,6 +7,7 @@ var x: float = 0
 
 
 func _physics_process(delta):
+	
 	look_at(get_global_mouse_position())
 	x = x - delta
 	Global.y = Global.y - delta
@@ -35,3 +36,4 @@ func shoot():
 	bullet.direction = global_rotation
 	bullet.pos = $"Przyszły pocisk".global_position
 	get_parent().add_child(bullet)
+	

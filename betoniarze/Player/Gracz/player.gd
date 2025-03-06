@@ -6,6 +6,8 @@ var zoom_factor := Vector2(1, 1)
 
 func _process(delta: float) -> void:
 	
+	player_filp()
+	
 	camera_zoom()
 	Global.original_position = position
 
@@ -37,3 +39,14 @@ func _physics_process(delta: float) -> void:
 		x = x + delta
 		if x >= 1:
 			queue_free()
+			
+func player_filp():
+	if get_global_mouse_position().x > position.x:
+		$"Player Texture".flip_h = false
+		$"Player Texture".offset.x = 0
+		Global.flip = false
+	if get_global_mouse_position().x < position.x:
+		$"Player Texture".flip_h = true
+		$"Player Texture".offset.x = -16
+		Global.flip = true
+		
