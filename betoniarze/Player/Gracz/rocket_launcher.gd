@@ -7,6 +7,7 @@ var x: float = 0
 
 
 func _physics_process(delta):
+	rotate_launcher()
 	
 	look_at(get_global_mouse_position())
 	x = x - delta
@@ -36,4 +37,14 @@ func shoot():
 	bullet.direction = global_rotation
 	bullet.pos = $"Przyszły pocisk".global_position
 	get_parent().add_child(bullet)
+	
+func rotate_launcher():
+	if Global.flip == true:
+		$Sprite2D.flip_v = true
+		$Sprite2D.position = Vector2(14,0)
+		position = Vector2(-3, -7)
+	else:
+		$Sprite2D.flip_v = false
+		$Sprite2D.position = Vector2(14, 0)
+		position = Vector2(-13, -7)
 	

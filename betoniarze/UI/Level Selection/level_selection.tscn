@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://calwive56yyy6"]
+[gd_scene load_steps=12 format=3 uid="uid://calwive56yyy6"]
 
 [ext_resource type="Script" path="res://UI/Level Selection/level_selection.gd" id="1_dao3m"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_env5a"]
 [ext_resource type="Script" path="res://UI/Level Selection/grid_container.gd" id="2_04lxy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oq6r0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wesk7"]
 
@@ -72,10 +70,10 @@ grow_vertical = 2
 columns = 4
 script = ExtResource("2_04lxy")
 
-[node name="Level 1" type="TextureButton" parent="GridContainer"]
+[node name="Level 1" type="Button" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-texture_normal = SubResource("AtlasTexture_oq6r0")
+icon = ExtResource("1_env5a")
 
 [node name="Label" type="Label" parent="GridContainer/Level 1"]
 layout_mode = 1

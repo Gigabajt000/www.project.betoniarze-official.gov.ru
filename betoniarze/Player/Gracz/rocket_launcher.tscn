@@ -5,8 +5,8 @@
 
 [node name="Rocket" type="Node2D"]
 texture_filter = 1
-position = Vector2(13, 2)
 script = ExtResource("1_jo23r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 0)
 texture = ExtResource("1_jopa7")

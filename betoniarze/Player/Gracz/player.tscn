@@ -57,7 +57,7 @@ stream = ExtResource("3_8aglv")
 volume_db = -12.891
 
 [node name="Rocket" parent="." node_paths=PackedStringArray("particle") instance=ExtResource("2_boloi")]
-position = Vector2(-1, -5)
+position = Vector2(-13, -7)
 particle = NodePath("CPUParticles2D")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Rocket"]
