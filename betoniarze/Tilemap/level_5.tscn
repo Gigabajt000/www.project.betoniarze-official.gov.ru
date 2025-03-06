@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cndrxykp5y7gu"]
+[gd_scene load_steps=11 format=4 uid="uid://cndrxykp5y7gu"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_8dkus"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_1g3md"]
@@ -140,9 +140,6 @@ texture = ExtResource("1_8dkus")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bdrji")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mckm"]
-size = Vector2(256, 17)
-
 [node name="Level5" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -202,10 +199,3 @@ position = Vector2(-680, -18)
 [node name="Winda" parent="." instance=ExtResource("8_80p0n")]
 position = Vector2(-1015, -28)
 level = 5
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(165, -121)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(171, -113)
-shape = SubResource("RectangleShape2D_5mckm")

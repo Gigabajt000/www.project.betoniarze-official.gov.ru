@@ -74,7 +74,7 @@ scale_amount_curve = SubResource("Curve_etrrw")
 color = Color(0, 0, 0, 1)
 
 [node name="Przyszły pocisk" type="Node2D" parent="Rocket"]
-position = Vector2(20, 8)
+position = Vector2(29, -1)
 
 [node name="explosion_sfx" type="AudioStreamPlayer" parent="Rocket"]
 stream = ExtResource("5_nfk2t")
@@ -86,4 +86,4 @@ position = Vector2(-221.5, -258)
 texture = ExtResource("7_w50c6")
 
 [node name="Srodek_Gracza" type="Node2D" parent="."]
-position = Vector2(-9, 0)
+position = Vector2(-9, -2)
