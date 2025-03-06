@@ -9,7 +9,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.97191, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnh4j"]
-radius = 7.0
+radius = 4.0
 
 [node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("explosion_sfx")]
 script = ExtResource("1_eg6pt")
@@ -22,19 +22,20 @@ one_shot = true
 explosiveness = 0.9
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 119.19
-initial_velocity_max = 220.2
-scale_amount_min = 7.0
-scale_amount_max = 14.0
+initial_velocity_min = 38.38
+initial_velocity_max = 109.09
+scale_amount_min = 3.0
+scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_s86wu")
 color = Color(1, 0.701961, 0.0862745, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1.90735e-06)
-scale = Vector2(0.117188, 0.117188)
+position = Vector2(0, -3.57628e-07)
+scale = Vector2(0.117188, 0.0625)
 texture = ExtResource("1_tkt4b")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]

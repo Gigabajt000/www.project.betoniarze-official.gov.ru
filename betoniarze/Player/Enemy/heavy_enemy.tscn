@@ -364,11 +364,11 @@ shape = SubResource("RectangleShape2D_tnmdr")
 
 [node name="RayCast2D_Dół1" type="RayCast2D" parent="."]
 position = Vector2(18, 31)
-target_position = Vector2(0, 35)
+target_position = Vector2(0, 45)
 
 [node name="RayCast2D_Dół2" type="RayCast2D" parent="."]
 position = Vector2(-17, 31)
-target_position = Vector2(0, 35)
+target_position = Vector2(0, 45)
 
 [node name="Area2D" type="Area2D" parent="."]
 

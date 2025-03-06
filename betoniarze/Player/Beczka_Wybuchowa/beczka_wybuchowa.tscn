@@ -1,33 +1,34 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy321p2ckls7j"]
 
 [ext_resource type="Script" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.gd" id="1_oew65"]
-[ext_resource type="Texture2D" uid="uid://dl5b11kpcojyq" path="res://Art/beczka.PNG" id="2_mtl22"]
+[ext_resource type="Texture2D" uid="uid://c41rh5g6n8gpg" path="res://Art/Barrel_bomb.png" id="2_ta6ms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicup"]
-size = Vector2(32, 60)
+size = Vector2(17, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s718s"]
-size = Vector2(33, 62)
+size = Vector2(19, 24)
 
 [sub_resource type="Curve" id="Curve_r50c7"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.97191, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Beczka_Wybuchowa" type="RigidBody2D"]
+[node name="Beczka_Wybuchowa" type="StaticBody2D"]
 script = ExtResource("1_oew65")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(1.90735e-06, 9.53674e-07)
-scale = Vector2(0.112211, 0.13408)
-texture = ExtResource("2_mtl22")
+texture = ExtResource("2_ta6ms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_jicup")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 0)
+position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_s718s")
 
 [node name="początek eksplozji" type="Node2D" parent="Area2D"]

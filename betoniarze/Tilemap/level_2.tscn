@@ -145,19 +145,18 @@ tile_map_data = PackedByteArray("AAD4////AAAAAAAAAAD4/wAAAAAAAAEAAAD5////AAABAAA
 tile_set = SubResource("TileSet_dlmfb")
 
 [node name="Kolce" parent="." instance=ExtResource("2_b08ty")]
-position = Vector2(398, -9)
-
-[node name="Kolce2" parent="." instance=ExtResource("2_b08ty")]
-position = Vector2(411, -9)
+position = Vector2(334, -9)
 
 [node name="Kolce3" parent="." instance=ExtResource("2_b08ty")]
-position = Vector2(385, -9)
+position = Vector2(321, -9)
 
 [node name="Drzwi" parent="." instance=ExtResource("3_t0uxy")]
 position = Vector2(454, -67)
 
 [node name="Przycisk" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("4_ui7hr")]
-position = Vector2(179, -8)
+texture_filter = 1
+position = Vector2(410, -143)
+rotation = -1.5708
 Drzwi = NodePath("../Drzwi")
 
 [node name="Winda" parent="." instance=ExtResource("5_whrur")]

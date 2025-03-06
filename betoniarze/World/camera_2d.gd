@@ -8,7 +8,7 @@ var shake_timer = 0.0
 
 func _ready():
 	Global.original_position = position
-	zoom = Vector2(3, 3)
+	zoom = Vector2(1.5, 1.5)
 	
 func _process(delta):
 	zoom = Global.zoom

@@ -13,19 +13,21 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l4n"]
-size = Vector2(21, 43)
+size = Vector2(18, 42)
 
 [sub_resource type="Curve" id="Curve_etrrw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0.527472), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("celownik")]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("celownik", "srodek")]
 z_index = 1
 position = Vector2(9, -1)
-gravity_scale = 2.0
+gravity_scale = 1.5
 lock_rotation = true
+linear_damp = 1.0
 script = ExtResource("1_3a02r")
 celownik = NodePath("Celownik")
+srodek = NodePath("Srodek_Gracza")
 metadata/_edit_horizontal_guides_ = [-401.0]
 
 [node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="."]
@@ -48,7 +50,7 @@ texture_filter = 1
 texture = ExtResource("2_543ar")
 
 [node name="Player Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-8.5, 1.5)
+position = Vector2(-8, 1)
 shape = SubResource("RectangleShape2D_20l4n")
 
 [node name="Zabicie_sfx" type="AudioStreamPlayer" parent="."]
@@ -56,7 +58,7 @@ stream = ExtResource("3_8aglv")
 volume_db = -12.891
 
 [node name="Rocket" parent="." node_paths=PackedStringArray("particle") instance=ExtResource("2_boloi")]
-position = Vector2(1, -4)
+position = Vector2(-9, 1)
 script = ExtResource("4_oxlml")
 particle = NodePath("CPUParticles2D")
 
@@ -77,7 +79,7 @@ scale_amount_curve = SubResource("Curve_etrrw")
 color = Color(0, 0, 0, 1)
 
 [node name="Przyszły pocisk" type="Node2D" parent="Rocket"]
-position = Vector2(5, -1)
+position = Vector2(17, 0)
 
 [node name="explosion_sfx" type="AudioStreamPlayer" parent="Rocket"]
 stream = ExtResource("5_nfk2t")
@@ -87,3 +89,6 @@ volume_db = -12.891
 texture_filter = 1
 position = Vector2(-221.5, -258)
 texture = ExtResource("7_w50c6")
+
+[node name="Srodek_Gracza" type="Node2D" parent="."]
+position = Vector2(-9, 0)

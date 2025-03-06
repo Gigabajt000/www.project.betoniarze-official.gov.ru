@@ -21,7 +21,7 @@ var max_amunicja: int = 100
 var amunicja: float = 100
 
 #Camera
-var zoom = Vector2(2, 2)
+var zoom = Vector2(1.5, 1.5)
 
 #Camera shake
 var boom: bool = false
@@ -31,8 +31,8 @@ var stun : bool = false
 
 var level1: bool = true
 var level2: bool = true
-var level3: bool = false
-var level4: bool = false
+var level3: bool = true
+var level4: bool = true
 var level5: bool = false
 var level6: bool = false
 var level7: bool = true
@@ -43,6 +43,7 @@ var change:bool
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	zoom = Vector2(2, 2)
+	
 var timer: float = 0
 
 func _process(delta):

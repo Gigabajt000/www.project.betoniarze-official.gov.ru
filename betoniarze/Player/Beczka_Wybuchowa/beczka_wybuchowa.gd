@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends StaticBody2D
 
 var start_timer: bool = false
 var x: float = 0
