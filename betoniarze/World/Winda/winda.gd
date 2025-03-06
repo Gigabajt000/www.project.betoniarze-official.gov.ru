@@ -36,16 +36,8 @@ func _process(_delta: float) -> void:
 				FadeIn.transition()
 				await FadeIn.on_transition_finished
 				Global.level7 = true
-				get_tree().change_scene_to_file("res://World/Level 7/level_7.tscn")
-			7:
-				FadeIn.transition()
-				await FadeIn.on_transition_finished
-				Global.level8 = true
-				get_tree().change_scene_to_file("res://World/Level 8/level_8.tscn")
-			8:
-				FadeIn.transition()
-				await FadeIn.on_transition_finished
-				get_tree().change_scene_to_file("res://UI/Level Selection/level_selection.tscn")
+				get_tree().change_scene_to_file("res://UI/Win Scrin.tscn")
+			
 				
 
 

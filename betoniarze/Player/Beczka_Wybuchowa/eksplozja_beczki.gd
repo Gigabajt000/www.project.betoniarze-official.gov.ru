@@ -17,4 +17,7 @@ func _physics_process(delta):
 			
 			o.queue_free()
 			queue_free()
-		
+		if o.has_method("Turret"):
+			
+			Global.stun = true
+			queue_free()

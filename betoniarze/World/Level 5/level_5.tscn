@@ -15,12 +15,6 @@
 [node name="Level 5" type="Node2D"]
 script = ExtResource("1_lwpgq")
 
-[node name="Label" type="Label" parent="."]
-offset_top = -344.0
-offset_right = 50.0
-offset_bottom = -321.0
-text = "level 5"
-
 [node name="Player" parent="." instance=ExtResource("2_46by8")]
 position = Vector2(-1153, -224)
 

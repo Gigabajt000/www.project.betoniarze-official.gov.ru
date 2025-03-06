@@ -57,13 +57,13 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-1022, -237)
 
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_jhi5m")]
-position = Vector2(-317, -254)
+position = Vector2(-313, -280)
 target = NodePath("../Player")
 
 [node name="Light_Enemy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_jhi5m")]
-position = Vector2(-1043, -254)
+position = Vector2(-1051, -278)
 target = NodePath("../Player")
 
 [node name="Light_Enemy3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_jhi5m")]
-position = Vector2(-1695, -306)
+position = Vector2(-1697, -324)
 target = NodePath("../Player")

@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 
 func _ready():
 	deafult_transform = transform
-	progress_bar.max_value = 3
+	progress_bar.max_value = 4
 	
 	
 func _physics_process(delta):
@@ -58,7 +58,7 @@ func _physics_process(delta):
 	if attacking == true and not $RayCast2D.get_collider() is StaticBody2D and Global.stun == false:
 		timer = timer + delta
 	
-	if attacking == true and timer >= 3 and not $RayCast2D.get_collider() is StaticBody2D:
+	if attacking == true and timer >= 4 and not $RayCast2D.get_collider() is StaticBody2D:
 		atak()
 		timer = 0
 

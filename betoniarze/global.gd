@@ -35,9 +35,9 @@ var level2: bool = true
 var level3: bool = true
 var level4: bool = true
 var level5: bool = true
-var level6: bool = false
+var level6: bool = true
 var level7: bool = true
-var level8: bool = false
+var level8: bool = true
 
 var change:bool
 
@@ -54,7 +54,7 @@ func _process(delta):
 	
 	if stun == true:
 		timer = timer + delta
-	if stun == true and timer >= 2:
+	if stun == true and timer >= 3:
 		timer = 0
 		stun = false
 	if mouse_shown == true:

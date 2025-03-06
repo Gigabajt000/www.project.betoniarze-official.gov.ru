@@ -333,10 +333,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqrt5"]
-size = Vector2(128, 126)
+size = Vector2(29, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clsar"]
-size = Vector2(203, 88)
+size = Vector2(39, 48)
 
 [node name="Light_Enemy" type="CharacterBody2D" node_paths=PackedStringArray("raycast_dół_lewo", "raycast_dół1_prawo", "area")]
 script = ExtResource("1_r4s87")
@@ -349,21 +349,22 @@ sprite_frames = SubResource("SpriteFrames_yhmib")
 animation = &"light_attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 7.5)
 shape = SubResource("RectangleShape2D_aqrt5")
 
 [node name="RayCast2D_Dół1" type="RayCast2D" parent="."]
-position = Vector2(82, -9)
-target_position = Vector2(0, 104)
+position = Vector2(24, 30)
+target_position = Vector2(0, 62)
 
 [node name="RayCast2D_Dół2" type="RayCast2D" parent="."]
-position = Vector2(-80, -9)
-target_position = Vector2(0, 104)
+position = Vector2(-13, 30)
+target_position = Vector2(0, 63)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-167, -64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(166.5, 23)
+position = Vector2(171.5, 62)
 shape = SubResource("RectangleShape2D_clsar")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

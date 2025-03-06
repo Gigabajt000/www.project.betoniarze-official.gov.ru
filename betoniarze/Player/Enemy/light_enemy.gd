@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 70
-@export var target : CharacterBody2D
+@export var target : RigidBody2D
 
 @export var raycast_dół_lewo: RayCast2D
 @export var raycast_dół1_prawo: RayCast2D

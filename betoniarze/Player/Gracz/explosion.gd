@@ -20,9 +20,9 @@ func _physics_process(delta):
 		if o.has_method("Player"):
 		
 			var force = (o.srodek.global_position - global_position).normalized()
-			force *= 800
-			
-			o.velocity += force
+			force *= 700
+			o.linear_velocity = force
+			print(o.linear_velocity)
 			queue_free()
 			
 			

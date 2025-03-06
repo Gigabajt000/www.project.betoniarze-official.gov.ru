@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://i2p4cgaqayu5"]
+[gd_scene load_steps=9 format=4 uid="uid://i2p4cgaqayu5"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_i7fik"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_n1jt4"]
@@ -137,6 +137,8 @@ texture = ExtResource("1_i7fik")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rsig0")
 
+[sub_resource type="LabelSettings" id="LabelSettings_u0ef1"]
+
 [node name="Level3" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -176,3 +178,11 @@ Drzwi = NodePath("../Drzwi2")
 
 [node name="Drzwi2" parent="." instance=ExtResource("2_n1jt4")]
 position = Vector2(-450, -205)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 560.0
+offset_top = -100.0
+offset_right = 796.0
+offset_bottom = -77.0
+text = "Ohh! An Enemy - Kill Him!"
+label_settings = SubResource("LabelSettings_u0ef1")
