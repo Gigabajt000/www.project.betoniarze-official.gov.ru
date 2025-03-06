@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://f20dewbteyj0"]
+[gd_scene load_steps=10 format=4 uid="uid://f20dewbteyj0"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_ewx8w"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_ww701"]
@@ -139,9 +139,6 @@ texture = ExtResource("1_ewx8w")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2u7u8")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8j36"]
-size = Vector2(256, 17)
-
 [node name="Level4" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -174,7 +171,7 @@ position = Vector2(-906, -115)
 position = Vector2(-686, -41)
 
 [node name="Beczka_Wybuchowa2" parent="." instance=ExtResource("5_jss23")]
-position = Vector2(-870, -11)
+position = Vector2(-870, -19)
 
 [node name="Winda" parent="." instance=ExtResource("6_jowga")]
 position = Vector2(-1055, -82)
@@ -206,17 +203,3 @@ position = Vector2(673, -57)
 
 [node name="Kolce9" parent="." instance=ExtResource("7_2mua4")]
 position = Vector2(660, -57)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(165, -121)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(187, 127)
-shape = SubResource("RectangleShape2D_d8j36")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-891, -121)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(187, 127)
-shape = SubResource("RectangleShape2D_d8j36")

@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
 	if is_on_floor() and abs(velocity.x) != 0:
-		velocity.x = move_toward(velocity.x, 0, velocity.x / 10)
+		velocity.x = move_toward(velocity.x, 0, velocity.x / 5)
 	
 	celownik.position = get_local_mouse_position()
 	if Global.play_zabicie == true:
