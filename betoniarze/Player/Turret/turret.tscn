@@ -32,10 +32,12 @@ position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_vls4p")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, 9)
 texture = ExtResource("2_lxkpd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_od4ew")
 flip_h = true
 

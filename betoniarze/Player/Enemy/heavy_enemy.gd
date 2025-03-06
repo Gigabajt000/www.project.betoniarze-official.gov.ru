@@ -21,26 +21,30 @@ func _process(delta: float) -> void:
 	if can_attack == true:
 		attack()
 
+
+func _integrate_forces(state):
+	if abs(linear_velocity.x) <= SPEED:
+		print(abs(linear_velocity.x))
+		var velocity = linear_velocity
+		velocity.x = SPEED * direction 
+		state.set_linear_velocity(velocity)
+
 func _physics_process(delta: float) -> void:
 	
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
-
-	if abs(linear_velocity.x) <= SPEED:
+	
+	
+	if abs(linear_velocity.x) > 0 and can_attack == false:
+		$AnimatedSprite2D.play("heavy_walk")
 		
-		var velocity = linear_velocity
-		velocity.x = SPEED * direction
-		set_linear_velocity(velocity)
-		if abs(linear_velocity.x) > 0 and can_attack == false:
-			$AnimatedSprite2D.play("heavy_walk")
+	if cos3 == null and direction == -1:
+		direction = 1
+		$AnimatedSprite2D.flip_h = true
 		
-		if cos3 == null and direction == -1:
-			direction = 1
-			$AnimatedSprite2D.flip_h = true
-			
-		elif cos4 == null and direction == 1:
-			direction = -1
-			$AnimatedSprite2D.flip_h = false
+	elif cos4 == null and direction == 1:
+		direction = -1
+		$AnimatedSprite2D.flip_h = false
 
 
 func attack():

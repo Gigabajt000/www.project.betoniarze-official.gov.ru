@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_cnybo"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7q558"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwpxh"]
 texture = ExtResource("1_cnybo")
 0:0/0 = 0
 1:0/0 = 0
@@ -131,7 +131,7 @@ texture = ExtResource("1_cnybo")
 
 [sub_resource type="TileSet" id="TileSet_0nrtl"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7q558")
+sources/0 = SubResource("TileSetAtlasSource_fwpxh")
 
 [node name="Tilemap" type="Node2D"]
 

@@ -3,12 +3,15 @@ extends Node2D
 var timer: float = 0
 var hide_ui: bool = false
 
+
+
 func _ready() -> void:
 	Global.amunicja = 100
 	Global.y = 0
 	Global.IsAlive = true
 	Global.is_in_game = true
 	get_tree().paused = false
+	
 
 func _process(delta: float) -> void:
 	timer = timer + delta

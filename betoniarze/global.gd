@@ -27,13 +27,14 @@ var zoom = Vector2(1.5, 1.5)
 var boom: bool = false
 var original_position: Vector2
 
+# Wiezyczka
 var stun : bool = false
 
 var level1: bool = true
 var level2: bool = true
 var level3: bool = true
 var level4: bool = true
-var level5: bool = false
+var level5: bool = true
 var level6: bool = false
 var level7: bool = true
 var level8: bool = false

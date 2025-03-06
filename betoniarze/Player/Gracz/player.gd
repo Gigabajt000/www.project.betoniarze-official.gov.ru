@@ -28,6 +28,11 @@ func camera_zoom():
 
 var x : float = 0	
 func _physics_process(delta: float) -> void:
+	if linear_velocity.y < 0:
+		gravity_scale = gravity_scale * 1.1
+	if linear_velocity.y >= 0:
+		gravity_scale = 1
+	
 	celownik.position = get_local_mouse_position()
 	if Global.play_zabicie == true:
 		$CPUParticles2D_Zabicie.emitting = true

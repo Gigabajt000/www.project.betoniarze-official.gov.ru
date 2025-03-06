@@ -52,6 +52,8 @@ func _physics_process(delta):
 
 		
 	progress_bar.value = timer
+	if Global.stun == true:
+		timer = 0
 	
 	if attacking == true and not $RayCast2D.get_collider() is StaticBody2D and Global.stun == false:
 		timer = timer + delta
