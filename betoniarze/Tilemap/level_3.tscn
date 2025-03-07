@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_i7fik"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_n1jt4"]
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="3_1lj4g"]
-[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Gracz/kolce.tscn" id="4_adko3"]
+[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="4_adko3"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="5_o0h0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsig0"]

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="5_cl62p"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="6_6qvsg"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="7_lhc7a"]
-[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Gracz/kolce.tscn" id="8_qeyej"]
+[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="8_qeyej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w06ni"]
 texture = ExtResource("1_68kwh")

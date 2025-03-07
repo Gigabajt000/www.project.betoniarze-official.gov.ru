@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://t8pscco1c6y3"]
 
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_iqifa"]
-[ext_resource type="Script" path="res://Player/Gracz/kolce.gd" id="1_j7wrm"]
+[ext_resource type="Script" path="res://Player/Kolce/kolce.gd" id="1_j7wrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k740v"]
 size = Vector2(115, 49)

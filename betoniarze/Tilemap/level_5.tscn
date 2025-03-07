@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="3_j5xe3"]
 [ext_resource type="PackedScene" uid="uid://ctw4nlxqryxer" path="res://Player/Enemy/heavy_enemy.tscn" id="4_uceuk"]
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="5_5aw8b"]
-[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Gracz/kolce.tscn" id="6_cc87r"]
+[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="6_cc87r"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="7_kkjlr"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="8_80p0n"]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://World/main.gd" id="1_47k2o"]
 [ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_ef2qo"]
 [ext_resource type="Script" path="res://World/camera_2d.gd" id="1_pkevd"]
-[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Gracz/kolce.tscn" id="2_a0g76"]
+[ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="2_a0g76"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="3_d523m"]
 [ext_resource type="PackedScene" uid="uid://bwcjmax67ubvt" path="res://UI/Ammunition/Ammunition.tscn" id="4_l224j"]
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="5_1h2xq"]

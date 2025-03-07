@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvsy2gwf8e34l"]
+
+[ext_resource type="Script" path="res://Player/Kolce/kolce.gd" id="1_i3m7d"]
+[ext_resource type="Texture2D" uid="uid://ddglowsrt8l8w" path="res://Art/tilemap_ground_kolce.png" id="2_kef4q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkf1n"]
+atlas = ExtResource("2_kef4q")
+region = Rect2(192, 40, 32, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwu"]
+size = Vector2(32, 33)
+
+[node name="wysokie_szare" type="Node2D"]
+script = ExtResource("1_i3m7d")
+
+[node name="Kolce Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_gkf1n")
+
+[node name="Area2D" type="Area2D" parent="Kolce Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kolce Sprite/Area2D"]
+position = Vector2(0, -0.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_uvnwu")
