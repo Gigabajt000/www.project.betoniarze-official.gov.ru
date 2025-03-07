@@ -9,6 +9,7 @@ var y: float = 0
 signal open_settings
 signal close_settings
 @onready var first_open: bool = true
+var fullscreen: bool = false
 
 
 #dzwięk

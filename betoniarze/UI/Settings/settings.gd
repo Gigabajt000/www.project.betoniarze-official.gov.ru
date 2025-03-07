@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 		visible = false
 
 func _ready() -> void:
+	$MarginContainer/VBoxContainer/Fullscreen.button_pressed = Global.fullscreen
 	visible = false
 	sound_slider.value = Global.master_volume
 	is_muted.button_pressed = Global.muted
@@ -35,5 +36,7 @@ func _on_check_box_toggled(toggled_on):
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
 	if toggled_on == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		Global.fullscreen = true
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		Global.fullscreen = false
