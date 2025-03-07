@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqhjvoghc7v7k"]
+[gd_scene load_steps=13 format=3 uid="uid://bqhjvoghc7v7k"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_yrsww"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_0u10q"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" path="res://World/nie_usuwaj_tego.gd" id="9_6631q"]
 [ext_resource type="PackedScene" uid="uid://d2r01xv4y3k2r" path="res://World/parallax_2d.tscn" id="10_f11no"]
 [ext_resource type="PackedScene" uid="uid://dhj6apym210ol" path="res://Tilemap/node_2d.tscn" id="11_atd2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl73h"]
+size = Vector2(256, 51)
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_yrsww")
@@ -58,4 +61,22 @@ metadata/_edit_use_anchors_ = true
 [node name="Tilemap" parent="." instance=ExtResource("11_atd2n")]
 position = Vector2(-522, -182)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-170, -159.5)
+shape = SubResource("RectangleShape2D_jl73h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-352, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-170, -159.5)
+shape = SubResource("RectangleShape2D_jl73h")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(352, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-170, -159.5)
+shape = SubResource("RectangleShape2D_jl73h")
