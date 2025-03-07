@@ -1,9 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv5q2blr7onvn"]
+[gd_scene load_steps=7 format=3 uid="uid://cv5q2blr7onvn"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu/main_menu.gd" id="1_541ho"]
+[ext_resource type="Texture2D" uid="uid://dorv5tosmcv2x" path="res://Art/476441310_3875020276074030_3093440147093967702_n (1).jpg" id="2_s1fwa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dqsex"]
 font_size = 100
+
+[sub_resource type="Animation" id="Animation_3cyp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0tui6"]
+resource_name = "betoniarze"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0333333, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkqy5"]
+_data = {
+"RESET": SubResource("Animation_3cyp6"),
+"betoniarze": SubResource("Animation_0tui6")
+}
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -13,6 +75,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_541ho")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.500427
+offset_right = 0.500488
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s1fwa")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -57,6 +142,11 @@ text = "    Settings    "
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bkqy5")
+}
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

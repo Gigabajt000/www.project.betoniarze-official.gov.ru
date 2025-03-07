@@ -21,5 +21,4 @@ texture = SubResource("AtlasTexture_2gv4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kolce Sprite/Area2D"]
 position = Vector2(0, 4)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tc2n3")

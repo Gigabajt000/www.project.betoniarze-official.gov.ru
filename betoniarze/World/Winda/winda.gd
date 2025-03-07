@@ -45,8 +45,10 @@ func _process(_delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("Player"):
 		Global.change = true
+		$AnimatedSprite2D.play("open")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.has_method("Player"):
 		Global.change = false
+		$AnimatedSprite2D.play("close")
