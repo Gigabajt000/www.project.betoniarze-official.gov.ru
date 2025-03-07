@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dufjnqfscevao"]
+[gd_scene load_steps=25 format=3 uid="uid://dufjnqfscevao"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_p7y15"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_yskvw"]
@@ -39,6 +39,17 @@ size = Vector2(32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiosh"]
 size = Vector2(48, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdjsq"]
+size = Vector2(96, 43)
+
+[sub_resource type="Curve" id="Curve_8e4ur"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_p2o55"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Level 6" type="Node2D"]
 position = Vector2(-8, 0)
@@ -1321,6 +1332,50 @@ shape = SubResource("RectangleShape2D_eiosh")
 position = Vector2(-293, -946)
 level = 6
 
+[node name="ColorRect7" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = -3420.0
+offset_top = 313.0
+offset_right = -3324.0
+offset_bottom = 356.0
+scale = Vector2(76.375, 2.72584)
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect7/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_jdjsq")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect7"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_8e4ur")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect7"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_p2o55")
+color = Color(1, 0, 0, 1)
+
 [connection signal="body_entered" from="ColorRect23/Area2D" to="ColorRect23" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect24/Area2D" to="ColorRect24" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect25/Area2D" to="ColorRect25" method="_on_area_2d_body_entered"]
@@ -1345,3 +1400,4 @@ level = 6
 [connection signal="body_entered" from="ColorRect44/Area2D" to="ColorRect44" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect45/Area2D" to="ColorRect45" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect46/Area2D" to="ColorRect46" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect7/Area2D" to="ColorRect7" method="_on_area_2d_body_entered"]

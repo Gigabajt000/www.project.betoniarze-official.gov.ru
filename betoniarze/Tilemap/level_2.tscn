@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bqwaxnk2ree4v"]
+[gd_scene load_steps=21 format=4 uid="uid://bqwaxnk2ree4v"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_prvxb"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="2_b08ty"]
@@ -118,6 +118,17 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_coniq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x73uk"]
+size = Vector2(96, 43)
+
+[sub_resource type="Curve" id="Curve_tssh7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_e08fr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -419,9 +430,54 @@ color = Color(1, 0, 0, 1)
 position = Vector2(352, -13)
 scale = Vector2(1, 1)
 
+[node name="ColorRect7" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = -2346.0
+offset_top = 364.0
+offset_right = -2250.0
+offset_bottom = 407.0
+scale = Vector2(61.095, 2.72584)
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("6_ovhbw")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect7/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_x73uk")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect7"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_tssh7")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect7"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_e08fr")
+color = Color(1, 0, 0, 1)
+
 [connection signal="body_entered" from="ColorRect/Area2D" to="ColorRect" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect2/Area2D" to="ColorRect2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect3/Area2D" to="ColorRect3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect4/Area2D" to="ColorRect4" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect5/Area2D" to="ColorRect5" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect6/Area2D" to="ColorRect6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect7/Area2D" to="ColorRect7" method="_on_area_2d_body_entered"]

@@ -30,7 +30,7 @@ func Enemy():
 
 func attack():
 	$Sprite2D.play("light_attack")
-	if $Sprite2D.frame >= 10 and can_attack == true:
+	if can_attack == true:
 		Global.Death()
 		can_attack = false
 
@@ -41,16 +41,10 @@ func _physics_process(delta: float) -> void:
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
 	
-	if abs(velocity.x) > 0 and can_attack == false:
+	if abs(velocity.x) > 0 and can_attack == false and can_move == true:
 		$Sprite2D.play("light_walk")
 		
-	if cos3 == null and direction == -1:
-		direction = 1
-		$Sprite2D.flip_h = true
-		
-	elif cos4 == null and direction == 1:
-		direction = -1
-		$Sprite2D.flip_h = false
+	
 	
 	if cos3 == null and temporary_direction > 0 :
 		can_move = false
@@ -66,12 +60,14 @@ func _physics_process(delta: float) -> void:
 		temporary_direction = (target.position.x - position.x)
 	
 	if can_move == false:
+		$Sprite2D.stop()
 		direction = 0
 	if temporary_direction > 15 and can_move == true:
+		$Sprite2D.flip_h = true
 		direction = 1
 	if temporary_direction < -15 and can_move == true:
 		direction = -1
-	
+		$Sprite2D.flip_h = false
 	
 	if direction:
 		velocity.x = SPEED * direction
@@ -84,7 +80,13 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _on_area_2d_body_exited(body):
+	if body.has_method("Player"):
+		can_attack = false
+
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("Player"):
+		can_attack = true
 		attack()
+		
