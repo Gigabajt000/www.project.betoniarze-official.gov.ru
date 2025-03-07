@@ -34,12 +34,11 @@ var stun : bool = false
 
 var level1: bool = true
 var level2: bool = true
-var level3: bool = true
-var level4: bool = true
-var level5: bool = true
-var level6: bool = true
-var level7: bool = true
-var level8: bool = true
+var level3: bool = false
+var level4: bool = false
+var level5: bool = false
+var level6: bool = false
+
 
 var change:bool
 

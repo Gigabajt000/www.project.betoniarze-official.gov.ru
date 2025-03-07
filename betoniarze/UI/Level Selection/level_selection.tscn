@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://calwive56yyy6"]
+[gd_scene load_steps=30 format=3 uid="uid://calwive56yyy6"]
 
 [ext_resource type="Script" path="res://UI/Level Selection/level_selection.gd" id="1_dao3m"]
 [ext_resource type="Script" path="res://UI/Level Selection/grid_container.gd" id="2_04lxy"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1jbkuljxjnml" path="res://Art/button_long_hover.png" id="4_gau8x"]
 [ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="5_2m05j"]
 [ext_resource type="Texture2D" uid="uid://oiy34lxbveh4" path="res://Art/Level_selection_button_low_hover.png" id="5_ffapt"]
+[ext_resource type="Texture2D" uid="uid://b2uje2whqcm1o" path="res://Art/Rysunek_90_.png" id="10_wmypk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sno66"]
 font = ExtResource("5_2m05j")
@@ -165,6 +166,11 @@ texture_pressed = SubResource("AtlasTexture_8r0ah")
 texture_hover = SubResource("AtlasTexture_p8b0c")
 stretch_mode = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Level 1"]
+position = Vector2(84.5, 84.5)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("10_wmypk")
+
 [node name="Level 2" type="TextureButton" parent="GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(168, 168)
@@ -173,6 +179,11 @@ texture_normal = SubResource("AtlasTexture_rkgy6")
 texture_pressed = SubResource("AtlasTexture_hgd1b")
 texture_hover = SubResource("AtlasTexture_ca1gq")
 stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Level 2"]
+position = Vector2(84.5, 84.5)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("10_wmypk")
 
 [node name="Level 3" type="TextureButton" parent="GridContainer"]
 texture_filter = 1
@@ -183,6 +194,11 @@ texture_pressed = SubResource("AtlasTexture_yn6qg")
 texture_hover = SubResource("AtlasTexture_ci64b")
 stretch_mode = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Level 3"]
+position = Vector2(84.5, 84.5)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("10_wmypk")
+
 [node name="Level 4" type="TextureButton" parent="GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(168, 168)
@@ -191,6 +207,11 @@ texture_normal = SubResource("AtlasTexture_y28fu")
 texture_pressed = SubResource("AtlasTexture_rmun5")
 texture_hover = SubResource("AtlasTexture_f3wb6")
 stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Level 4"]
+position = Vector2(84.5, 84.5)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("10_wmypk")
 
 [node name="Level 5" type="TextureButton" parent="GridContainer"]
 texture_filter = 1
@@ -201,6 +222,11 @@ texture_pressed = SubResource("AtlasTexture_rugfu")
 texture_hover = SubResource("AtlasTexture_24yh7")
 stretch_mode = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Level 5"]
+position = Vector2(84.5, 84.5)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("10_wmypk")
+
 [node name="Level 6" type="TextureButton" parent="GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(168, 168)
@@ -209,6 +235,11 @@ texture_normal = SubResource("AtlasTexture_a1020")
 texture_pressed = SubResource("AtlasTexture_fkijg")
 texture_hover = SubResource("AtlasTexture_wl3qa")
 stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/Level 6"]
+position = Vector2(84.5, 84.5)
+scale = Vector2(3.96875, 3.96875)
+texture = ExtResource("10_wmypk")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/Level 1" to="." method="_on_level_1_pressed"]
