@@ -1,26 +1,84 @@
-[gd_scene load_steps=13 format=3 uid="uid://calwive56yyy6"]
+[gd_scene load_steps=25 format=3 uid="uid://calwive56yyy6"]
 
 [ext_resource type="Script" path="res://UI/Level Selection/level_selection.gd" id="1_dao3m"]
-[ext_resource type="Texture2D" uid="uid://cf115c8vlcp0w" path="res://icon.svg" id="1_env5a"]
 [ext_resource type="Script" path="res://UI/Level Selection/grid_container.gd" id="2_04lxy"]
+[ext_resource type="Texture2D" uid="uid://8bktagc1fhp3" path="res://Art/Level_selection_button_low1.png" id="3_yifrk"]
+[ext_resource type="Texture2D" uid="uid://caaiji0winlyp" path="res://Art/Level_selection_button_low_pressed.png" id="4_awbk6"]
+[ext_resource type="Texture2D" uid="uid://oiy34lxbveh4" path="res://Art/Level_selection_button_low_hover.png" id="5_ffapt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjwhv"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_wesk7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiatk"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(0, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8fmm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r0ah"]
+atlas = ExtResource("4_awbk6")
+region = Rect2(0, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvr7y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8b0c"]
+atlas = ExtResource("5_ffapt")
+region = Rect2(0, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p776u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkgy6"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(42, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sefco"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgd1b"]
+atlas = ExtResource("4_awbk6")
+region = Rect2(42, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cipc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wddk"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(42, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtw2r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpk8n"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(84, 0, 42, 42)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7r14r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn6qg"]
+atlas = ExtResource("4_awbk6")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci64b"]
+atlas = ExtResource("5_ffapt")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y28fu"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmun5"]
+atlas = ExtResource("4_awbk6")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3wb6"]
+atlas = ExtResource("5_ffapt")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ymut"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(0, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rugfu"]
+atlas = ExtResource("4_awbk6")
+region = Rect2(0, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24yh7"]
+atlas = ExtResource("5_ffapt")
+region = Rect2(0, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1020"]
+atlas = ExtResource("3_yifrk")
+region = Rect2(42, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkijg"]
+atlas = ExtResource("4_awbk6")
+region = Rect2(42, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl3qa"]
+atlas = ExtResource("5_ffapt")
+region = Rect2(42, 42, 42, 42)
 
 [node name="Level selection" type="Control"]
 layout_mode = 3
@@ -64,182 +122,69 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -278.0
-offset_top = -138.0
-offset_right = 278.0
-offset_bottom = 138.0
+offset_left = -256.0
+offset_top = -170.0
+offset_right = 256.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 4
+columns = 3
 script = ExtResource("2_04lxy")
 
-[node name="Level 1" type="Button" parent="GridContainer"]
+[node name="Level 1" type="TextureButton" parent="GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
 size_flags_horizontal = 0
-icon = ExtResource("1_env5a")
+texture_normal = SubResource("AtlasTexture_jiatk")
+texture_pressed = SubResource("AtlasTexture_8r0ah")
+texture_hover = SubResource("AtlasTexture_p8b0c")
+stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/Level 1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -88.0
-offset_right = 25.0
-offset_bottom = -65.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level1"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 2" type="Button" parent="GridContainer"]
+[node name="Level 2" type="TextureButton" parent="GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_v8fmm")
-icon = ExtResource("1_env5a")
+texture_normal = SubResource("AtlasTexture_rkgy6")
+texture_pressed = SubResource("AtlasTexture_hgd1b")
+texture_hover = SubResource("AtlasTexture_0wddk")
+stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/Level 2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -86.0
-offset_right = 25.0
-offset_bottom = -63.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level2"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 3" type="Button" parent="GridContainer"]
+[node name="Level 3" type="TextureButton" parent="GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_rvr7y")
-icon = ExtResource("1_env5a")
+texture_normal = SubResource("AtlasTexture_gpk8n")
+texture_pressed = SubResource("AtlasTexture_yn6qg")
+texture_hover = SubResource("AtlasTexture_ci64b")
+stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/Level 3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -88.0
-offset_right = 25.0
-offset_bottom = -65.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level3"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 4" type="Button" parent="GridContainer"]
+[node name="Level 4" type="TextureButton" parent="GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_p776u")
-icon = ExtResource("1_env5a")
+texture_normal = SubResource("AtlasTexture_y28fu")
+texture_pressed = SubResource("AtlasTexture_rmun5")
+texture_hover = SubResource("AtlasTexture_f3wb6")
+stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/Level 4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -85.0
-offset_right = 25.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level4"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 5" type="Button" parent="GridContainer"]
+[node name="Level 5" type="TextureButton" parent="GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sefco")
-icon = ExtResource("1_env5a")
+texture_normal = SubResource("AtlasTexture_6ymut")
+texture_pressed = SubResource("AtlasTexture_rugfu")
+texture_hover = SubResource("AtlasTexture_24yh7")
+stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/Level 5"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -87.0
-offset_right = 25.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level5"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 6" type="Button" parent="GridContainer"]
+[node name="Level 6" type="TextureButton" parent="GridContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3cipc")
-icon = ExtResource("1_env5a")
-
-[node name="Label" type="Label" parent="GridContainer/Level 6"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -85.0
-offset_right = 25.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level6"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 7" type="Button" parent="GridContainer"]
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qtw2r")
-icon = ExtResource("1_env5a")
-
-[node name="Label" type="Label" parent="GridContainer/Level 7"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -85.0
-offset_right = 25.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level7"
-label_settings = SubResource("LabelSettings_wesk7")
-
-[node name="Level 8" type="Button" parent="GridContainer"]
-layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7r14r")
-icon = ExtResource("1_env5a")
-
-[node name="Label" type="Label" parent="GridContainer/Level 8"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -83.0
-offset_right = 25.0
-offset_bottom = -60.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Level8"
-label_settings = SubResource("LabelSettings_wesk7")
+texture_normal = SubResource("AtlasTexture_a1020")
+texture_pressed = SubResource("AtlasTexture_fkijg")
+texture_hover = SubResource("AtlasTexture_wl3qa")
+stretch_mode = 0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/Level 1" to="." method="_on_level_1_pressed"]
@@ -248,5 +193,3 @@ label_settings = SubResource("LabelSettings_wesk7")
 [connection signal="pressed" from="GridContainer/Level 4" to="." method="_on_level_4_pressed"]
 [connection signal="pressed" from="GridContainer/Level 5" to="." method="_on_level_5_pressed"]
 [connection signal="pressed" from="GridContainer/Level 6" to="." method="_on_level_6_pressed"]
-[connection signal="pressed" from="GridContainer/Level 7" to="." method="_on_level_7_pressed"]
-[connection signal="pressed" from="GridContainer/Level 8" to="." method="_on_level_8_pressed"]
