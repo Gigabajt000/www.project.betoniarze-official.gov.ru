@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqhjvoghc7v7k"]
+[gd_scene load_steps=12 format=3 uid="uid://bqhjvoghc7v7k"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_yrsww"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_0u10q"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://vmtbxrprytn" path="res://UI/Pause_Menu/pause_menu.tscn" id="7_0i04q"]
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_0vtpn"]
 [ext_resource type="Script" path="res://World/nie_usuwaj_tego.gd" id="9_6631q"]
-[ext_resource type="PackedScene" uid="uid://d2r01xv4y3k2r" path="res://World/parallax_2d.tscn" id="10_f11no"]
 [ext_resource type="PackedScene" uid="uid://dhj6apym210ol" path="res://Tilemap/node_2d.tscn" id="11_atd2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl73h"]
@@ -56,7 +55,17 @@ metadata/_edit_use_anchors_ = true
 visible = false
 metadata/_edit_use_anchors_ = true
 
-[node name="Parallax2D" parent="CanvasLayer" instance=ExtResource("10_f11no")]
+[node name="Parallax2D" parent="CanvasLayer"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="Tilemap" parent="." instance=ExtResource("11_atd2n")]
 position = Vector2(-522, -182)
