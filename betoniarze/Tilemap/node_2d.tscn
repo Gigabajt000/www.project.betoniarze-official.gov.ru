@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_cnybo"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="2_3i2mj"]
 [ext_resource type="Script" path="res://Tilemap/Lava.gd" id="3_avkvn"]
+[ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="3_wgrpo"]
 
 [sub_resource type="Environment" id="Environment_tuy55"]
 background_mode = 3
@@ -92,10 +93,8 @@ texture = ExtResource("1_cnybo")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_m0fdm")
 
-[sub_resource type="SystemFont" id="SystemFont_bae04"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_6oy35"]
-font = SubResource("SystemFont_bae04")
+font = ExtResource("3_wgrpo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfh01"]
 size = Vector2(96, 43)
@@ -119,7 +118,7 @@ tile_map_data = PackedByteArray("AAD4////AAAAAAAAAAD4/wAAAAAAAAEAAAD5////AAABAAA
 tile_set = SubResource("TileSet_0nrtl")
 
 [node name="Winda" parent="." instance=ExtResource("2_3i2mj")]
-position = Vector2(772, -33)
+position = Vector2(772, -29)
 level = 1
 
 [node name="Label" type="Label" parent="."]
@@ -127,8 +126,8 @@ texture_filter = 1
 texture_repeat = 1
 offset_left = -64.0
 offset_top = -101.0
-offset_right = 147.0
-offset_bottom = -78.0
+offset_right = 178.0
+offset_bottom = -76.0
 text = "\"Left Click\" To Fire Bazooka"
 label_settings = SubResource("LabelSettings_6oy35")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bqwaxnk2ree4v"]
+[gd_scene load_steps=18 format=4 uid="uid://bqwaxnk2ree4v"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_prvxb"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="2_b08ty"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="4_ui7hr"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="5_whrur"]
 [ext_resource type="Script" path="res://Tilemap/Lava.gd" id="6_ovhbw"]
+[ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="6_rjmao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1entt"]
 texture = ExtResource("1_prvxb")
@@ -87,6 +88,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1entt")
 
 [sub_resource type="LabelSettings" id="LabelSettings_6r54a"]
+font = ExtResource("6_rjmao")
 
 [sub_resource type="Environment" id="Environment_tslo8"]
 background_mode = 3
@@ -142,14 +144,15 @@ rotation = -1.5708
 Drzwi = NodePath("../Drzwi")
 
 [node name="Winda" parent="." instance=ExtResource("5_whrur")]
-position = Vector2(613, -50)
+position = Vector2(612, -61)
 level = 2
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 136.0
-offset_top = -62.0
-offset_right = 372.0
-offset_bottom = -39.0
+texture_filter = 1
+offset_left = 218.0
+offset_top = -76.0
+offset_right = 454.0
+offset_bottom = -53.0
 text = "Be Aware of the Spikes!"
 label_settings = SubResource("LabelSettings_6r54a")
 

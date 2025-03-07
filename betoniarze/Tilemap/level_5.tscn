@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cndrxykp5y7gu"]
+[gd_scene load_steps=14 format=4 uid="uid://cndrxykp5y7gu"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_8dkus"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_1g3md"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="6_cc87r"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="7_kkjlr"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="8_80p0n"]
+[ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="9_fxrj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdrji"]
 texture = ExtResource("1_8dkus")
@@ -89,6 +90,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bdrji")
 
 [sub_resource type="LabelSettings" id="LabelSettings_0a6jm"]
+font = ExtResource("9_fxrj0")
 
 [sub_resource type="Environment" id="Environment_3uiob"]
 background_mode = 3
@@ -160,11 +162,12 @@ position = Vector2(-975, -33)
 level = 5
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -730.0
-offset_top = -111.0
-offset_right = -432.0
-offset_bottom = -88.0
-text = "Wait! A Turret?! Try To Shoot It Maybe?"
+texture_filter = 1
+offset_left = -705.0
+offset_top = -106.0
+offset_right = -407.0
+offset_bottom = -83.0
+text = "Wait! A Turret?! Shoot To Stun IT!"
 label_settings = SubResource("LabelSettings_0a6jm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
