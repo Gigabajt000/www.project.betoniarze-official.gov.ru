@@ -8,7 +8,7 @@ var cos4
 var can_attack: bool = false
 
 var direction = 1
-var SPEED = 50
+var SPEED = 35
 
 func _ready() -> void:
 	velocity.x = SPEED

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dufjnqfscevao"]
+[gd_scene load_steps=16 format=3 uid="uid://dufjnqfscevao"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_p7y15"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_yskvw"]
@@ -11,8 +11,21 @@
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_7qy8w"]
 [ext_resource type="PackedScene" uid="uid://c0mhx884nbne4" path="res://Tilemap/level_6.tscn" id="10_2smdm"]
 [ext_resource type="PackedScene" uid="uid://bnowdgnrihfy3" path="res://Player/Enemy/Light_Enemy.tscn" id="11_ss4o8"]
+[ext_resource type="Script" path="res://Tilemap/Lava.gd" id="12_ivumc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e4x3"]
+size = Vector2(96, 43)
+
+[sub_resource type="Curve" id="Curve_q5xxh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6o2ph"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Level 6" type="Node2D"]
+position = Vector2(-8, 0)
 script = ExtResource("1_p7y15")
 
 [node name="Player" parent="." instance=ExtResource("2_yskvw")]
@@ -63,3 +76,1039 @@ target = NodePath("../Player")
 [node name="Light_Enemy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_ss4o8")]
 position = Vector2(-133, -267)
 target = NodePath("../Player")
+
+[node name="ColorRect23" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -693.0
+offset_top = -229.0
+offset_right = -597.0
+offset_bottom = -186.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect23"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect23/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect23"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect23"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect24" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -341.0
+offset_top = -224.0
+offset_right = -245.0
+offset_bottom = -181.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect24"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect24/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect24"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect24"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect25" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 11.0
+offset_top = -224.0
+offset_right = 107.0
+offset_bottom = -181.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect25"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect25/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect25"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect25"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect26" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 315.0
+offset_top = -181.0
+offset_right = 411.0
+offset_bottom = -138.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect26"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect26/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect26"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect26"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect27" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 667.0
+offset_top = -181.0
+offset_right = 763.0
+offset_bottom = -138.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect27"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect27/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect27"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect27"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect28" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 971.0
+offset_top = -224.0
+offset_right = 1067.0
+offset_bottom = -181.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect28"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect28/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect28"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect28"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect29" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 1067.0
+offset_top = -224.0
+offset_right = 1163.0
+offset_bottom = -181.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect29"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect29/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect29"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect29"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect30" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 1163.0
+offset_top = -224.0
+offset_right = 1259.0
+offset_bottom = -181.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect30"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect30/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect30"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect30"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect31" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -997.0
+offset_top = -277.0
+offset_right = -901.0
+offset_bottom = -234.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect31"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect31/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect31"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect31"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect32" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -773.0
+offset_top = -528.0
+offset_right = -677.0
+offset_bottom = -485.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect32"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect32/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect32"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect32"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect33" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -421.0
+offset_top = -528.0
+offset_right = -325.0
+offset_bottom = -485.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect33"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect33/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect33"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect33"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect34" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 283.0
+offset_top = -533.0
+offset_right = 379.0
+offset_bottom = -490.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect34"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect34/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect34"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect34"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect35" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 843.0
+offset_top = -752.0
+offset_right = 939.0
+offset_bottom = -709.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect35"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect35/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect35"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect35"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect36" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 1195.0
+offset_top = -752.0
+offset_right = 1291.0
+offset_bottom = -709.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect36"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect36/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect36"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect36"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect37" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 1547.0
+offset_top = -757.0
+offset_right = 1643.0
+offset_bottom = -714.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect37"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect37/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect37"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect37"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect38" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 235.0
+offset_top = -912.0
+offset_right = 331.0
+offset_bottom = -869.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect38"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect38/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect38"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect38"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect39" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -108.0
+offset_top = -912.0
+offset_right = -12.0
+offset_bottom = -869.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect39"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect39/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect39"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect39"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect40" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -1301.0
+offset_top = -320.0
+offset_right = -1205.0
+offset_bottom = -277.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect40"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect40/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect40"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect40"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect41" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -1397.0
+offset_top = -320.0
+offset_right = -1301.0
+offset_bottom = -277.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect41"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect41/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect41"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect41"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect42" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 1851.0
+offset_top = -800.0
+offset_right = 1947.0
+offset_bottom = -757.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect42"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect42/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect42"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect42"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect43" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -1493.0
+offset_top = -320.0
+offset_right = -1397.0
+offset_bottom = -277.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect43"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect43/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect43"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect43"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect44" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = -1589.0
+offset_top = -320.0
+offset_right = -1493.0
+offset_bottom = -277.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect44"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect44/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect44"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect44"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect45" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+z_index = -1
+offset_left = 1947.0
+offset_top = -800.0
+offset_right = 2043.0
+offset_bottom = -757.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("12_ivumc")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect45"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect45/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_8e4x3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect45"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_q5xxh")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect45"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_6o2ph")
+color = Color(1, 0, 0, 1)
+
+[connection signal="body_entered" from="ColorRect23/Area2D" to="ColorRect23" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect24/Area2D" to="ColorRect24" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect25/Area2D" to="ColorRect25" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect26/Area2D" to="ColorRect26" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect27/Area2D" to="ColorRect27" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect28/Area2D" to="ColorRect28" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect29/Area2D" to="ColorRect29" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect30/Area2D" to="ColorRect30" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect31/Area2D" to="ColorRect31" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect32/Area2D" to="ColorRect32" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect33/Area2D" to="ColorRect33" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect34/Area2D" to="ColorRect34" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect35/Area2D" to="ColorRect35" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect36/Area2D" to="ColorRect36" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect37/Area2D" to="ColorRect37" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect38/Area2D" to="ColorRect38" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect39/Area2D" to="ColorRect39" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect40/Area2D" to="ColorRect40" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect41/Area2D" to="ColorRect41" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect42/Area2D" to="ColorRect42" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect43/Area2D" to="ColorRect43" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect44/Area2D" to="ColorRect44" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect45/Area2D" to="ColorRect45" method="_on_area_2d_body_entered"]

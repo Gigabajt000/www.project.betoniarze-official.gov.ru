@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c0mhx884nbne4"]
+[gd_scene load_steps=12 format=4 uid="uid://c0mhx884nbne4"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_68kwh"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="2_1ybgn"]
@@ -140,6 +140,15 @@ texture = ExtResource("1_68kwh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w06ni")
 
+[sub_resource type="Environment" id="Environment_vi12m"]
+background_mode = 3
+background_color = Color(1, 0.533333, 0.227451, 1)
+glow_enabled = true
+glow_intensity = 5.18
+glow_strength = 1.02
+glow_mix = 0.26
+glow_bloom = 0.1
+
 [node name="Level6" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -214,3 +223,6 @@ position = Vector2(714, -313)
 
 [node name="Beczka_Wybuchowa3" parent="." instance=ExtResource("4_y33qw")]
 position = Vector2(1258, -99)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vi12m")

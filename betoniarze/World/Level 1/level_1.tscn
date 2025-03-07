@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqhjvoghc7v7k"]
+[gd_scene load_steps=12 format=3 uid="uid://bqhjvoghc7v7k"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_yrsww"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_0u10q"]
@@ -10,27 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_0vtpn"]
 [ext_resource type="Script" path="res://World/nie_usuwaj_tego.gd" id="9_6631q"]
 [ext_resource type="PackedScene" uid="uid://d2r01xv4y3k2r" path="res://World/parallax_2d.tscn" id="10_f11no"]
-[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="10_oovmt"]
 [ext_resource type="PackedScene" uid="uid://dhj6apym210ol" path="res://Tilemap/node_2d.tscn" id="11_atd2n"]
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_yrsww")
-
-[node name="Label" type="Label" parent="."]
-texture_filter = 1
-texture_repeat = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -395.5
-offset_right = 25.0
-offset_bottom = -372.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "level 1"
 
 [node name="Player" parent="." instance=ExtResource("2_0u10q")]
 position = Vector2(-619, -212)
@@ -72,9 +55,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Parallax2D" parent="CanvasLayer" instance=ExtResource("10_f11no")]
 
-[node name="Winda" parent="." instance=ExtResource("10_oovmt")]
-position = Vector2(126, -207)
-level = 1
-
 [node name="Tilemap" parent="." instance=ExtResource("11_atd2n")]
 position = Vector2(-522, -182)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
