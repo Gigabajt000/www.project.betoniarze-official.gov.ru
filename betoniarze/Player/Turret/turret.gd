@@ -15,28 +15,28 @@ func Turret():
 
 func _process(delta: float) -> void:
 	if abs(rotation) >= deg_to_rad(180):
-		$Sprite2D.flip_h = true
-		$Sprite2D.flip_v = true
-	else:
 		$Sprite2D.flip_h = false
 		$Sprite2D.flip_v = false
+	else:
+		$Sprite2D.flip_h = true
+		$Sprite2D.flip_v = true
 	
 	if look_at_player == false:
 		transform = transform.interpolate_with(deafult_transform, 3 * delta)
 	if look_at_player == true and gracz != null:
-		look_at(gracz.global_position)
+		$Sprite2D.look_at(gracz.global_position)
 	
-	if $RayCast2D.get_collider() is StaticBody2D or $RayCast2D.get_collider() == null:
+	if $Sprite2D/RayCast2D.get_collider() is StaticBody2D or $Sprite2D/RayCast2D.get_collider() == null:
 		attacking = false
 		look_at_player = false
-	if $RayCast2D.get_collider() is RigidBody2D:
+	if $Sprite2D/RayCast2D.get_collider() is RigidBody2D:
 		look_at_player = true
 
 		
 	for o in $Wykrywanie.get_overlapping_bodies():
 		if o.has_method("Player"):
 			gracz = o
-			$RayCast2D.look_at(gracz.global_position)
+			$Sprite2D/RayCast2D.look_at(gracz.global_position)
 			
 
 func _ready():
@@ -45,7 +45,7 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	for o in $Area2D.get_overlapping_bodies():
+	for o in $Sprite2D/Area2D.get_overlapping_bodies():
 		if o.has_method("Player"):
 			
 			attacking = true
@@ -55,10 +55,10 @@ func _physics_process(delta):
 	if Global.stun == true:
 		timer = 0
 	
-	if attacking == true and not $RayCast2D.get_collider() is StaticBody2D and Global.stun == false:
+	if attacking == true and not $Sprite2D/RayCast2D.get_collider() is StaticBody2D and Global.stun == false:
 		timer = timer + delta
 	
-	if attacking == true and timer >= 4 and not $RayCast2D.get_collider() is StaticBody2D:
+	if attacking == true and timer >= 4 and not $Sprite2D/RayCast2D.get_collider() is StaticBody2D:
 		atak()
 		timer = 0
 
@@ -66,7 +66,7 @@ func _physics_process(delta):
 func atak():
 	var bullet = bullet_path.instantiate()
 	bullet.direction = global_rotation
-	bullet.pos = $Node2D.global_position
+	bullet.pos = $Sprite2D/Node2D.global_position
 	get_parent().add_child(bullet)
 
 	

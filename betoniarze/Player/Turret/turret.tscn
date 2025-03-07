@@ -20,9 +20,6 @@ radius = 140.004
 script = ExtResource("1_7lw66")
 progress_bar = NodePath("ProgressBar")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(140, 0)
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_r28ep")
@@ -41,6 +38,26 @@ texture_filter = 1
 texture = ExtResource("2_od4ew")
 flip_h = true
 
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(-65, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(135.25, 0)
+shape = SubResource("RectangleShape2D_8244u")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D/Area2D"]
+offset_left = 65.0
+offset_top = -7.0
+offset_right = 205.0
+offset_bottom = 6.0
+color = Color(1, 1, 1, 0.0941176)
+
+[node name="Node2D" type="Node2D" parent="Sprite2D"]
+position = Vector2(18, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite2D"]
+target_position = Vector2(140, 0)
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
@@ -55,28 +72,11 @@ grow_horizontal = 2
 grow_vertical = 0
 show_percentage = false
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-65, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(135.25, 0)
-shape = SubResource("RectangleShape2D_8244u")
-
-[node name="ColorRect" type="ColorRect" parent="Area2D"]
-offset_left = 65.0
-offset_top = -7.0
-offset_right = 205.0
-offset_bottom = 6.0
-color = Color(1, 1, 1, 0.0941176)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-72, -1)
-
 [node name="Wykrywanie" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wykrywanie"]
 shape = SubResource("CircleShape2D_tf4wg")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="Wykrywanie" to="." method="_on_wykrywanie_body_exited"]
