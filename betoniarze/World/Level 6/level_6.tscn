@@ -52,14 +52,14 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kes1t"]
-size = Vector2(48, 51.25)
+size = Vector2(64, 51.25)
 
 [node name="Level 6" type="Node2D"]
 position = Vector2(-8, 0)
 script = ExtResource("1_p7y15")
 
 [node name="Player" parent="." instance=ExtResource("2_yskvw")]
-position = Vector2(-1110, -359)
+position = Vector2(-460, -255)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
@@ -727,9 +727,9 @@ color = Color(1, 0, 0, 1)
 modulate = Color(2, 2, 2, 1)
 z_index = -1
 offset_left = 1547.0
-offset_top = -757.0
+offset_top = -754.0
 offset_right = 1643.0
-offset_bottom = -714.0
+offset_bottom = -711.0
 color = Color(1, 0.282353, 0.0117647, 1)
 script = ExtResource("12_ivumc")
 x = NodePath("CPUParticles2D_Zabicie")
@@ -869,7 +869,7 @@ x = NodePath("CPUParticles2D_Zabicie")
 [node name="Area2D" type="Area2D" parent="ColorRect40"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect40/Area2D"]
-position = Vector2(48, 21.5)
+position = Vector2(48, 21)
 shape = SubResource("RectangleShape2D_8e4x3")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect40"]
@@ -1390,15 +1390,22 @@ shape = SubResource("RectangleShape2D_kes1t")
 position = Vector2(896, -414)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D28"]
-position = Vector2(-285, -448.375)
+position = Vector2(-277, -448.375)
 shape = SubResource("RectangleShape2D_kes1t")
 
 [node name="StaticBody2D29" type="StaticBody2D" parent="."]
 position = Vector2(1904, -462)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D29"]
-position = Vector2(-285, -448.375)
+position = Vector2(-277, -449)
 shape = SubResource("RectangleShape2D_kes1t")
+
+[node name="StaticBody2D30" type="StaticBody2D" parent="."]
+position = Vector2(656, -1311)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D30"]
+position = Vector2(-101, 225)
+shape = SubResource("RectangleShape2D_ex5cq")
 
 [connection signal="body_entered" from="ColorRect23/Area2D" to="ColorRect23" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect24/Area2D" to="ColorRect24" method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcpou0mrjchfq"]
+[gd_scene load_steps=9 format=3 uid="uid://bcpou0mrjchfq"]
 
 [ext_resource type="Script" path="res://UI/Death_Screen/death_screen.gd" id="1_md0f3"]
 [ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="2_0h7pp"]
@@ -9,6 +9,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_gdck6"]
 font = ExtResource("2_0h7pp")
 font_size = 140
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhlsf"]
+font = ExtResource("2_0h7pp")
+font_size = 70
 
 [sub_resource type="LabelSettings" id="LabelSettings_iu36v"]
 font = ExtResource("2_0h7pp")
@@ -54,6 +58,13 @@ theme_override_constants/separation = 35
 layout_mode = 2
 text = "You Died"
 label_settings = SubResource("LabelSettings_gdck6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Get Good!"
+label_settings = SubResource("LabelSettings_rhlsf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
