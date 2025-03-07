@@ -15,16 +15,6 @@ func _on_level_1_pressed() -> void:
 		get_tree().change_scene_to_file("res://World/Level 1/level_1.tscn")
 	
 
-
-func _on_level_2_pressed() -> void:
-	if Global.level2 == true:
-		FadeIn.transition()
-		await FadeIn.on_transition_finished
-		Global.IsAlive = true
-		get_tree().change_scene_to_file("res://World/Level 2/level_2.tscn")
-	
-
-
 func _on_level_3_pressed() -> void:
 	if Global.level3 == true:
 		FadeIn.transition()
@@ -75,3 +65,11 @@ func _on_level_8_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/Main_Menu/main_menu.tscn")
+
+
+func _on_level_2_pressed():
+	if Global.level2 == true:
+		FadeIn.transition()
+		await FadeIn.on_transition_finished
+		Global.IsAlive = true
+		get_tree().change_scene_to_file("res://World/Level 2/level_2.tscn")

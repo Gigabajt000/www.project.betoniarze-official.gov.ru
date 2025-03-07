@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://i2p4cgaqayu5"]
+[gd_scene load_steps=14 format=4 uid="uid://i2p4cgaqayu5"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_i7fik"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_n1jt4"]
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="3_1lj4g"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="4_adko3"]
-[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="5_o0h0s"]
 [ext_resource type="Script" path="res://Tilemap/Lava.gd" id="6_4vdvb"]
 [ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="6_ofg3i"]
 
@@ -123,10 +122,6 @@ position = Vector2(99, -67)
 [node name="Przycisk" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("3_1lj4g")]
 position = Vector2(1088, -41)
 Drzwi = NodePath("../Drzwi")
-
-[node name="Winda" parent="." instance=ExtResource("5_o0h0s")]
-position = Vector2(-294, -173)
-level = 3
 
 [node name="Kolce" parent="." instance=ExtResource("4_adko3")]
 position = Vector2(720, -13)

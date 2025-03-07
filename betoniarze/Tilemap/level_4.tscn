@@ -1,11 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://f20dewbteyj0"]
+[gd_scene load_steps=16 format=4 uid="uid://f20dewbteyj0"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_ewx8w"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_ww701"]
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="3_iwis1"]
 [ext_resource type="PackedScene" uid="uid://ctw4nlxqryxer" path="res://Player/Enemy/heavy_enemy.tscn" id="4_kw4yh"]
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="5_jss23"]
-[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="6_jowga"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="7_2mua4"]
 [ext_resource type="Script" path="res://Tilemap/Lava.gd" id="8_g23rj"]
 [ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="8_gqs0p"]
@@ -145,10 +144,6 @@ position = Vector2(-686, -41)
 
 [node name="Beczka_Wybuchowa2" parent="." instance=ExtResource("5_jss23")]
 position = Vector2(-871, -189)
-
-[node name="Winda" parent="." instance=ExtResource("6_jowga")]
-position = Vector2(-1050, -77)
-level = 4
 
 [node name="Kolce" parent="." instance=ExtResource("7_2mua4")]
 position = Vector2(-272, -13)

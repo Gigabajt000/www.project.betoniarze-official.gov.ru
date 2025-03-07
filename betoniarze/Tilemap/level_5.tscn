@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cndrxykp5y7gu"]
+[gd_scene load_steps=13 format=4 uid="uid://cndrxykp5y7gu"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_8dkus"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="2_1g3md"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="5_5aw8b"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="6_cc87r"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="7_kkjlr"]
-[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="8_80p0n"]
 [ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="9_fxrj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdrji"]
@@ -154,10 +153,6 @@ position = Vector2(138, -285)
 
 [node name="Turret" parent="." instance=ExtResource("7_kkjlr")]
 position = Vector2(-680, -18)
-
-[node name="Winda" parent="." instance=ExtResource("8_80p0n")]
-position = Vector2(-975, -33)
-level = 5
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 1

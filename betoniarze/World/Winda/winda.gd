@@ -14,7 +14,6 @@ func _process(_delta: float) -> void:
 			2:
 				FadeIn.transition()
 				await FadeIn.on_transition_finished
-				print("a")
 				Global.level3 = true
 				get_tree().change_scene_to_file("res://World/Level 3/level_3.tscn")
 			3:

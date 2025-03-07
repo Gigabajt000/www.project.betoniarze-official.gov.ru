@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dufjnqfscevao"]
+[gd_scene load_steps=22 format=3 uid="uid://dufjnqfscevao"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_p7y15"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_yskvw"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c0mhx884nbne4" path="res://Tilemap/level_6.tscn" id="10_2smdm"]
 [ext_resource type="PackedScene" uid="uid://bnowdgnrihfy3" path="res://Player/Enemy/Light_Enemy.tscn" id="11_ss4o8"]
 [ext_resource type="Script" path="res://Tilemap/Lava.gd" id="12_ivumc"]
+[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="13_71r7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e4x3"]
 size = Vector2(96, 43)
@@ -1315,6 +1316,10 @@ position = Vector2(1457, -1234)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D27"]
 position = Vector2(-670, 875.5)
 shape = SubResource("RectangleShape2D_eiosh")
+
+[node name="Winda" parent="." instance=ExtResource("13_71r7a")]
+position = Vector2(-293, -946)
+level = 6
 
 [connection signal="body_entered" from="ColorRect23/Area2D" to="ColorRect23" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect24/Area2D" to="ColorRect24" method="_on_area_2d_body_entered"]

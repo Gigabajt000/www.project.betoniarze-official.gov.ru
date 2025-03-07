@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://c0mhx884nbne4"]
+[gd_scene load_steps=11 format=4 uid="uid://c0mhx884nbne4"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_68kwh"]
 [ext_resource type="PackedScene" uid="uid://b0phpr1x2jtf1" path="res://Player/Turret/turret.tscn" id="2_1ybgn"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cy321p2ckls7j" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.tscn" id="4_y33qw"]
 [ext_resource type="PackedScene" uid="uid://cfgt0menksvxi" path="res://Player/Przycisk/przycisk.tscn" id="5_cl62p"]
 [ext_resource type="PackedScene" uid="uid://b32l5t0agidxy" path="res://Player/Drzwi/drzwi.tscn" id="6_6qvsg"]
-[ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="7_lhc7a"]
 [ext_resource type="PackedScene" uid="uid://t8pscco1c6y3" path="res://Player/Kolce/kolce.tscn" id="8_qeyej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w06ni"]
@@ -128,10 +127,6 @@ Drzwi = NodePath("../Drzwi2")
 
 [node name="Drzwi2" parent="." instance=ExtResource("6_6qvsg")]
 position = Vector2(1030, -755)
-
-[node name="Winda" parent="." instance=ExtResource("7_lhc7a")]
-position = Vector2(164, -722)
-level = 6
 
 [node name="Turret2" parent="." instance=ExtResource("2_1ybgn")]
 position = Vector2(-402, -66)
