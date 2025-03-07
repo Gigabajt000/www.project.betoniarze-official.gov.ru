@@ -123,22 +123,20 @@ position = Vector2(319, -279)
 position = Vector2(351, -13)
 
 [node name="Kolce" parent="." instance=ExtResource("6_cc87r")]
-position = Vector2(249, -9)
+position = Vector2(240, -13)
+scale = Vector2(1, 1)
 
 [node name="Kolce2" parent="." instance=ExtResource("6_cc87r")]
-position = Vector2(262, -9)
-
-[node name="Kolce3" parent="." instance=ExtResource("6_cc87r")]
-position = Vector2(275, -9)
+position = Vector2(272, -13)
+scale = Vector2(1, 1)
 
 [node name="Kolce4" parent="." instance=ExtResource("6_cc87r")]
-position = Vector2(577, -249)
+position = Vector2(576, -253)
+scale = Vector2(1, 1)
 
 [node name="Kolce5" parent="." instance=ExtResource("6_cc87r")]
-position = Vector2(590, -249)
-
-[node name="Kolce6" parent="." instance=ExtResource("6_cc87r")]
-position = Vector2(603, -249)
+position = Vector2(608, -253)
+scale = Vector2(1, 1)
 
 [node name="Drzwi2" parent="." instance=ExtResource("2_1g3md")]
 position = Vector2(-349, -66)

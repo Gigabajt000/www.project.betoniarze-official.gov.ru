@@ -143,13 +143,16 @@ position = Vector2(337, -343)
 position = Vector2(1525, -568)
 
 [node name="Kolce" parent="." instance=ExtResource("8_qeyej")]
-position = Vector2(2220, -585)
+position = Vector2(2240, -589)
+scale = Vector2(1, 1)
 
 [node name="Kolce2" parent="." instance=ExtResource("8_qeyej")]
-position = Vector2(2233, -585)
+position = Vector2(2272, -589)
+scale = Vector2(1, 1)
 
 [node name="Kolce3" parent="." instance=ExtResource("8_qeyej")]
-position = Vector2(2246, -585)
+position = Vector2(2304, -589)
+scale = Vector2(1, 1)
 
 [node name="Turret3" parent="." instance=ExtResource("2_1ybgn")]
 position = Vector2(346, -708)
@@ -161,13 +164,12 @@ position = Vector2(641, -727)
 position = Vector2(507, -316)
 
 [node name="Kolce4" parent="." instance=ExtResource("8_qeyej")]
-position = Vector2(688, -313)
+position = Vector2(672, -317)
+scale = Vector2(1, 1)
 
 [node name="Kolce5" parent="." instance=ExtResource("8_qeyej")]
-position = Vector2(701, -313)
-
-[node name="Kolce6" parent="." instance=ExtResource("8_qeyej")]
-position = Vector2(714, -313)
+position = Vector2(704, -317)
+scale = Vector2(1, 1)
 
 [node name="Beczka_Wybuchowa3" parent="." instance=ExtResource("4_y33qw")]
 position = Vector2(1256, -99)

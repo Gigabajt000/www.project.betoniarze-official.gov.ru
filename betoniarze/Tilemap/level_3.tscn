@@ -124,24 +124,25 @@ position = Vector2(99, -67)
 position = Vector2(1088, -41)
 Drzwi = NodePath("../Drzwi")
 
-[node name="Kolce" parent="." instance=ExtResource("4_adko3")]
-position = Vector2(712, -10)
-
-[node name="Kolce2" parent="." instance=ExtResource("4_adko3")]
-position = Vector2(699, -10)
-
 [node name="Winda" parent="." instance=ExtResource("5_o0h0s")]
 position = Vector2(-294, -173)
 level = 3
 
+[node name="Kolce" parent="." instance=ExtResource("4_adko3")]
+position = Vector2(720, -13)
+scale = Vector2(1, 1)
+
+[node name="Kolce2" parent="." instance=ExtResource("4_adko3")]
+position = Vector2(688, -13)
+scale = Vector2(1, 1)
+
 [node name="Kolce3" parent="." instance=ExtResource("4_adko3")]
-position = Vector2(-345, -9)
+position = Vector2(-368, -13)
+scale = Vector2(1, 1)
 
 [node name="Kolce4" parent="." instance=ExtResource("4_adko3")]
-position = Vector2(-332, -9)
-
-[node name="Kolce5" parent="." instance=ExtResource("4_adko3")]
-position = Vector2(-319, -9)
+position = Vector2(-336, -13)
+scale = Vector2(1, 1)
 
 [node name="Przycisk2" parent="." node_paths=PackedStringArray("Drzwi") instance=ExtResource("3_1lj4g")]
 position = Vector2(-1056, -90)

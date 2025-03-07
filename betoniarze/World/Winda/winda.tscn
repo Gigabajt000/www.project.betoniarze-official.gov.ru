@@ -114,8 +114,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_poxdj"]
-radius = 38.0526
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt72r"]
+size = Vector2(57, 48)
 
 [node name="Winda" type="Node2D"]
 texture_filter = 1
@@ -128,7 +128,8 @@ animation = &"open"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_poxdj")
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_qt72r")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

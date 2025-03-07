@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		#Animacja Smierci trzeba zrobic tutaj
 		
 		x = x + delta
-		if x >= 1:
+		if x >= 0.3:
 			queue_free()
 	
 	
