@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dufjnqfscevao"]
+[gd_scene load_steps=26 format=3 uid="uid://dufjnqfscevao"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_p7y15"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_yskvw"]
@@ -51,12 +51,15 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kes1t"]
+size = Vector2(48, 51.25)
+
 [node name="Level 6" type="Node2D"]
 position = Vector2(-8, 0)
 script = ExtResource("1_p7y15")
 
 [node name="Player" parent="." instance=ExtResource("2_yskvw")]
-position = Vector2(-483, -260)
+position = Vector2(-1110, -359)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
@@ -1375,6 +1378,27 @@ scale_amount_min = 4.0
 scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_p2o55")
 color = Color(1, 0, 0, 1)
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2(-285, -448.375)
+shape = SubResource("RectangleShape2D_kes1t")
+
+[node name="StaticBody2D28" type="StaticBody2D" parent="."]
+position = Vector2(896, -414)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D28"]
+position = Vector2(-285, -448.375)
+shape = SubResource("RectangleShape2D_kes1t")
+
+[node name="StaticBody2D29" type="StaticBody2D" parent="."]
+position = Vector2(1904, -462)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D29"]
+position = Vector2(-285, -448.375)
+shape = SubResource("RectangleShape2D_kes1t")
 
 [connection signal="body_entered" from="ColorRect23/Area2D" to="ColorRect23" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect24/Area2D" to="ColorRect24" method="_on_area_2d_body_entered"]
