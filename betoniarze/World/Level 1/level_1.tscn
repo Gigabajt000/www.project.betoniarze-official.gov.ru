@@ -80,4 +80,4 @@ position = Vector2(-170, -159.5)
 shape = SubResource("RectangleShape2D_jl73h")
 
 [node name="Winda111" parent="." instance=ExtResource("11_xmmgf")]
-position = Vector2(240, -211)
+position = Vector2(125, -211)

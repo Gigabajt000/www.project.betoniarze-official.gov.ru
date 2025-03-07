@@ -115,7 +115,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6ecf"]
-size = Vector2(57, 48)
+size = Vector2(87, 48)
 
 [node name="Winda111" type="Node2D"]
 script = ExtResource("1_7xay8")

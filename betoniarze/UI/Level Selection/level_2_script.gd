@@ -2,9 +2,6 @@ extends TextureButton
 
 
 
-
-
-
 func _on_pressed():
 	if Global.level2 == true:
 		FadeIn.transition()
