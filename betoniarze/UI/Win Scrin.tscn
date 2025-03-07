@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4ji0tinw6k61"]
+[gd_scene load_steps=3 format=3 uid="uid://d4ji0tinw6k61"]
+
+[ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="1_3xrvb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5f8au"]
-font_size = 80
+font = ExtResource("1_3xrvb")
+font_size = 120
 
 [node name="Control" type="Control"]
 layout_mode = 3

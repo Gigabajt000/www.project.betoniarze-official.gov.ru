@@ -1,10 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv5q2blr7onvn"]
+[gd_scene load_steps=12 format=3 uid="uid://cv5q2blr7onvn"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu/main_menu.gd" id="1_541ho"]
 [ext_resource type="Texture2D" uid="uid://dorv5tosmcv2x" path="res://Art/476441310_3875020276074030_3093440147093967702_n (1).jpg" id="2_s1fwa"]
+[ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="3_rmq2k"]
+[ext_resource type="Texture2D" uid="uid://g58t33isgr20" path="res://Art/button_long.png" id="4_knfq3"]
+[ext_resource type="Texture2D" uid="uid://bfiiwglap6ipl" path="res://Art/button_long_pressed.png" id="5_aha3w"]
+[ext_resource type="Texture2D" uid="uid://b1jbkuljxjnml" path="res://Art/button_long_hover.png" id="6_w44ec"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dqsex"]
+font = ExtResource("3_rmq2k")
 font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_gi6ja"]
+font = ExtResource("3_rmq2k")
+font_size = 25
 
 [sub_resource type="Animation" id="Animation_3cyp6"]
 length = 0.001
@@ -77,6 +86,7 @@ grow_vertical = 2
 script = ExtResource("1_541ho")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -128,20 +138,81 @@ theme_override_constants/separation = 35
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Main Menu"
 label_settings = SubResource("LabelSettings_dqsex")
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_knfq3")
+texture_pressed = ExtResource("5_aha3w")
+texture_hover = ExtResource("6_w44ec")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Play"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -11.5
+offset_right = 14.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Play"
+label_settings = SubResource("LabelSettings_gi6ja")
 
-[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "    Settings    "
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_knfq3")
+texture_pressed = ExtResource("5_aha3w")
+texture_hover = ExtResource("6_w44ec")
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -11.5
+offset_right = 29.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_gi6ja")
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_knfq3")
+texture_pressed = ExtResource("5_aha3w")
+texture_hover = ExtResource("6_w44ec")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Quit"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.5
+offset_top = -11.5
+offset_right = 13.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Quit"
+label_settings = SubResource("LabelSettings_gi6ja")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

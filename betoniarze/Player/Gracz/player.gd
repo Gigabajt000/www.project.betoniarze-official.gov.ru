@@ -30,7 +30,7 @@ var x : float = 0
 func _physics_process(delta: float) -> void:
 	
 	if linear_velocity.y < 0:
-		gravity_scale = 2
+		gravity_scale = 3
 	if linear_velocity.y >= 0:
 		gravity_scale = 1
 	

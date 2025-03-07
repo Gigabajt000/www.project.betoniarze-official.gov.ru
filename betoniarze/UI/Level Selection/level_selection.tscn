@@ -1,12 +1,18 @@
-[gd_scene load_steps=25 format=3 uid="uid://calwive56yyy6"]
+[gd_scene load_steps=29 format=3 uid="uid://calwive56yyy6"]
 
 [ext_resource type="Script" path="res://UI/Level Selection/level_selection.gd" id="1_dao3m"]
 [ext_resource type="Script" path="res://UI/Level Selection/grid_container.gd" id="2_04lxy"]
+[ext_resource type="Texture2D" uid="uid://g58t33isgr20" path="res://Art/button_long.png" id="2_a4bcb"]
+[ext_resource type="Texture2D" uid="uid://bfiiwglap6ipl" path="res://Art/button_long_pressed.png" id="3_oh53j"]
 [ext_resource type="Texture2D" uid="uid://8bktagc1fhp3" path="res://Art/Level_selection_button_low1.png" id="3_yifrk"]
 [ext_resource type="Texture2D" uid="uid://caaiji0winlyp" path="res://Art/Level_selection_button_low_pressed.png" id="4_awbk6"]
+[ext_resource type="Texture2D" uid="uid://b1jbkuljxjnml" path="res://Art/button_long_hover.png" id="4_gau8x"]
+[ext_resource type="FontFile" uid="uid://c6wh8dcnatflp" path="res://Art/BitPotionExt.ttf" id="5_2m05j"]
 [ext_resource type="Texture2D" uid="uid://oiy34lxbveh4" path="res://Art/Level_selection_button_low_hover.png" id="5_ffapt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjwhv"]
+[sub_resource type="LabelSettings" id="LabelSettings_sno66"]
+font = ExtResource("5_2m05j")
+font_size = 25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jiatk"]
 atlas = ExtResource("3_yifrk")
@@ -28,8 +34,8 @@ region = Rect2(42, 0, 42, 42)
 atlas = ExtResource("4_awbk6")
 region = Rect2(42, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0wddk"]
-atlas = ExtResource("3_yifrk")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca1gq"]
+atlas = ExtResource("5_ffapt")
 region = Rect2(42, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpk8n"]
@@ -98,22 +104,40 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.596078)
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -438.5
-offset_top = -61.0
-offset_right = 438.5
-offset_bottom = -30.0
+offset_left = -143.0
+offset_top = -53.0
+offset_right = 143.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hjwhv")
+texture_normal = ExtResource("2_a4bcb")
+texture_pressed = ExtResource("3_oh53j")
+texture_hover = ExtResource("4_gau8x")
+
+[node name="Label" type="Label" parent="Button"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Back"
+label_settings = SubResource("LabelSettings_sno66")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -147,7 +171,7 @@ custom_minimum_size = Vector2(168, 168)
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_rkgy6")
 texture_pressed = SubResource("AtlasTexture_hgd1b")
-texture_hover = SubResource("AtlasTexture_0wddk")
+texture_hover = SubResource("AtlasTexture_ca1gq")
 stretch_mode = 0
 
 [node name="Level 3" type="TextureButton" parent="GridContainer"]

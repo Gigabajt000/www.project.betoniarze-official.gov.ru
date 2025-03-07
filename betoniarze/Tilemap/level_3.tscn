@@ -559,9 +559,9 @@ color = Color(1, 0, 0, 1)
 [node name="ColorRect10" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
 modulate = Color(2, 2, 2, 1)
 z_index = -1
-offset_left = -1089.0
+offset_left = -1088.0
 offset_top = -43.0
-offset_right = -993.0
+offset_right = -992.0
 color = Color(1, 0.282353, 0.0117647, 1)
 script = ExtResource("6_4vdvb")
 x = NodePath("../CPUParticles2D_Zabicie")
