@@ -154,3 +154,10 @@ shape = SubResource("RectangleShape2D_tcuys")
 [node name="Winda" parent="." instance=ExtResource("12_7exlj")]
 position = Vector2(-1328, -410)
 level = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 113.0
+offset_top = -150.0
+offset_right = 1745.0
+offset_bottom = 234.0
+color = Color(0, 0, 0, 1)

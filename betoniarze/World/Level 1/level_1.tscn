@@ -81,3 +81,10 @@ shape = SubResource("RectangleShape2D_jl73h")
 
 [node name="Winda111" parent="." instance=ExtResource("11_xmmgf")]
 position = Vector2(259, -211)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2459.0
+offset_top = -61.0
+offset_right = -827.0
+offset_bottom = 323.0
+color = Color(0, 0, 0, 1)
