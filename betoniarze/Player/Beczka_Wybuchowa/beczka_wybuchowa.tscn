@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy321p2ckls7j"]
+[gd_scene load_steps=7 format=3 uid="uid://cy321p2ckls7j"]
 
 [ext_resource type="Script" path="res://Player/Beczka_Wybuchowa/beczka_wybuchowa.gd" id="1_oew65"]
 [ext_resource type="Texture2D" uid="uid://c41rh5g6n8gpg" path="res://Art/Barrel_bomb.png" id="2_ta6ms"]
+[ext_resource type="AudioStream" uid="uid://c3jrnbd2ybp2v" path="res://Sound/explosion (6).wav" id="3_hac38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicup"]
 size = Vector2(17, 22)
@@ -46,5 +47,9 @@ scale_amount_min = 9.0
 scale_amount_max = 16.0
 scale_amount_curve = SubResource("Curve_r50c7")
 color = Color(1, 0.411765, 0.0862745, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hac38")
+volume_db = -13.357
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
