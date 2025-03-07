@@ -12,7 +12,6 @@ func _physics_process(delta):
 			var force = (o.global_position - global_position).normalized()
 			
 			force *= Vector2(600,100)
-			print(force)
 			o.velocity += force
 			o.move_and_slide()
 			queue_free()
@@ -22,7 +21,6 @@ func _physics_process(delta):
 			var force = (o.srodek.global_position - global_position).normalized()
 			force *= 700
 			o.linear_velocity = force
-			print(o.linear_velocity)
 			queue_free()
 			
 			

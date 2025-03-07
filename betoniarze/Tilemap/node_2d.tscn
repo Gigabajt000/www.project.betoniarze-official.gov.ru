@@ -1,7 +1,17 @@
-[gd_scene load_steps=6 format=4 uid="uid://dhj6apym210ol"]
+[gd_scene load_steps=11 format=4 uid="uid://dhj6apym210ol"]
 
 [ext_resource type="Texture2D" uid="uid://deboo08hve8p4" path="res://Art/tilemap_ground.png" id="1_cnybo"]
 [ext_resource type="PackedScene" uid="uid://cc3ic18s4652p" path="res://World/Winda/winda.tscn" id="2_3i2mj"]
+[ext_resource type="Script" path="res://Tilemap/Lava.gd" id="3_avkvn"]
+
+[sub_resource type="Environment" id="Environment_tuy55"]
+background_mode = 3
+background_color = Color(1, 0.533333, 0.227451, 1)
+glow_enabled = true
+glow_intensity = 5.18
+glow_strength = 1.02
+glow_mix = 0.26
+glow_bloom = 0.1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0fdm"]
 texture = ExtResource("1_cnybo")
@@ -136,11 +146,25 @@ sources/0 = SubResource("TileSetAtlasSource_m0fdm")
 
 [sub_resource type="LabelSettings" id="LabelSettings_6oy35"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfh01"]
+size = Vector2(96, 43)
+
+[sub_resource type="Curve" id="Curve_d5ijk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.142857), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ern3t"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Tilemap" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tuy55")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAD4////AAAAAAAAAAD4/wAAAAAAAAEAAAD5////AAABAAAAAAD5/wAAAAABAAEAAAD6////AAACAAAAAAD6/wAAAAACAAEAAAD7////AAADAAAAAAD7/wAAAAADAAEAAAD8////AAAEAAAAAAD8/wAAAAAEAAEAAAD9////AAAFAAAAAAD9/wAAAAAFAAEAAAD+////AAAGAAAAAAD+/wAAAAAGAAEAAAD/////AAAHAAAAAAD//wAAAAAHAAEAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAEAAAABAP//AAABAAAAAAABAAAAAAABAAEAAAACAP//AAACAAAAAAACAAAAAAACAAEAAAADAP//AAADAAAAAAADAAAAAAADAAEAAAAEAP//AAAEAAAAAAAEAAAAAAAEAAEAAAAFAP//AAAFAAAAAAAFAAAAAAAFAAEAAAAGAP//AAAGAAAAAAAGAAAAAAAGAAEAAAAHAP//AAAHAAAAAAAHAAAAAAAHAAEAAAD4/wEAAAAGAAIAAAD4/wIAAAAGAAMAAAD5/wEAAAAHAAIAAAD5/wIAAAAHAAMAAAD6/wEAAAAGAAIAAAD6/wIAAAAGAAMAAAD7/wEAAAAHAAIAAAD7/wIAAAAHAAMAAAD+/wEAAAAGAAIAAAD+/wIAAAAGAAMAAAD//wEAAAAHAAIAAAD//wIAAAAHAAMAAAAAAAEAAAAGAAIAAAAAAAIAAAAGAAMAAAABAAEAAAAHAAIAAAABAAIAAAAHAAMAAAAEAAEAAAAGAAIAAAAEAAIAAAAGAAMAAAAFAAEAAAAHAAIAAAAFAAIAAAAHAAMAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAHAAEAAAAHAAIAAAAHAAIAAAAHAAMAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAD8/wEAAAAEAAIAAAD8/wIAAAAEAAMAAAD9/wEAAAAFAAIAAAD9/wIAAAAFAAMAAAAOAP//AAAAAAAAAAAOAAAAAAAAAAEAAAAOAAEAAAAGAAIAAAAOAAIAAAAGAAMAAAAPAP//AAABAAAAAAAPAAAAAAABAAEAAAAPAAEAAAAHAAIAAAAPAAIAAAAHAAMAAAAQAP//AAACAAAAAAAQAAAAAAACAAEAAAAQAAEAAAAGAAIAAAAQAAIAAAAGAAMAAAARAP//AAADAAAAAAARAAAAAAADAAEAAAARAAEAAAAHAAIAAAARAAIAAAAHAAMAAAASAP//AAAEAAAAAAASAAAAAAAEAAEAAAASAAEAAAAEAAIAAAASAAIAAAAEAAMAAAATAP//AAAFAAAAAAATAAAAAAAFAAEAAAATAAEAAAAFAAIAAAATAAIAAAAFAAMAAAAUAP//AAAGAAAAAAAUAAAAAAAGAAEAAAAUAAEAAAAGAAIAAAAUAAIAAAAGAAMAAAAVAP//AAAHAAAAAAAVAAAAAAAHAAEAAAAVAAEAAAAHAAIAAAAVAAIAAAAHAAMAAAAWAP//AAAAAAAAAAAWAAAAAAAAAAEAAAAWAAEAAAAGAAIAAAAWAAIAAAAGAAMAAAAXAP//AAABAAAAAAAXAAAAAAABAAEAAAAXAAEAAAAHAAIAAAAXAAIAAAAHAAMAAAAYAP//AAACAAAAAAAYAAAAAAACAAEAAAAYAAEAAAACAAIAAAAYAAIAAAACAAMAAAAZAP//AAADAAAAAAAZAAAAAAADAAEAAAAZAAEAAAADAAIAAAAZAAIAAAADAAMAAAAaAP//AAAEAAAAAAAaAAAAAAAEAAEAAAAaAAEAAAAGAAIAAAAaAAIAAAAGAAMAAAAbAP//AAAFAAAAAAAbAAAAAAAFAAEAAAAbAAEAAAAHAAIAAAAbAAIAAAAHAAMAAAAcAP//AAAGAAAAAAAcAAAAAAAGAAEAAAAcAAEAAAAGAAIAAAAcAAIAAAAGAAMAAAAdAP//AAAHAAAAAAAdAAAAAAAHAAEAAAAdAAEAAAAHAAIAAAAdAAIAAAAHAAMAAAAkAP//AAAAAAAAAAAkAAAAAAAAAAEAAAAkAAEAAAAGAAIAAAAkAAIAAAAGAAMAAAAlAP//AAABAAAAAAAlAAAAAAABAAEAAAAlAAEAAAAHAAIAAAAlAAIAAAAHAAMAAAAmAP//AAACAAAAAAAmAAAAAAACAAEAAAAmAAEAAAAGAAIAAAAmAAIAAAAGAAMAAAAnAP//AAADAAAAAAAnAAAAAAADAAEAAAAnAAEAAAAHAAIAAAAnAAIAAAAHAAMAAAAoAP//AAAEAAAAAAAoAAAAAAAEAAEAAAAoAAEAAAAEAAIAAAAoAAIAAAAEAAMAAAApAP//AAAFAAAAAAApAAAAAAAFAAEAAAApAAEAAAAFAAIAAAApAAIAAAAFAAMAAAAqAP//AAAGAAAAAAAqAAAAAAAGAAEAAAAqAAEAAAAGAAIAAAAqAAIAAAAGAAMAAAArAP//AAAHAAAAAAArAAAAAAAHAAEAAAArAAEAAAAHAAIAAAArAAIAAAAHAAMAAAAsAP//AAAAAAAAAAAsAAAAAAAAAAEAAAAsAAEAAAAGAAIAAAAsAAIAAAAGAAMAAAAtAP//AAABAAAAAAAtAAAAAAABAAEAAAAtAAEAAAAHAAIAAAAtAAIAAAAHAAMAAAAuAP//AAACAAAAAAAuAAAAAAACAAEAAAAuAAEAAAACAAIAAAAuAAIAAAACAAMAAAAvAP//AAADAAAAAAAvAAAAAAADAAEAAAAvAAEAAAADAAIAAAAvAAIAAAADAAMAAAAwAP//AAAEAAAAAAAwAAAAAAAEAAEAAAAwAAEAAAAGAAIAAAAwAAIAAAAGAAMAAAAxAP//AAAFAAAAAAAxAAAAAAAFAAEAAAAxAAEAAAAHAAIAAAAxAAIAAAAHAAMAAAAyAP//AAAGAAAAAAAyAAAAAAAGAAEAAAAyAAEAAAAGAAIAAAAyAAIAAAAGAAMAAAAzAP//AAAHAAAAAAAzAAAAAAAHAAEAAAAzAAEAAAAHAAIAAAAzAAIAAAAHAAMAAAA=")
+tile_map_data = PackedByteArray("AAD4////AAAAAAAAAAD4/wAAAAAAAAEAAAD5////AAABAAAAAAD5/wAAAAABAAEAAAD6////AAACAAAAAAD6/wAAAAACAAEAAAD7////AAADAAAAAAD7/wAAAAADAAEAAAD8////AAAEAAAAAAD8/wAAAAAEAAEAAAD9////AAAFAAAAAAD9/wAAAAAFAAEAAAD+////AAAGAAAAAAD+/wAAAAAGAAEAAAD/////AAAHAAAAAAD//wAAAAAHAAEAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAEAAAABAP//AAABAAAAAAABAAAAAAABAAEAAAACAP//AAACAAAAAAACAAAAAAACAAEAAAADAP//AAADAAAAAAADAAAAAAADAAEAAAAEAP//AAAEAAAAAAAEAAAAAAAEAAEAAAAFAP//AAAFAAAAAAAFAAAAAAAFAAEAAAAGAP//AAAGAAAAAAAGAAAAAAAGAAEAAAAHAP//AAAHAAAAAAAHAAAAAAAHAAEAAAD4/wEAAAAGAAIAAAD4/wIAAAAGAAMAAAD5/wEAAAAHAAIAAAD5/wIAAAAHAAMAAAD6/wEAAAAGAAIAAAD6/wIAAAAGAAMAAAD7/wEAAAAHAAIAAAD7/wIAAAAHAAMAAAD+/wEAAAAGAAIAAAD+/wIAAAAGAAMAAAD//wEAAAAHAAIAAAD//wIAAAAHAAMAAAAAAAEAAAAGAAIAAAAAAAIAAAAGAAMAAAABAAEAAAAHAAIAAAABAAIAAAAHAAMAAAAEAAEAAAAGAAIAAAAEAAIAAAAGAAMAAAAFAAEAAAAHAAIAAAAFAAIAAAAHAAMAAAAGAAEAAAAGAAIAAAAGAAIAAAAGAAMAAAAHAAEAAAAHAAIAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAD8/wEAAAAEAAIAAAD8/wIAAAAEAAMAAAD9/wEAAAAFAAIAAAD9/wIAAAAFAAMAAAAOAP//AAAAAAAAAAAOAAAAAAAAAAEAAAAOAAEAAAAGAAIAAAAOAAIAAAAGAAMAAAAPAP//AAABAAAAAAAPAAAAAAABAAEAAAAPAAEAAAAHAAIAAAAPAAIAAAAHAAMAAAAQAP//AAACAAAAAAAQAAAAAAACAAEAAAAQAAEAAAAGAAIAAAAQAAIAAAAGAAMAAAARAP//AAADAAAAAAARAAAAAAADAAEAAAARAAEAAAAHAAIAAAARAAIAAAAHAAMAAAASAP//AAAEAAAAAAASAAAAAAAEAAEAAAASAAEAAAAEAAIAAAASAAIAAAAEAAMAAAATAP//AAAFAAAAAAATAAAAAAAFAAEAAAATAAEAAAAFAAIAAAATAAIAAAAFAAMAAAAUAP//AAAGAAAAAAAUAAAAAAAGAAEAAAAUAAEAAAAGAAIAAAAUAAIAAAAGAAMAAAAVAP//AAAHAAAAAAAVAAAAAAAHAAEAAAAVAAEAAAAHAAIAAAAVAAIAAAAHAAMAAAAWAP//AAAAAAAAAAAWAAAAAAAAAAEAAAAWAAEAAAAGAAIAAAAWAAIAAAAGAAMAAAAXAP//AAABAAAAAAAXAAAAAAABAAEAAAAXAAEAAAAHAAIAAAAXAAIAAAAHAAMAAAAYAP//AAACAAAAAAAYAAAAAAACAAEAAAAYAAEAAAACAAIAAAAYAAIAAAACAAMAAAAZAP//AAADAAAAAAAZAAAAAAADAAEAAAAZAAEAAAADAAIAAAAZAAIAAAADAAMAAAAaAP//AAAEAAAAAAAaAAAAAAAEAAEAAAAaAAEAAAAGAAIAAAAaAAIAAAAGAAMAAAAbAP//AAAFAAAAAAAbAAAAAAAFAAEAAAAbAAEAAAAHAAIAAAAbAAIAAAAHAAMAAAAcAP//AAAGAAAAAAAcAAAAAAAGAAEAAAAcAAEAAAAGAAIAAAAcAAIAAAAGAAMAAAAdAP//AAAHAAAAAAAdAAAAAAAHAAEAAAAdAAEAAAAHAAIAAAAdAAIAAAAHAAMAAAAkAP//AAAAAAAAAAAkAAAAAAAAAAEAAAAkAAEAAAAGAAIAAAAkAAIAAAAGAAMAAAAlAP//AAABAAAAAAAlAAAAAAABAAEAAAAlAAEAAAAHAAIAAAAlAAIAAAAHAAMAAAAmAP//AAACAAAAAAAmAAAAAAACAAEAAAAmAAEAAAAGAAIAAAAmAAIAAAAGAAMAAAAnAP//AAADAAAAAAAnAAAAAAADAAEAAAAnAAEAAAAHAAIAAAAnAAIAAAAHAAMAAAAoAP//AAAEAAAAAAAoAAAAAAAEAAEAAAAoAAEAAAAEAAIAAAAoAAIAAAAEAAMAAAApAP//AAAFAAAAAAApAAAAAAAFAAEAAAApAAEAAAAFAAIAAAApAAIAAAAFAAMAAAAqAP//AAAGAAAAAAAqAAAAAAAGAAEAAAAqAAEAAAAGAAIAAAAqAAIAAAAGAAMAAAArAP//AAAHAAAAAAArAAAAAAAHAAEAAAArAAEAAAAHAAIAAAArAAIAAAAHAAMAAAAsAP//AAAAAAAAAAAsAAAAAAAAAAEAAAAsAAEAAAAGAAIAAAAsAAIAAAAGAAMAAAAtAP//AAABAAAAAAAtAAAAAAABAAEAAAAtAAEAAAAHAAIAAAAtAAIAAAAHAAMAAAAuAP//AAACAAAAAAAuAAAAAAACAAEAAAAuAAEAAAACAAIAAAAuAAIAAAACAAMAAAAvAP//AAADAAAAAAAvAAAAAAADAAEAAAAvAAEAAAADAAIAAAAvAAIAAAADAAMAAAAwAP//AAAEAAAAAAAwAAAAAAAEAAEAAAAwAAEAAAAGAAIAAAAwAAIAAAAGAAMAAAAxAP//AAAFAAAAAAAxAAAAAAAFAAEAAAAxAAEAAAAHAAIAAAAxAAIAAAAHAAMAAAAyAP//AAAGAAAAAAAyAAAAAAAGAAEAAAAyAAEAAAAGAAIAAAAyAAIAAAAGAAMAAAAzAP//AAAHAAAAAAAzAAAAAAAHAAEAAAAzAAEAAAAHAAIAAAAzAAIAAAAHAAMAAAAHAAIAAAAHAAMAAAA=")
 tile_set = SubResource("TileSet_0nrtl")
 
 [node name="Winda" parent="." instance=ExtResource("2_3i2mj")]
@@ -176,3 +200,268 @@ offset_right = 901.0
 offset_bottom = -85.0
 text = "Click \"Enter\" To Finish The Level"
 label_settings = SubResource("LabelSettings_6oy35")
+
+[node name="ColorRect" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = 128.0
+offset_top = 5.0
+offset_right = 224.0
+offset_bottom = 48.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("3_avkvn")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_vfh01")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_d5ijk")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ern3t")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = 480.0
+offset_top = 5.0
+offset_right = 576.0
+offset_bottom = 48.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("3_avkvn")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_vfh01")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect2"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_d5ijk")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect2"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ern3t")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = -224.0
+offset_top = 5.0
+offset_right = -128.0
+offset_bottom = 48.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("3_avkvn")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_vfh01")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect3"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_d5ijk")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect3"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ern3t")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = -320.0
+offset_top = 5.0
+offset_right = -224.0
+offset_bottom = 48.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("3_avkvn")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect4/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_vfh01")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect4"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_d5ijk")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect4"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ern3t")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = 928.0
+offset_top = 5.0
+offset_right = 1024.0
+offset_bottom = 48.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("3_avkvn")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect5/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_vfh01")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect5"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_d5ijk")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect5"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ern3t")
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
+modulate = Color(2, 2, 2, 1)
+offset_left = 832.0
+offset_top = 5.0
+offset_right = 928.0
+offset_bottom = 48.0
+color = Color(1, 0.282353, 0.0117647, 1)
+script = ExtResource("3_avkvn")
+x = NodePath("CPUParticles2D_Zabicie")
+
+[node name="Area2D" type="Area2D" parent="ColorRect6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect6/Area2D"]
+position = Vector2(48, 21.5)
+shape = SubResource("RectangleShape2D_vfh01")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect6"]
+position = Vector2(49, 18)
+amount = 40
+direction = Vector2(0, -1)
+spread = 146.13
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.41
+initial_velocity_max = 90.91
+scale_amount_min = 4.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_d5ijk")
+color = Color(1, 0.282353, 0.0117647, 1)
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="ColorRect6"]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_ern3t")
+color = Color(1, 0, 0, 1)
+
+[connection signal="body_entered" from="ColorRect/Area2D" to="ColorRect" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect2/Area2D" to="ColorRect2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect3/Area2D" to="ColorRect3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect4/Area2D" to="ColorRect4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect5/Area2D" to="ColorRect5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ColorRect6/Area2D" to="ColorRect6" method="_on_area_2d_body_entered"]

@@ -36,6 +36,8 @@ func attack():
 
 func _physics_process(delta: float) -> void:
 	
+	
+	
 	cos3 = raycast_dół_lewo.get_collider()
 	cos4 = raycast_dół1_prawo.get_collider()
 	

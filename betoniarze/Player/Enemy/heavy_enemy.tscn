@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://ctw4nlxqryxer"]
+[gd_scene load_steps=53 format=3 uid="uid://ctw4nlxqryxer"]
 
 [ext_resource type="Script" path="res://Player/Enemy/heavy_enemy.gd" id="1_k3k5d"]
 [ext_resource type="Texture2D" uid="uid://1hpf0mop4yna" path="res://Art/robot_walkt.png" id="2_8wu0o"]
@@ -338,6 +338,10 @@ size = Vector2(35, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfl3x"]
 size = Vector2(48, 47)
 
+[sub_resource type="Curve" id="Curve_a7gtl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="heavy_enemy" type="CharacterBody2D" node_paths=PackedStringArray("raycast_dół_lewo", "raycast_dół1_prawo")]
 script = ExtResource("1_k3k5d")
 "raycast_dół_lewo" = NodePath("RayCast2D_Dół2")
@@ -364,6 +368,20 @@ target_position = Vector2(0, 37)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_wfl3x")
+
+[node name="CPUParticles2D_Zabicie" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 60
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.2
+initial_velocity_max = 70.7
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_a7gtl")
+color = Color(1, 0, 0, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
