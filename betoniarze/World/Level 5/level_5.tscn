@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxfh80tli0nrh"]
+[gd_scene load_steps=26 format=3 uid="uid://cxfh80tli0nrh"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_lwpgq"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_46by8"]
@@ -23,6 +23,36 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_wkvgs"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.461538), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo52e"]
+size = Vector2(256, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxxv1"]
+size = Vector2(64.5, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8bpl"]
+size = Vector2(80, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x3mw"]
+size = Vector2(112, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poofd"]
+size = Vector2(48, 48.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtnvf"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pi0o"]
+size = Vector2(48.5, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkeeg"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwngr"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd7ti"]
+size = Vector2(48, 221)
 
 [node name="Level 5" type="Node2D"]
 script = ExtResource("1_lwpgq")
@@ -69,11 +99,11 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-1016, -197)
 
 [node name="Light_Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_qrwqf")]
-position = Vector2(-362, -263)
+position = Vector2(-366, -284)
 target = NodePath("../Player")
 
 [node name="Light_Enemy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_qrwqf")]
-position = Vector2(-1240, -501)
+position = Vector2(-1239, -523)
 target = NodePath("../Player")
 
 [node name="ColorRect13" type="ColorRect" parent="." node_paths=PackedStringArray("x")]
@@ -559,6 +589,139 @@ scale_amount_min = 4.0
 scale_amount_max = 8.0
 scale_amount_curve = SubResource("Curve_wkvgs")
 color = Color(1, 0, 0, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-991, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-1343, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(104, -144.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(241, -63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(545, -111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(241, -255)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(-671, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+position = Vector2(-415, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+position = Vector2(-399, -255)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2(-79, -255)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_fo52e")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+position = Vector2(-793, -199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
+position = Vector2(-575.25, -207.5)
+shape = SubResource("RectangleShape2D_dxxv1")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
+position = Vector2(-672, -432.5)
+shape = SubResource("RectangleShape2D_b8bpl")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15"]
+position = Vector2(-464, -432.5)
+shape = SubResource("RectangleShape2D_2x3mw")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16"]
+position = Vector2(-448, -606.75)
+shape = SubResource("RectangleShape2D_poofd")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17"]
+position = Vector2(-496, -655)
+shape = SubResource("RectangleShape2D_gtnvf")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="."]
+position = Vector2(388, -47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18"]
+position = Vector2(-148.25, -319.5)
+shape = SubResource("RectangleShape2D_7pi0o")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D19"]
+position = Vector2(504, -567)
+shape = SubResource("RectangleShape2D_wkeeg")
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="."]
+position = Vector2(-768, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D20"]
+position = Vector2(-112, -426)
+shape = SubResource("RectangleShape2D_nwngr")
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="."]
+position = Vector2(-1330, -376)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D21"]
+position = Vector2(-126, -222.5)
+shape = SubResource("RectangleShape2D_yd7ti")
 
 [connection signal="body_entered" from="ColorRect13/Area2D" to="ColorRect13" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ColorRect14/Area2D" to="ColorRect14" method="_on_area_2d_body_entered"]

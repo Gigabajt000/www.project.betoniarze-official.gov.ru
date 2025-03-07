@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qte38jbk1cga"]
+[gd_scene load_steps=16 format=3 uid="uid://qte38jbk1cga"]
 
 [ext_resource type="Script" path="res://World/main.gd" id="1_is4ol"]
 [ext_resource type="PackedScene" uid="uid://djpihxejo1d0r" path="res://Player/Gracz/player.tscn" id="2_ohu5t"]
@@ -11,6 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://cstyfc6cspfe1" path="res://UI/Settings/settings.tscn" id="8_mocbl"]
 [ext_resource type="PackedScene" uid="uid://i2p4cgaqayu5" path="res://Tilemap/level_3.tscn" id="10_vb623"]
 [ext_resource type="PackedScene" uid="uid://bnowdgnrihfy3" path="res://Player/Enemy/Light_Enemy.tscn" id="11_jhi5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bj4t"]
+size = Vector2(256, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klk2l"]
+size = Vector2(96, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvul0"]
+size = Vector2(64.5, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuys"]
+size = Vector2(32, 125)
 
 [node name="Level 3" type="Node2D"]
 script = ExtResource("1_is4ol")
@@ -67,3 +79,73 @@ target = NodePath("../Player")
 [node name="Light_Enemy3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("11_jhi5m")]
 position = Vector2(-1697, -324)
 target = NodePath("../Player")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-773, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_7bj4t")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-421, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_7bj4t")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-69, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_7bj4t")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(283, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_7bj4t")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(-1093, -103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_7bj4t")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(-773, -199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(-601, -159.5)
+shape = SubResource("RectangleShape2D_7bj4t")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(-1397, -135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(-681, -159.5)
+shape = SubResource("RectangleShape2D_klk2l")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+position = Vector2(747, -87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2(-681, -159.5)
+shape = SubResource("RectangleShape2D_klk2l")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+position = Vector2(-1106, -133)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2(180.25, -304)
+shape = SubResource("RectangleShape2D_xvul0")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2(-1106, -133)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2(-156, -313.5)
+shape = SubResource("RectangleShape2D_tcuys")
